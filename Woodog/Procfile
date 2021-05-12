@@ -1,1 +1,1 @@
-web: gunicorn Woodog.wsgi
+web: waitress-serve --port=$PORT Woodog.wsgi:application
