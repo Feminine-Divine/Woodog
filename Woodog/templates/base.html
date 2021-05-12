@@ -8,11 +8,11 @@
     {% endblock %} </title>
 
     <!-- Bootstrap core CSS -->
-<link href="{% assets 'css/bootstrap.min.css' %}" rel="stylesheet" >
-<link href="{% assets 'css/main.css' %}" rel="stylesheet" >
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+<link href="{% static 'css/main.css' %}" rel="stylesheet" >
 
     <!-- Custom styles for this template -->
-    <link href="{% assets 'navbar-top-fixed.css' %}" rel="stylesheet">
+    <link href="{% static 'navbar-top-fixed.css' %}" rel="stylesheet">
   </head>
   <body>
     
@@ -28,7 +28,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -47,7 +47,7 @@
 
   {% endblock %}
 </main>
-    <script src="{% assets 'js/main.js' %}" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
       
   </body>
