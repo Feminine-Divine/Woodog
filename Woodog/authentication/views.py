@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 import json
 from validate_email import validate_email
 from django.contrib import messages
+from django.core.mail import EmailMessage
+
 
 # Create your views here.
 
@@ -47,7 +49,17 @@ class RegistrationView(View):
                     return render(request, 'authentication/register.html')
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
+                user.is_active = False
                 user.save()
+                email_subject = 'Activate your account'
+                email_body = 'Test Body'
+                email = EmailMessage(
+                email_subject,
+                email_body,
+                'from@example.com',
+                [email],
+                )
+                email.send(fail_silently=False)
                 messages.success(request,'Account successfully created')
                 return render(request, 'authentication/register.html')
                 
