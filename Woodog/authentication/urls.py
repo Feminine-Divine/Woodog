@@ -1,5 +1,5 @@
 from django.utils import regex_helper
-from .views import EmailValidationView, RegistrationView, UsernameValidationView
+from .views import EmailValidationView, RegistrationView, UsernameValidationView, VerificationView
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 
@@ -9,4 +9,5 @@ urlpatterns = [
     name="validate-username"),
     path('validate-email', csrf_exempt(EmailValidationView.as_view()), 
     name="validate-email"),
+    path('activate/<uidb64>/<token>',VerificationView.as_view(),name='activate')
 ]
