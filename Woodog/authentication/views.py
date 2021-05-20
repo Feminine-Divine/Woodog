@@ -8,11 +8,13 @@ import json
 from validate_email import validate_email
 from django.contrib import messages
 from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text , DjangoUnicodeDecodeError
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.sites.shortcuts import get_current_site
 from .utils import token_generator
+from django.contrib import auth
 
 
 # Create your views here.
@@ -104,3 +106,36 @@ class VerificationView(View):
 class LoginView(View):
     def get(self,request):
         return render(request,'authentication/login.html')
+    
+    def post(self,request):
+        username = request.POST['username']
+        password = request.POST['password']
+
+        if username and password:
+
+            user = auth.authenticate(username=username , password=password)
+
+            if user:
+                if user.is_active:
+                    auth.login(request, user)
+                    messages.success(request, 'Welcome, ' + 
+                                    user.username + ' you are now logged in')
+                    return redirect('woodogdata')
+
+                messages.error(
+                    request, 'Account is not active, please check your email')
+                return render(request,'authentication/login.html')
+            messages.error(
+                request, 'Invalid credentials, try again')
+            return render(request,'authentication/login.html')
+        messages.error(
+            request, 'Please fill all the fields')
+        return render(request,'authentication/login.html')
+
+class LogoutView(View):
+    def post(self, request):
+        auth.logout(request)
+        messages.success(request, 'You have been logged out')
+        return redirect('login')
+            
+                
