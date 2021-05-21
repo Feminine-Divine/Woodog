@@ -19,7 +19,8 @@ from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
-    path('',include('woodogdata.urls')),
+    path('woodogdata/',include('woodogdata.urls')),
     path('authentication/',include('authentication.urls')),
+    path('dashboard/',include('appdashboard.urls')),
     path('admin/', admin.site.urls),
 ]
