@@ -1,150 +1,62 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Woodog {% block title %}
+    {% endblock %} </title>
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
 <link href="{% static 'css/main.css' %}" rel="stylesheet" >
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/navbar-top-fixed.css' %}" rel="stylesheet">
-        
-    <title>Woodog {% block title %}
-      {% endblock %} </title>
-    </head>
-    <body>
+    <link href="{% static 'navbar-top-fixed.css' %}" rel="stylesheet">
+  </head>
+<body>
+    
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Fixed navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <button type="button" class="btn btn-outline-light">Sign Out</button>
+    </div>
+  </div>
+</nav>
+
+{% include "partials/card.html" %}
 
 
-      <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap py-4 mx-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Woodog</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <ul class="navbar-nav px-3">
-          <li class="nav-item text-nowrap">
-            <form action="{% url  'logout' %}" method="POST">
-              {% csrf_token %}
-              <input
-                class="text text-capitalize"
-                type="submit"
-                value="Sign out"
-              />
-            </form>
-          </li>
-        </ul>
-      </nav>
+<main role='main' class="container">
 
-      {% include 'partials/_messages.html' %}
-        <div class="container"> 
-            <div class="slider">
 
-                <div class="box1 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>Heya!! Doglovers</h1>
-                        <p>
-                            Wanna Help, give food and shelter to
-                            those stray dogs you seen in your daily life. 
-                            Come up with this app to show yourself a true doglover.
-                        </p>
-                        <button>Check Now</button>
-                    </div>
+  {% block content %}
 
-                    <div class="illustration"><div class="inner"></div></div>
-                </div>
-                                
-                
-                <div class="box2 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>I'm the second Box</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing 
-                            elit. Integer lacinia dui lectus. Donec scelerisque ipsum
-                            diam, ac mattis orci pellentesque eget. 
-                        </p>
-                        <button>Check Now</button>
-                    </div>
+  {% endblock %}
+ 
 
-                    <div class="illustration"><div class="inner"></div></div>
-                </div>
-                                
-                <div class="box3 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>I'm the third Box</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing 
-                            elit. Integer lacinia dui lectus. Donec scelerisque ipsum
-                            diam, ac mattis orci pellentesque eget. 
-                        </p>
-                        <button>Check Now</button>
-                    </div>
+</main>
+    <script src="{% static 'js/main.js' %}" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
-                    <div class="illustration"><div class="inner"></div></div>
-                </div>
-
-                <div class="box4 box">
-                  <div class="bg"></div>
-                  <div class="details">
-                      <h1>I'm the third Box</h1>
-                      <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing 
-                          elit. Integer lacinia dui lectus. Donec scelerisque ipsum
-                          diam, ac mattis orci pellentesque eget. 
-                      </p>
-                      <button>Check Now</button>
-                  </div>
-
-                  <div class="illustration"><div class="inner"></div></div>
-              </div>
-                                
-                <div class="box5 box">
-                    <div class="bg"></div>
-                    <div class="details">
-                        <h1>I'm the fifth Box</h1>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing 
-                            elit. Integer lacinia dui lectus. Donec scelerisque ipsum
-                            diam, ac mattis orci pellentesque eget. 
-                        </p>
-                        <button>Check Now</button>
-                    </div>
-
-                    <div class="illustration"><div class="inner"></div></div>
-                </div>
-                                
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="prev" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#fff"/></svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="next" width="56.898" height="91" viewBox="0 0 56.898 91"><path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#fff"/></svg>
-            <div class="trail">
-                    <div class="box1 active">1</div>
-                    <div class="box2">2</div>
-                    <div class="box3">3</div>
-                    <div class="box4">4</div>
-                    <div class="box5">5</div>
-            </div>
-        </div>   
-
-        <main role="main">
-          {% block content %}
-        
-          {% endblock %}
-        </main>
-
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
-        <script src="{% static 'js/main.js' %}" ></script>
-        
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.2/CSSRulePlugin.min.js"></script> -->
-        <script src="{% static 'js/script.js'%}"></script>
-    </body>
+      
+  </body>
 </html>
