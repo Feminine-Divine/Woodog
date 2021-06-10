@@ -23,7 +23,7 @@ Refer to the following articles on the basics of Git and Github:
 **1.** Fork [this](#) repository.
 Click on the <a href="https://github.com/Feminine-Divine/Woodog"><img src="https://user-images.githubusercontent.com/58631762/120588030-11cee200-c454-11eb-98ad-060ef99428c5.png"></a> symbol at the top right corner.
 
-**2.** Clone the forked repository. Open terminl and type:
+**2.** Clone the forked repository. Open terminal and type:
 
 ```bash
 git clone https://github.com/<your-github-username>/Woodog
