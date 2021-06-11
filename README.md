@@ -144,6 +144,7 @@ Step 9: Installing Requirements
 <br><br>
 
 ```bash
+cd Woodog
 pip install -r requirements.txt
 ```
 </details>
@@ -152,7 +153,7 @@ pip install -r requirements.txt
 
 <details>
 <summary>
-Step 10: Download and Install postgreSQL
+Step 10: Download and Install postgreSQL(DataBase)
 </summary>
 <br>
 
@@ -220,6 +221,7 @@ Step 14: Running the Project in local server
 
 ```bash
 python manage.py runserver
+http://www.localhost:3000
 ```
 </details>
 
@@ -238,7 +240,6 @@ git pull upstream master
 ```bash
 git checkout -b '<new-branch-name>'
 ```
-
 ---
 
 ## Code of conduct
@@ -259,6 +260,14 @@ git add .
 * Commit your changes
 ```bash
 git commit -m '<your_commit_message>'
+```
+* Check for Status to be sure everything is added
+```bash
+git status
+```
+* Check for your remote
+```bash
+git remote -v
 ```
 * Push changes to remote
 ```bash
