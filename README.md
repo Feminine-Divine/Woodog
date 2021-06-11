@@ -242,7 +242,8 @@ git checkout -b '<new-branch-name>'
 ---
 
 ## Code of conduct
-
+  
+ *Note: Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/README.md) and [contributing.md](https://github.com/coding-geek21/Woodog/blob/1fcf646971819b77f052e357dad81af633bd1619/CODE_OF_CONDUCT.md) which provides the guidelines for contributing.
 ---
 
 ## Contributing
