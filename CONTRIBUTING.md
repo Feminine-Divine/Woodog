@@ -1,4 +1,4 @@
-## ⭐ First time contributing? We will help you out.
+## ⭐ First time contributing? We will help you out
 
 Refer to the following articles on the basics of Git and Github:
 
@@ -11,19 +11,19 @@ Refer to the following articles on the basics of Git and Github:
 
 ## 💥 Contribution
 
-* Take a look at the Existing [Issues](https://github.com/Feminine-Divine/Woodog/issues) or create your own Issues!
-* Participants have to comment on issues they would like to work on, and mentors will assign you.
+* Take a look at the Existing [Issues](https://github.com/Feminine-Divine/Woodog/issues) or Create your own Issues!
+* Participants have to ask the mentor ro assign the particular issue.
 * Wait for the Issue to be assigned to you after which you can start working on it.
-* Fork the Repo and create a Branch for any Issue that you are working upon.
+* Fork the Repo and Create a Branch for aIssue that assigned you.
 * Read the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md)
 * Create a Pull Request which will be promptly reviewed and suggestions would be added to improve it.
 
-## ⭐HOW TO MAKE A PULL REQUEST:
+## ⭐How To Make a Pull Request
 
 **1.** Fork [this](#) repository.
 Click on the <a href="https://github.com/Feminine-Divine/Woodog"><img src="https://user-images.githubusercontent.com/58631762/120588030-11cee200-c454-11eb-98ad-060ef99428c5.png"></a> symbol at the top right corner.
 
-**2.** Clone the forked repository. Open terminal and type:
+**2.** Clone the repository. Open terminal and type:
 
 ```bash
 git clone https://github.com/<your-github-username>/Woodog
@@ -80,7 +80,7 @@ git push origin <your_branch_name>
 
 **12.** Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) !
 
-**13.** **Congratulations!** Sit and relax, you've made your contribution to [Woodog](https://github.com/Feminine-Divine/Woodog) project.
+**13.** **Congratulations!** Sit and Relax, you've made your contribution to [Woodog](https://github.com/Feminine-Divine/Woodog) project.
 
 
 ## 💥 Issues:
