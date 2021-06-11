@@ -243,7 +243,7 @@ git checkout -b '<new-branch-name>'
 
 ## Code of conduct
   
-* Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/README.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) which provides the guidelines for contributing.
+* Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/contributing.md) which provides the guidelines for contributing.
 ---
 
 ## Contributing
