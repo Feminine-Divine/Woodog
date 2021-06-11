@@ -123,6 +123,8 @@ To Activate `env`
 
 ```bash
 source env/Scripts/activate
+or
+./env/Scripts/activate
 ```
 
 To deactivate `env`
