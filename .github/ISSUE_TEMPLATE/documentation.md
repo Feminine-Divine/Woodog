@@ -1,6 +1,6 @@
 ---
 name: 📔 Documentation
-about: Suggest an idea for the documentation
+about: Enhance documentation
 labels: documentation
 assignees: ''
 
