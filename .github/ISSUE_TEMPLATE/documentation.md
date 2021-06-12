@@ -6,6 +6,7 @@ assignees: ''
 
 ---
 
+### 📚 Documentation File you'd like to improve:
 <!-- Let us know the files you'd like to enhance by checking the checkboxes `[x]`: -->
 - [ ] README.md
 - [ ] CODE_OF_CONDUCT.md
