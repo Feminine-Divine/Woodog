@@ -1,7 +1,6 @@
-
 ---
-name:📃 Documentation
-about: Suggest how you want to improve the documentation
+name: 🚀 Documentation
+about: Suggest an idea for the documentation
 labels: enhancement
 assignees: ''
 
