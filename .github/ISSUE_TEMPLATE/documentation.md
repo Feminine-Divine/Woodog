@@ -7,13 +7,16 @@ assignees: ''
 ---
 
 ### 📚 Documentation File you'd like to improve:
+
 <!-- Let us know the files you'd like to enhance by checking the checkboxes `[x]`: -->
+
 - [ ] README.md
 - [ ] CODE_OF_CONDUCT.md
 - [ ] CONTRIBUTING.md
 
 
 ### 💡 Describe your ideas briefly on how to improve the documentation
+
 <!-- A clear and concise description of what your idea is -->
 
 
