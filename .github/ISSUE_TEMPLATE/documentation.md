@@ -1,24 +1,15 @@
 ---
-name: 📃Documentation
+name: 📔 Documentation
 about: Suggest an idea for the documentation
-labels: enhancement
+labels: documentation
 assignees: ''
 
 ---
 
-### 🐣 Please describe your ideas on how to improve the documentation.
-
-<!-- A clear and concise description of what your idea is-->
-
-
-### 💡 Describe the solution you'd like
-
-<!-- A clear and concise description of what you want to happen. -->
-
-
-### ❓ Describe alternatives you've considered
-
-<!-- A clear and concise description of any alternative solutions or features you've considered. -->
+<!-- Let us know the files you'd like to enhance by checking the checkboxes `[x]`: -->
+- [ ] README.md
+- [ ] CODE_OF_CONDUCT.md
+- [ ] CONTRIBUTING.md
 
 
 ### 📹 Screenshots or Video or GIF
