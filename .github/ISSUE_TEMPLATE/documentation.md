@@ -1,5 +1,5 @@
 ---
-name: 🚀 Documentation
+name: 📃Documentation
 about: Suggest an idea for the documentation
 labels: enhancement
 assignees: ''
