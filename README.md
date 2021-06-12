@@ -153,34 +153,6 @@ pip install -r requirements.txt
 
 <details>
 <summary>
-Step 10: Download and Install postgreSQL(DataBase)
-</summary>
-<br>
-
-* Download <a href="https://www.postgresql.org/download/">postgreSQL</a>
-* Install it.
-* Add postgreSQL to path.
-</details>
-
----
-
-<details>
-<summary>
-Step 11: Create Database named 'woodog'
-</summary>
-<br>
-
-To create database in postgreSQL,
-
-```bash
-createdb --username=postgres woodog
-```
-</details>
-
----
-
-<details>
-<summary>
 Step 12: Making database migrations
 </summary>
 <br>
@@ -243,7 +215,7 @@ git checkout -b '<new-branch-name>'
 ---
 
 ## Code of conduct
-  
+
 * Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/contributing.md) which provides the guidelines for contributing.
 ---
 
