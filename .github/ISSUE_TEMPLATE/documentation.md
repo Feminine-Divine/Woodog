@@ -13,6 +13,10 @@ assignees: ''
 - [ ] CONTRIBUTING.md
 
 
+### 💡 Describe your ideas briefly on how to improve the documentation
+<!-- A clear and concise description of what your idea is -->
+
+
 ### 📹 Screenshots or Video or GIF
 
 <!-- Attach screenshots or video of GIF if applicable -->
