@@ -153,7 +153,7 @@ pip install -r requirements.txt
 
 <details>
 <summary>
-Step 12: Making database migrations
+Step 10: Making database migrations
 </summary>
 <br>
 
@@ -172,7 +172,7 @@ python manage.py migrate
 
 <details>
 <summary>
-Step 13: Creating superuser to access Admin Panel
+Step 11: Creating superuser to access Admin Panel
 </summary>
 <br>
 
@@ -185,7 +185,7 @@ python manage.py createsuperuser
 
 <details>
 <summary>
-Step 14: Running the Project in local server
+Step 12: Running the Project in local server
 </summary>
 <br>
 <b>Note:</b> Before running the project in local server, Make sure you activate the Virtual Environment.
