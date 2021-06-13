@@ -1,18 +1,20 @@
-# Woodog 🐶
+<p align = 'center'>
+<img src = "https://img.shields.io/badge/Woodog-4285F4?style=%2for-the-badge&logo=datadog&logoColor=white" height = '100' width = '300'/>
+</p>
 
 Woodog is an initiative to provide help to increasing stray animals by providing them food and refuge by connecting them with fellow helpful humans.
 On the application, two types of people can be registered: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter and food for them.
 
 Django and bootstrap are incorporated into the application, requiring authentication and establishing profiles and positioning using maps.
 
-## Instructions to setup 📘
+## Instructions to setup :arrow_down::computer:
 
 <details>
 <summary>
 Step 1: Downloading and Installing the Code Editor
 </summary>
 <br>
-You can download and install any one of the following code editors.
+You can download and install any one of the following IDE.
 <br><br>
 <ul>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (Preferred)</li>
@@ -24,7 +26,7 @@ You can download and install any one of the following code editors.
 
 <details>
 <summary>
-Step 2: Installing Python
+Step 2: Installing Python 
 </summary>
 <br>
 Download <a href="https://www.python.org/downloads/">Python Latest Version</a>
@@ -45,7 +47,7 @@ python --version
 
 <details>
 <summary>
-Step 3: Installing Git
+Step 3: Installing Git 
 </summary>
 <br>
 Download <a href="https://git-scm.com/downloads">Git</a>
@@ -232,13 +234,13 @@ http://www.localhost:3000
 
 ## :bulb: Pro Tip!
 
-* Always keep updating your master branch with the main repository by running the following command on the local master branch. Refer <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github#:~:text=git%20remote%20add%20upstream%20https://github.com/whoever/whatever.git">this stackoverflow page.</a>
+:one: Always keep updating your master branch with the main repository by running the following command on the local master branch. Refer <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github#:~:text=git%20remote%20add%20upstream%20https://github.com/whoever/whatever.git">this stackoverflow page.</a>
 
 ```bash
 git pull upstream master
 ```
 
-* Always create a new branch before making any changes. Never ever make any changes directly on the master branch. To create a **new** branch,
+:two: Always create a new branch before making any changes. Never ever make any changes directly on the master branch. To create a **new** branch,
 
 ```bash
 git checkout -b '<new-branch-name>'
@@ -283,6 +285,6 @@ git push origin '<your_branch_name>'
 
 <p align="center">
 <a href="https://github.com/Feminine-Divine/Woodog" title="Woodog Github">
-<img src="https://user-images.githubusercontent.com/58631762/120077716-60cded80-c0c9-11eb-983d-80dfa5862d8a.png" width="19">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 </a>
 </p>
