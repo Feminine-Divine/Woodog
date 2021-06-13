@@ -2,8 +2,8 @@
 <img src = "https://img.shields.io/badge/Woodog-4285F4?style=%2for-the-badge&logo=datadog&logoColor=white" height = '100' width = '300'/>
 </p>
 
-Woodog is an initiative to provide help to increasing stray animals by providing them food and refuge by connecting them with fellow helpful humans.
-On the application, two types of people can be registered: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter and food for them.
+Woodog:dog: is an initiative to provide help to increasing stray animals by providing them food :bread: and refuge :house: by connecting them with fellow helpful humans.
+On the application, two types of people can be registered :inbox_tray: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter :house: and food :bread: for them.
 
 Django and bootstrap are incorporated into the application, requiring authentication and establishing profiles and positioning using maps.
 
