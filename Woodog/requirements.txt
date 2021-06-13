@@ -1,0 +1,4 @@
+six==1.15.0
+Django==3.0.7
+django_heroku==0.3.1
+validate_email==1.3
