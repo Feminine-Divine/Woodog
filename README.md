@@ -1,10 +1,11 @@
-# Woodog
+# Woodog 🐶
 
-We could see the innocence livings in our day to day life, that includes stray dogs who suffers the most by not having a perfect family or living to survive. We all should help these dogs by the means of giving them shelter, food, protection to have their loyality. So this Application to aid and provide refuge for stray animals and dogs by connecting them and helpful people.
+Woodog is an initiative to provide help to increasing stray animals by providing them food and refuge by connecting them with fellow helpful humans.
 On the application, two types of people can be registered: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter and food for them.
+
 Django and bootstrap are incorporated into the application, requiring authentication and establishing profiles and positioning using maps.
 
-## Instructions to setup
+## Instructions to setup 📘
 
 <details>
 <summary>
@@ -229,7 +230,7 @@ http://www.localhost:3000
 
 ---
 
-:bulb: Pro Tip!
+## :bulb: Pro Tip!
 
 * Always keep updating your master branch with the main repository by running the following command on the local master branch. Refer <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github#:~:text=git%20remote%20add%20upstream%20https://github.com/whoever/whatever.git">this stackoverflow page.</a>
 
@@ -244,12 +245,12 @@ git checkout -b '<new-branch-name>'
 ```
 ---
 
-## Code of conduct
+## Code of conduct ©️
   
 * Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/contributing.md) which provides the guidelines for contributing.
 ---
 
-## Contributing
+## Contributing 👷
 
 * <a href="#" target="_self" title="Fork">Fork</a> the project.
 * Create your Feature Branch
