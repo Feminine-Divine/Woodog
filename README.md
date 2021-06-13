@@ -279,13 +279,6 @@ git push origin '<your_branch_name>'
 ```
 * Open a <a href="https://github.com/Feminine-Divine/Woodog/pulls" title="Create Pull request">Pull Request</a>
 
----
-
-<p align="center">
-<a href="https://github.com/Feminine-Divine/Woodog" title="Woodog Github">
-<img src="https://user-images.githubusercontent.com/58631762/120077716-60cded80-c0c9-11eb-983d-80dfa5862d8a.png" width="19">
-</a>
-</p>
 
 ## 📌 Opensource Programs
 
@@ -303,3 +296,8 @@ git push origin '<your_branch_name>'
 </table>
 
 ---
+<p align="center">
+<a href="https://github.com/Feminine-Divine/Woodog" title="Woodog Github">
+<img src="https://user-images.githubusercontent.com/58631762/120077716-60cded80-c0c9-11eb-983d-80dfa5862d8a.png" width="19">
+</a>
+</p>
