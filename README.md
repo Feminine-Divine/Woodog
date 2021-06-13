@@ -287,9 +287,7 @@ git push origin '<your_branch_name>'
 </a>
 </p>
 
-## 📌Program
-<br>
-<img src="https://camo.githubusercontent.com/d382fd0021bdf6d98f4b6904e638f9c811d2018d8325ba89106efc5a0570d498/687474703a2f2f7777772e677572707265657473616c756a612e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031362f30352f616c776179732d6b6565702d6c6561726e696e672e706e67">
+## 📌 Opensource Programs
 
 ### This project is a part of following Open Source Program
 <br>
