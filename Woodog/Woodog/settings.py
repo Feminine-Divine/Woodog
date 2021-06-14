@@ -82,10 +82,11 @@ WSGI_APPLICATION = 'Woodog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'woodog',
+
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
         'USER': 'postgres',
-        'PASSWORD': 'shikhu17',
+        'PASSWORD': '',
         'HOST': 'localhost',
     }
 }

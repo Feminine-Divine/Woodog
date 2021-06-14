@@ -1,17 +1,20 @@
-# Woodog
+<p align = 'center'>
+<img src = "https://img.shields.io/badge/Woodog-4285F4?style=%2for-the-badge&logo=datadog&logoColor=white" height = '100' width = '300'/>
+</p>
 
-We could see the innocence livings in our day to day life, that includes stray dogs who suffers the most by not having a perfect family or living to survive. We all should help these dogs by the means of giving them shelter, food, protection to have their loyality. So this Application to aid and provide refuge for stray animals and dogs by connecting them and helpful people.
-On the application, two types of people can be registered: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter and food for them.
+Woodog:dog: is an initiative to provide help to increasing stray animals by providing them food :bread: and refuge :house: by connecting them with fellow helpful humans.
+On the application, two types of people can be registered :inbox_tray: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter :house: and food :bread: for them.
+
 Django and bootstrap are incorporated into the application, requiring authentication and establishing profiles and positioning using maps.
 
-## Instructions to setup
+## Instructions to setup :arrow_down::computer:
 
 <details>
 <summary>
 Step 1: Downloading and Installing the Code Editor
 </summary>
 <br>
-You can download and install any one of the following code editors.
+You can download and install any one of the following IDE.
 <br><br>
 <ul>
 <li><a href="https://code.visualstudio.com/">Visual Studio Code</a> (Preferred)</li>
@@ -123,6 +126,8 @@ To Activate `env`
 
 ```bash
 source env/Scripts/activate
+or
+./env/Scripts/activate
 ```
 
 To deactivate `env`
@@ -144,6 +149,7 @@ Step 9: Installing Requirements
 <br><br>
 
 ```bash
+cd Woodog
 pip install -r requirements.txt
 ```
 </details>
@@ -152,35 +158,7 @@ pip install -r requirements.txt
 
 <details>
 <summary>
-Step 10: Download and Install postgreSQL
-</summary>
-<br>
-
-* Download <a href="https://www.postgresql.org/download/">postgreSQL</a>
-* Install it.
-* Add postgreSQL to path.
-</details>
-
----
-
-<details>
-<summary>
-Step 11: Create Database named 'woodog'
-</summary>
-<br>
-
-To create database in postgreSQL,
-
-```bash
-createdb --username=postgres woodog
-```
-</details>
-
----
-
-<details>
-<summary>
-Step 12: Making database migrations
+Step 10: Making database migrations
 </summary>
 <br>
 
@@ -199,7 +177,7 @@ python manage.py migrate
 
 <details>
 <summary>
-Step 13: Creating superuser to access Admin Panel
+Step 11: Creating superuser to access Admin Panel
 </summary>
 <br>
 
@@ -212,7 +190,7 @@ python manage.py createsuperuser
 
 <details>
 <summary>
-Step 14: Running the Project in local server
+Step 12: Running the Project in local server
 </summary>
 <br>
 <b>Note:</b> Before running the project in local server, Make sure you activate the Virtual Environment.
@@ -221,31 +199,32 @@ Step 14: Running the Project in local server
 ```bash
 python manage.py runserver
 ```
+<p>Server will be up and running in local host on PORT 8000</p>
 </details>
 
 ---
 
-:bulb: Pro Tip!
+## :bulb: Pro Tip!
 
-* Always keep updating your master branch with the main repository by running the following command on the local master branch. Refer <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github#:~:text=git%20remote%20add%20upstream%20https://github.com/whoever/whatever.git">this stackoverflow page.</a>
+:one: Always keep updating your master branch with the main repository by running the following command on the local master branch. Refer <a href="https://stackoverflow.com/questions/7244321/how-do-i-update-or-sync-a-forked-repository-on-github#:~:text=git%20remote%20add%20upstream%20https://github.com/whoever/whatever.git">this stackoverflow page.</a>
 
 ```bash
 git pull upstream master
 ```
 
-* Always create a new branch before making any changes. Never ever make any changes directly on the master branch. To create a **new** branch,
+:two: Always create a new branch before making any changes. Never ever make any changes directly on the master branch. To create a **new** branch,
 
 ```bash
 git checkout -b '<new-branch-name>'
 ```
-
 ---
 
-## Code of conduct
+## Code of conduct ©️
 
+* Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/contributing.md) which provides the guidelines for contributing.
 ---
 
-## Contributing
+## Contributing 👷
 
 * <a href="#" target="_self" title="Fork">Fork</a> the project.
 * Create your Feature Branch
@@ -260,16 +239,39 @@ git add .
 ```bash
 git commit -m '<your_commit_message>'
 ```
+* Check for Status to be sure everything is added
+```bash
+git status
+```
+* Check for your remote
+```bash
+git remote -v
+```
 * Push changes to remote
 ```bash
 git push origin '<your_branch_name>'
 ```
 * Open a <a href="https://github.com/Feminine-Divine/Woodog/pulls" title="Create Pull request">Pull Request</a>
 
+## 📌 Opensource Programs
+
+### This project is a part of following Open Source Program
+<br>
+
+<table style="width:80%;background-color:white;border-radius:30px;">
+    <tr>
+  <td>
+<center>
+  <a href="https://letsgrowmore.in/projects/"><img src="https://letsgrowmore.in/wp-content/uploads/2021/05/cropped-growmore-removebg-preview.png"></img></a>
+  </center>
+  </td>
+  </tr>
+</table>
+
 ---
 
 <p align="center">
 <a href="https://github.com/Feminine-Divine/Woodog" title="Woodog Github">
-<img src="https://user-images.githubusercontent.com/58631762/120077716-60cded80-c0c9-11eb-983d-80dfa5862d8a.png" width="19">
+<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
 </a>
 </p>
