@@ -55,8 +55,18 @@
 
             <small class="float-right py-2 showPasswordToggle"></small>
           </div>
-          <input type="submit" value="Register" class="btn btn-block
+          <div>
+            <input type="radio" class="btn-check" name="type_acc" id="success-outlined" autocomplete="off" value = 'helper' checked>
+            <label class="btn btn-outline-success" for="success-outlined">Helper</label>
+
+            <input type="radio" class="btn-check" name="type_acc" id="danger-outlined" autocomplete="off" value = 'seeker'>
+            <label class="btn btn-outline-danger" for="danger-outlined">Seeker</label>
+          </div>
+
+          <div>
+            <input style = 'margin-top: 10px;' type="submit" value="Register" class="btn btn-block
             btn-primary submit-btn" />
+          </div>
         </form>
 
       </div>

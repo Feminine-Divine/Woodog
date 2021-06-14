@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from authentication.models import User_status
 import json
 from validate_email import validate_email
 from django.contrib import messages
@@ -49,6 +50,7 @@ class RegistrationView(View):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
+        check = request.POST['type_acc']
 
         if not User.objects.filter(username=username).exists():
             if not User.objects.filter(email=email).exists():
@@ -59,8 +61,13 @@ class RegistrationView(View):
                 user.set_password(password)
                 user.is_active = False
                 user.save()
+                if check == 'helper' : 
+                    add_user_status = User_status( user = user , is_helper = True )
+                elif check == 'seeker' : 
+                    add_user_status = User_status( user = user , is_seeker = True)
+                add_user_status.save()
 
-                uidb64 = force_bytes(urlsafe_base64_encode(force_bytes(user.pk)))
+                uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
                 domain = get_current_site(request).domain
                 link = reverse('activate',kwargs={'uidb64':uidb64,'token': token_generator.make_token(user)})
 
@@ -84,8 +91,8 @@ class VerificationView(View):
     def get(self, request, uidb64, token):
 
         try:
-            id = force_text(urlsafe_base64_decode(uidb64))
-            user = User.objects.get(pk=id)
+            id_ = force_text(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=id_)
 
             if not token_generator.check_token(user,token):
                 return redirect('login'+'?message='+'User already activated')
