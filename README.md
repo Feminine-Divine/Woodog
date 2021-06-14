@@ -26,7 +26,7 @@ You can download and install any one of the following IDE.
 
 <details>
 <summary>
-Step 2: Installing Python 
+Step 2: Installing Python
 </summary>
 <br>
 Download <a href="https://www.python.org/downloads/">Python Latest Version</a>
@@ -47,7 +47,7 @@ python --version
 
 <details>
 <summary>
-Step 3: Installing Git 
+Step 3: Installing Git
 </summary>
 <br>
 Download <a href="https://git-scm.com/downloads">Git</a>
@@ -158,35 +158,7 @@ pip install -r requirements.txt
 
 <details>
 <summary>
-Step 10: Download and Install postgreSQL(DataBase)
-</summary>
-<br>
-
-* Download <a href="https://www.postgresql.org/download/">postgreSQL</a>
-* Install it.
-* Add postgreSQL to path.
-</details>
-
----
-
-<details>
-<summary>
-Step 11: Create Database named 'woodog'
-</summary>
-<br>
-
-To create database in postgreSQL,
-
-```bash
-createdb --username=postgres woodog
-```
-</details>
-
----
-
-<details>
-<summary>
-Step 12: Making database migrations
+Step 10: Making database migrations
 </summary>
 <br>
 
@@ -205,7 +177,7 @@ python manage.py migrate
 
 <details>
 <summary>
-Step 13: Creating superuser to access Admin Panel
+Step 11: Creating superuser to access Admin Panel
 </summary>
 <br>
 
@@ -218,7 +190,7 @@ python manage.py createsuperuser
 
 <details>
 <summary>
-Step 14: Running the Project in local server
+Step 12: Running the Project in local server
 </summary>
 <br>
 <b>Note:</b> Before running the project in local server, Make sure you activate the Virtual Environment.
@@ -226,8 +198,8 @@ Step 14: Running the Project in local server
 
 ```bash
 python manage.py runserver
-http://www.localhost:3000
 ```
+<p>Server will be up and running in local host on PORT 8000</p>
 </details>
 
 ---
@@ -248,7 +220,7 @@ git checkout -b '<new-branch-name>'
 ---
 
 ## Code of conduct ©️
-  
+
 * Please take a moment to review the [Code of Conduct](https://github.com/Feminine-Divine/Woodog/blob/master/CODE_OF_CONDUCT.md) and [contributing.md](https://github.com/Feminine-Divine/Woodog/blob/master/contributing.md) which provides the guidelines for contributing.
 ---
 
