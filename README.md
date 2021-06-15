@@ -279,7 +279,9 @@ git push origin '<your_branch_name>'
   
 
 
+
 <td align="center" ><a href="https://github.com/khushishikhu"><img src="https://avatars.githubusercontent.com/u/65439761?v=4" width=150px height=150px /></a></br> <h4 style="color:white;">Khushi Gautam</h4>
+
 </tr>
 </table>
 <br>
