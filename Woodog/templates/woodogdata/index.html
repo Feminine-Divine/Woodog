@@ -70,6 +70,17 @@
 
 </style>
 
+<div class="cards-section">
+    <div class="row" style="margin-top:40px;">
+        <div class="col">
+            <button type="button" onclick="register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as helper</button>
+        </div>
+        <div class="col">
+            <button type="button" onclick = "register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
+        </div>
+    </div>    
+</div>
+
 <main role='main' class="container">
     <p class="main-heading" style="width:500px;margin-left:192px;">We are Dog's Best Friends</p>
     <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
@@ -92,12 +103,10 @@
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
             <p class="card-text">Provide the location and condition of nearby stray</p>
-            <button type="button" onclick="register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up</button>
         </div>
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
             <p class="card-text" style="width: 363px;">Arrange food and shelter for dogs</p>
-            <button type="button" onclick = "register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up</button>
         </div>
     </div>    
 </div>

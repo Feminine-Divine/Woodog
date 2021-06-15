@@ -4,7 +4,6 @@ from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-# 'query_ans/<str:ques_id>'
     path('register/<str:type_of>',RegistrationView.as_view(), name='register'),
     path('login',LoginView.as_view(), name='login'),
     path('logout',LogoutView.as_view(), name='logout'),
