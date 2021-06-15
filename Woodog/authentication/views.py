@@ -148,3 +148,5 @@ class LogoutView(View):
         return redirect('login')
             
                 
+def get(self, request):
+        return render(request,'authentication/register.html')
