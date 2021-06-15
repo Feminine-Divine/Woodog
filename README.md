@@ -7,6 +7,7 @@ On the application, two types of people can be registered :inbox_tray: one who c
 
 Django and bootstrap are incorporated into the application, requiring authentication and establishing profiles and positioning using maps.
 
+
 ## Instructions to setup :arrow_down::computer:
 
 <details>
