@@ -1,3 +1,15 @@
 .env
-vir/
+*.pyc
+*~
+/.vscode
+__pycache__
+virtual
 db.sqlite3
+/static
+.DS_Store
+env/
+myenv/
+vir/
+virtual/
+v/
+myvenv/

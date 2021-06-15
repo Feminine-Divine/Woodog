@@ -149,3 +149,6 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'femininedivine591@gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = 'shiprakhushi17'
+
+# femininedivine591@gmail.com
+# 

@@ -1,9 +1,123 @@
+
+
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
+<style>
+    .main-pg-dog{
+        border-radius: 24px;
+        margin-top:20px;
+    }
+    .main-heading{
+        color:#FAFAFA;
+        margin-top:100px;
+        font-weight: 500;
+        font-size: 48px;
+        font-family: 'Poppins', sans-serif;
+        line-height: 72px;
+        
+    }
+    .application{
+        margin-left:192px;
+        width:500px;
+    }
+    .main-text{
+        font-size:24px;
+        line-height:38.06px;
+        color:hsla(0, 0%, 98%, 0.8);
+        font-family: 'Nunito', sans-serif;
+    }
+    .cards-section{
+        margin-left:146px;
+        margin-bottom: 163px;
+    }
+    .card-pics{
+        border-radius: 12px;
+    }
+    .card-text{
+        width:384px;
+        font-size:24px;
+        margin-top:40px;
+        line-height:38.06px;
+        color:hsla(0, 0%, 98%, 0.8);
+        font-family: 'Nunito', sans-serif;        
+    }
+    .cards-btn{
+        height:57px;
+        border-radius:8px;
+        padding:16px 45px 16px 45px;
+        width:530px;
+        background-color:#5A40AB;
+        margin-top:40px;
+        color:white;
+        font-family: 'Nunito', sans-serif;
+        font-size:18px;
+    }
+    .apply-btn{
+        border-radius: 0px 12px 12px 0px;
+        background-color:#5A40AB;
+        color:white;
+        font-family: 'Nunito', sans-serif;
+    }
+    .email-input{
+        width:336px;
+        height:58px;
+        background-color: #1F163B;
+        border-radius:12px 0px 0px 12px;
+        border:1px solid #5A40AB;
+    }
 
-<h1>Woodog</h1>
+</style>
 
+<div class="cards-section">
+    <div class="row" style="margin-top:40px;">
+        <div class="col">
+            <button type="button" onclick="register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as helper</button>
+        </div>
+        <div class="col">
+            <button type="button" onclick = "register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
+        </div>
+    </div>    
+</div>
 
+<main role='main' class="container">
+    <p class="main-heading" style="width:500px;margin-left:192px;">We are Dog's Best Friends</p>
+    <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
+
+    <div class="application">
+        <p class="main-heading">Application to help Dogs</p> 
+        <p class="main-text" style="width:384px;">We help dogs by means of giving them shelter, food, protection to have their loyalty</p>
+        <form class="form-inline">
+            <div class="row">
+                <input type="email"  class="email-input form-control col" id="inputEmail4" placeholder="Email">
+                <button class="btn col apply-btn" type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>  
+</main>
+
+<div class="cards-section">
+    <p class="main-heading">How can you help</p>
+    <div class="row" style="margin-top:40px;">
+        <div class="col">
+            <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
+            <p class="card-text">Provide the location and condition of nearby stray</p>
+        </div>
+        <div class="col">
+            <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
+            <p class="card-text" style="width: 363px;">Arrange food and shelter for dogs</p>
+        </div>
+    </div>    
+</div>
+
+<script >
+    function register_as(type) {
+        location.href= `authentication/register/${type}` ;
+    }
+
+</script>
 
 {% endblock content %}
+
+

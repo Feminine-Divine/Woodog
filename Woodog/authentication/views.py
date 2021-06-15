@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.views import View
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from authentication.models import User_status
 import json
 from validate_email import validate_email
 from django.contrib import messages
@@ -40,15 +41,18 @@ class UsernameValidationView(View):
         return JsonResponse({'username_valid': True})
 
 class RegistrationView(View):
-    def get(self, request):
-        return render(request,'authentication/register.html')
+    def get(self, request , type_of = None):
+        params = { 'txt' : type_of }
+        return render(request,'authentication/register.html'  , params)
 
-    def post(self, request):
+    def post(self, request , type_of = None):
         #create a user account
 
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
+        choice = type_of
+        params  = {'txt' : type_of}
 
         if not User.objects.filter(username=username).exists():
             if not User.objects.filter(email=email).exists():
@@ -59,8 +63,13 @@ class RegistrationView(View):
                 user.set_password(password)
                 user.is_active = False
                 user.save()
+                if choice == 'helper' : 
+                    user_status = User_status(user = user , is_helper  = True)
+                elif choice == 'seeker' : 
+                    user_status = User_status(user = user , is_seeker = True)
+                user_status.save()
 
-                uidb64 = force_bytes(urlsafe_base64_encode(force_bytes(user.pk)))
+                uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
                 domain = get_current_site(request).domain
                 link = reverse('activate',kwargs={'uidb64':uidb64,'token': token_generator.make_token(user)})
 
@@ -76,9 +85,9 @@ class RegistrationView(View):
                 )
                 email.send(fail_silently=False)
                 messages.success(request,'Account successfully created')
-                return render(request, 'authentication/register.html')
+                return render(request, 'authentication/register.html' , params)
                 
-        return render(request,'authentication/register.html')
+        return render(request,'authentication/register.html' , params)
 
 class VerificationView(View):
     def get(self, request, uidb64, token):

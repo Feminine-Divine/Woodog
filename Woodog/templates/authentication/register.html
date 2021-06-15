@@ -14,7 +14,7 @@
           <h4>Register for a free account</h4>
         </div>
 
-        <form action="{% url 'register' %}" method="post">
+        <form action="{% url 'register' txt %}" method="post">
           {% csrf_token %}
           {% include 'partials/_messages.html' %}
 
@@ -55,7 +55,7 @@
 
             <small class="float-right py-2 showPasswordToggle"></small>
           </div>
-          <input type="submit" value="Register" class="btn btn-block
+          <input type="submit" value="Register as {{txt}}" class="btn btn-block
             btn-primary submit-btn" />
         </form>
 
