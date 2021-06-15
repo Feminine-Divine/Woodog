@@ -25,8 +25,8 @@
   <style>
     #header{
       margin:60px 120px;
-      background-color: #1F163B;  
-      font-family: 'Nunito', sans-serif;    
+      background-color: #1F163B;
+      font-family: 'Nunito', sans-serif;
     }
     .nav-link ,.navbar-brand{
       color:#FAFAFA  !important;
@@ -34,7 +34,7 @@
     .nav-link{
       margin-left:45px;
       font-size:18px;
-      
+
     }
     #sign-up{
       margin-right:35px;
@@ -88,12 +88,12 @@
       margin-right:145px;
       font-size:24px;
       color:#FAFAFACC;
-      margin-left:1096px;     
+      margin-left:1096px;
     }
   </style>
   </head>
 <body>
-    
+
 <nav id="header" class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="{% static 'img/woodog-logo.svg' %}"></a>
@@ -115,13 +115,13 @@
           <a class="nav-link" href="#">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gallery</a>
+          <a class="nav-link" href="{% url 'appdashboard' %}">Gallery</a>
         </li>
       </ul>
-      
+
       <a class="nav-link" id="sign-up" href="#">Sign up</a>
       <button class="btn" id="login-navbtn" type="submit">Login</button>
-      
+
     </div>
   </div>
 </nav>
@@ -131,7 +131,7 @@
   {% block content %}
 
   {% endblock %}
- 
+
 
   <script src="{% static 'js/main.js' %}" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
     <footer>
@@ -143,7 +143,7 @@
                  <li><a class="nav-link" href="#">Contact</a></li>
                  <li><a class="nav-link" href="#">Blog</a></li>
                  <li><a class="nav-link" href="#">Gallery</a></li>
-             </ul> 
+             </ul>
           </div>
           <div class="col-lg-3" style="margin-top:160px;text-align: center;" >
               <div class="row">
@@ -168,6 +168,6 @@
           <p class="copyrights">Woodog &copy 2021</p>
       </div>
   </footer>
-      
+
   </body>
 </html>
