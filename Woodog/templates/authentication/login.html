@@ -1,59 +1,117 @@
-{% extends 'partials/base_auth.html' %}
+{% extends 'partials/base.html' %}
 {% load static %}
 {% block content %}
+ 
+  <style>
+    .container{
+        margin-top:120px;
+        margin-bottom:340px;
+    }
+    .input-field{
+        margin-top:20px;
+        height: 58px;
+        margin-bottom:40px;
+        border: 1px solid #5A40AB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: #1F163B;
+        color:white;
+        width:535px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .heading{
+       font-family: 'Poppins', sans-serif;
+       color:white;
+       font-size: 36px;
+       line-height: 54px;
+       text-align: center;
+    }
+    .label{
+        color: #FAFAFA;
+        font-size: 18px;
+        margin-left:290px;
+        font-family: 'Nunito', sans-serif;
+    }
+    .btn-login{
+        margin-top: 59px;
+        background-color:  #5A40AB;
+        align-items: center;
+        padding: 16px 45px;
+        width: 535px;
+        font-size: 18px;
+        color: #FFFFFF;
+        height: 57px;
+        margin-left:290px;
+        margin-bottom:10px;
+    }
+    #btn-text{
+        color: #9A88D3;
+        margin-left:290px;
+        font-size: 18px;
+        text-decoration: none;
+       
+    }
+    @media screen and (max-device-width: 375px) {
 
-<div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 py-5">
+        .btn-login{
+            margin-left:0px;
+            width:100%;
+        }
+        #btn-text{
+            margin-left: 0px;
+        }
+        .label{
+            margin-left: 0px;
+        }
+        .input-field{
+            width:100%;
+        }
+    }
+
+    @media screen and (max-device-width: 1000px) {
+
+        .btn-login{
+            margin-left:0px;
+            width:100%;
+        }
+        .input-field{
+            width:100%;
+        }
+        #btn-text{
+            margin-left: 0px;
+        }
+        .label{
+            margin-left: 0px;
+        }
+    }
+</style>
+
+<div class="container col-lg-12" >
+    <p class="heading">Welcome Back</p>
+    <form style="margin-top:80px;" action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      {% include 'partials/_messages.html' %}
   
-      <div class="card mt-5">
-  
-        <div class="card-body">
-  
-          <div class="card-title py-3">
-            <h4>Login for an account</h4>
-          </div>
-  
-          <form action="{% url 'login' %}" method="post">
-            {% csrf_token %}
-            {% include 'partials/_messages.html' %}
-  
-            <div class="form-group py-2">
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                id="usernameField"
-                class="form-control form-control-sm"
-                />
+        <div class="form-group" >
+            <label for="username" class="label">Username</label>
+            <input type="text" class="form-control input-field" name="username" id="username">
+            <!-- <div class="invalid_feedback invalid_feedback" style="display: none;">
             </div>
-            <div class="invalid_feedback invalid_feedback" style="display: none;">
-            </div>
-            <p class="text-sm text-success usernameSuccessOutput"></p>
-         
-           
-            <div class="form-group py-2">
-              <input
-                type="password"
-                name="password"
-                id="passwordField"
-                placeholder="password"
-                class="form-control form-control-sm"
-                />
-  
-              <small class="float-right py-2 showPasswordToggle"></small>
-            </div>
-            <input type="submit" value="Login" class="btn btn-block
-              btn-primary submit-btn" />
-          </form>
-  
+            <p class="text-sm text-success usernameSuccessOutput"></p> -->
         </div>
-      </div>
-    </div>
-    <div class="col-md-6"></div>
-  
-  </div>
-  
+        <div class="form-group">
+          <label for="password" class="label">Password</label>
+          <input type="password" class="form-control input-field" name="password" style=" margin-bottom:15px;" id="password">
+          <small class="form-text"><a id="btn-text" href="#">Forgot Password?</a></small>
+        </div>        
+        <div class="form-group">
+            <button type="submit" class="btn btn-login">Login</button>
+            <small class="form-text"><a id="btn-text" href="#">Need an account?</a></small>
+        </div>
+    </form>
+</div>
+
   <script src="{% static 'js/register.js' %}"></script>
 
 
