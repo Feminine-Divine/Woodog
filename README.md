@@ -267,11 +267,40 @@ git push origin '<your_branch_name>'
   </td>
   </tr>
 </table>
+    <hr>
+
+  ## Our Project Admins 🤓 
+
+<br>
+<table>
+<tr>
+<td align="center"><a href="https://github.com/Aaishpra"><img src="https://avatars.githubusercontent.com/u/66299533?v=4" width=150px height=150px /></a></br> <h4 style="color:white;">Shipra Verma</h4>
+
+  
+
+
+
+<td align="center" ><a href="https://github.com/khushishikhu"><img src="https://avatars.githubusercontent.com/u/65439761?v=4" width=150px height=150px /></a></br> <h4 style="color:white;">Khushi Gautam</h4>
+
+</tr>
+</table>
+<br>
+
+---
+
+
+ ## Our Valuable Contributors :
+
+
+<a href="https://github.com/Feminine-Divine/Woodog/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Feminine-Divine/Woodog" />
+</a>
 
 ---
 
 <p align="center">
 <a href="https://github.com/Feminine-Divine/Woodog" title="Woodog Github">
 <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+    
 </a>
 </p>
