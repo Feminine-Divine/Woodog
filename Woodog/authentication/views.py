@@ -58,7 +58,7 @@ class RegistrationView(View):
             if not User.objects.filter(email=email).exists():
                 if len(password)<6:
                     messages.error(request,'Password is too short')
-                    return render(request, 'authentication/register.html')
+                    return render(request, 'authentication/register.html' , params)
                 user = User.objects.create_user(username=username, email=email)
                 user.set_password(password)
                 user.is_active = False
@@ -84,7 +84,7 @@ class RegistrationView(View):
                 [email],
                 )
                 email.send(fail_silently=False)
-                messages.success(request,'Account successfully created')
+                messages.success(request,'Account successfully created kindly check the email to activate your account ')
                 return render(request, 'authentication/register.html' , params)
                 
         return render(request,'authentication/register.html' , params)
@@ -127,8 +127,8 @@ class LoginView(View):
             if user:
                 if user.is_active:
                     auth.login(request, user)
-                    messages.success(request, 'Welcome, ' + 
-                                    user.username + ' you are now logged in')
+                    # messages.success(request, 'Welcome, ' + 
+                    #                 user.username + ' you are now logged in')
                     return redirect('woodogdata')
 
                 messages.error(
@@ -142,11 +142,8 @@ class LoginView(View):
         return render(request,'authentication/login.html')
 
 class LogoutView(View):
-    def post(self, request):
+    def get(self, request):
+        crr_user = request.user
         auth.logout(request)
-        messages.success(request, 'You have been logged out')
+        messages.success(request, f'{crr_user} you have been succesfully logged out')
         return redirect('login')
-            
-                
-def get(self, request):
-        return render(request,'authentication/register.html')

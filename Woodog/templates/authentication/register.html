@@ -96,7 +96,7 @@
 <div class="container col-lg-12" >
   <p class="normal-text">Join Woodog</p>
   <p class="heading">Create your Account</p>
-  <form style="margin-top:80px;" action="{% url 'register' %}" method="post">
+  <form style="margin-top:80px;" action="{% url 'register' txt %}" method="post">
     {% csrf_token %}
     {% include 'partials/_messages.html' %}
       <div class="form-group" >
@@ -117,7 +117,7 @@
         <input type="password" class="form-control input-field" name="password" id="password">
       </div>        
       <div class="form-group">
-          <button type="submit" class="btn account-btn">Create Account</button>
+          <button type="submit" class="btn account-btn">Create Account as {{txt}}</button>
           <small class="form-text"><a id="btn-text" href="{% url 'login' %}">Already have an account?</a></small>
       </div>
   </form>

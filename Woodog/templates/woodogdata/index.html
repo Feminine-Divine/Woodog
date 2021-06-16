@@ -70,6 +70,20 @@
 
 </style>
 
+{% if not success %}
+    <div class="cards-section">
+        <div class="row" style="margin-top:40px;">
+            <div class="col">
+                <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
+            </div>
+            <div class="col">
+                <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
+            </div>
+        </div>    
+    </div>
+{% endif %}
+
+
 <main role='main' class="container">
     <p class="main-heading" style="width:500px;margin-left:192px;">Your Kindness can help them</p>
     <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
@@ -92,20 +106,32 @@
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
             <p class="card-text">Provide the location and condition of nearby stray and let us find their local helper. </p>
-            <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
         </div>
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
             <p class="card-text" style="width: 363px;">Arrange temporary food and shelter for your local stray animals.</p>
-            <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
         </div>
     </div>    
 </div>
 
 <script >
+
     function register_as(type) {
-        location.href= `authentication/register` ;
+        location.href= `authentication/register/${type}` ;
     }
+
+    function render_nav(){
+        ele = document.getElementById('sign-up');
+        ele_2 = document.getElementById('login-navbtn');
+        ele.innerText = 'Logout'
+        ele_2.innerText = "{{name}}"
+        ele.href = 'authentication/logout';
+    }
+
+        let var_ = "{{success}}"
+        if( var_ ){    
+            render_nav() } 
+
 
 </script>
 
