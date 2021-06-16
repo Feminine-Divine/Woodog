@@ -71,6 +71,9 @@
         width:15px;
         margin-bottom:0px;
     }
+    .footer-icon.fb{
+      width: 8px;
+    }
     body{
       background-color:#1F163B;
       overflow-x:hidden;
@@ -98,20 +101,23 @@
       border-radius: 0px 12px 12px 0px;
       font-family: 'Nunito', sans-serif;
     }
+    .navbar-brand.logo {
+      background: transparent;
+    }
   </style>
   </head>
 <body>
 
 <nav id="header" class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{% static 'img/woodog-logo.svg' %}"></a>
+    <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo.svg' %}"></a>
     <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="background-color:white"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'woodogdata' %}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -127,8 +133,8 @@
         </li>
       </ul>
 
-      <a class="nav-link" id="sign-up" href="#">Sign up</a>
-      <button class="btn" id="login-navbtn" type="submit">Login</button>
+      <a class="nav-link" id="sign-up" href="{% url "register" %}">Sign up</a>
+      <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
 
     </div>
   </div>
@@ -158,7 +164,7 @@
                   <p style="font-weight: 700;font-size:18px;">WOODOG</p>
               </div>
               <div class="row" style="display: inline-block;">
-                  <a href="#"><img class="col footer-icon"  src="{% static 'img/Vector.svg' %}" ></a>
+                  <a href="#"><img class="col footer-icon fb"  src="{% static 'img/Vector.svg' %}" ></a>
                   <a href="#"><img class="col footer-icon" src="{% static 'img/twitter.svg' %}" ></a>
                   <a href="#"><img class="col footer-icon" src="{% static 'img/mailbox.svg' %}" ></a>
               </div>
