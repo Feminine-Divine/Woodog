@@ -1,36 +1,18 @@
 # Configuration for the-welcome-bot - https://github.com/bash-bot/the-welcome-bot
 
-# Message for a new user who open an issue
-issueOpen: >
-  Hello World! Welcome to the project!
-  Thanks and congrats for opening your very first issue in this project.
-  You may submit a PR on the same if you like!
-  Join the Slack channel or the gitter chat for discussions.
-  Hope you have a great time here :)
+name: Config
 
-# Message for a new user who comments on an issue
-issueComment: >
-  Hello World! Welcome to the project!
-  Thanks and congrats for your very first comment on this project.
-  Checkout the ReadMe for more details on it.
-  Want to contribute? Make an issue or submit a PR.
-  Join the Slack channel or the gitter chat for discussions.
-  Hope you have a great time here :)
+on: [pull_request, issues]
 
-# Message for a new user who opens a PR
-prOpen: >
-  Hello World! Welcome to the project!
-  Thankyou and congarts for your first PR on this project.
-  We will review it soon!
-  Till then you can checkout the ReadMe for more details on it.
-  Join the Slack channel or the gitter chat for discussions.
-  Hope you have a great time here :)
-
-# Default message for a new user
-welcomeMessage: >
-  Hello World! Welcome to the project! Feel free to explore it.
-  Checkout the ReadMe for more details on it.
-  Want to contribute? Make an issue or submit a PR.
-  You can check the contributing guides and code of conduct for the same.
-  Join the Slack channel or the gitter chat for discussions.
-  Hope you have a great time here :)
+jobs:
+  Config:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: 'Hello @${{github.actor}}, <br> Thank you for opening an issue. :partying_face: <br> To get assigned to this particular issue please use <b>/assign</b><br>'
+          pr-message: "<h1> :partying_face: Congratulations :tada: </h1> <h3> :pray: Thank you @${{github.actor}} for taking out your time and contributing to our project. Make sure that you have followed the guidelines and filled the PR Template properly. We will soon review this and if everything looks good it will be merged. Happy Contributing!</h3>"
