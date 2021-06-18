@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{% static 'navbar-top-fixed.css' %}" rel="stylesheet">
@@ -112,15 +114,20 @@
       border-radius: 0px 12px 12px 0px;
       font-family: 'Nunito', sans-serif;
     }
+    
   </style>
   </head>
 <body>
 
 <nav id="header" class="navbar navbar-expand-lg">
+
   <div class="container-fluid">
     <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo.svg' %}"></a>
     <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="background-color:white"></span>
+      <div id="navbar-close" class="hidden">
+          <span class="glyphicon glyphicon-remove"></span>
+        </div>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
