@@ -62,7 +62,7 @@
     }
     .email-input{
         width:336px;
-        height:58px;
+        height:60px;
         background-color: #1F163B;
         border-radius:12px 0px 0px 12px;
         border:1px solid #5A40AB;
@@ -70,27 +70,16 @@
 
 </style>
 
-<div class="cards-section">
-    <div class="row" style="margin-top:40px;">
-        <div class="col">
-            <button type="button" onclick="register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as helper</button>
-        </div>
-        <div class="col">
-            <button type="button" onclick = "register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
-        </div>
-    </div>    
-</div>
-
 <main role='main' class="container">
-    <p class="main-heading" style="width:500px;margin-left:192px;">We are Dog's Best Friends</p>
+    <p class="main-heading" style="width:500px;margin-left:192px;">Your Kindness can help them</p>
     <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
 
     <div class="application">
-        <p class="main-heading">Application to help Dogs</p> 
-        <p class="main-text" style="width:384px;">We help dogs by means of giving them shelter, food, protection to have their loyalty</p>
+        <p class="main-heading">Food! Shelter! Love!</p> 
+        <p class="main-text" style="width:384px;">With Woodog provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
         <form class="form-inline">
             <div class="row">
-                <input type="email"  class="email-input form-control col" id="inputEmail4" placeholder="Email">
+                <input type="email"  class="email-input form-control col-md-8" id="inputEmail4" placeholder="Email">
                 <button class="btn col apply-btn" type="submit">Sign up</button>
             </div>
         </form>
@@ -98,22 +87,24 @@
 </main>
 
 <div class="cards-section">
-    <p class="main-heading">How can you help</p>
+    <p class="main-heading">How can you elp?</p>
     <div class="row" style="margin-top:40px;">
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
-            <p class="card-text">Provide the location and condition of nearby stray</p>
+            <p class="card-text">Provide the location and condition of nearby stray and let us find their local helper. </p>
+            <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
         </div>
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
-            <p class="card-text" style="width: 363px;">Arrange food and shelter for dogs</p>
+            <p class="card-text" style="width: 363px;">Arrange temporary food and shelter for your local stray animals.</p>
+            <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
         </div>
     </div>    
 </div>
 
 <script >
     function register_as(type) {
-        location.href= `authentication/register/${type}` ;
+        location.href= `authentication/register` ;
     }
 
 </script>

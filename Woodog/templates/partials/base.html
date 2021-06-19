@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="{% static 'navbar-top-fixed.css' %}" rel="stylesheet">
@@ -71,6 +73,9 @@
         width:15px;
         margin-bottom:0px;
     }
+    .footer-icon.fb{
+      width: 8px;
+    }
     body{
       background-color:#1F163B;
       overflow-x:hidden;
@@ -98,20 +103,40 @@
       border-radius: 0px 12px 12px 0px;
       font-family: 'Nunito', sans-serif;
     }
+    .navbar-brand.logo {
+      background: transparent;
+    }
+    .apply-btn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      background-color:#5A40AB;
+      border-radius:8px;
+      border-radius: 0px 12px 12px 0px;
+      font-family: 'Nunito', sans-serif;
+    }
+
   </style>
   </head>
 <body>
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> upstream/master
 <nav id="header" class="navbar navbar-expand-lg">
+  <!-- <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 80px;"></a> -->
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{% static 'img/woodog-logo.svg' %}"></a>
+    <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 119px;"></a>
     <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="background-color:white"></span>
+      <div id="navbar-close" class="hidden">
+          <span class="glyphicon glyphicon-remove"></span>
+        </div>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'woodogdata' %}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
@@ -127,8 +152,13 @@
         </li>
       </ul>
 
+<<<<<<< HEAD
       <a class="nav-link" id="sign-up" href="#">Sign up</a>
       <button class="btn" id="login-navbtn" type="submit">Login</button>
+=======
+      <a class="nav-link" id="sign-up" href="{% url "register" %}">Sign up</a>
+      <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
+>>>>>>> upstream/master
 
     </div>
   </div>
@@ -158,7 +188,7 @@
                   <p style="font-weight: 700;font-size:18px;">WOODOG</p>
               </div>
               <div class="row" style="display: inline-block;">
-                  <a href="#"><img class="col footer-icon"  src="{% static 'img/Vector.svg' %}" ></a>
+                  <a href="#"><img class="col footer-icon fb"  src="{% static 'img/Vector.svg' %}" ></a>
                   <a href="#"><img class="col footer-icon" src="{% static 'img/twitter.svg' %}" ></a>
                   <a href="#"><img class="col footer-icon" src="{% static 'img/mailbox.svg' %}" ></a>
               </div>
@@ -166,14 +196,14 @@
           <div class="col-lg-3" style="margin-top:162px;margin-left:120px;">
             <form class="form-inline">
               <div class="row">
-                  <input type="email"  class="email-input1 form-control col" id="inputEmail4" placeholder="Email">
+                  <input type="email"  class="email-input1 form-control col-md-8" id="inputEmail4" placeholder="Email">
                   <button class="btn col apply-btn" type="submit">Sign up</button>
               </div>
             </form>
           </div>
       </div>
       <div class="row">
-          <p class="copyrights">Woodog &copy 2021</p>
+          <p class="copyrights">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
       </div>
   </footer>
 

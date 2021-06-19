@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from authentication.models import User_status
 import json
-from validate_email import validate_email
+
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
