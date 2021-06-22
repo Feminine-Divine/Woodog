@@ -2,180 +2,98 @@
 {% load static %}
 {% block content %}
 
+{% include 'partials/header.html' %}
 <style>
-  .container{
-      margin-top:120px;
-      margin-bottom:140px;
-  }
-  .normal-text{
-      font-family: 'Nunito', sans-serif; 
-      font-size:24px;
-      text-align: center;
-      color: #FAFAFACC;
-  }
-  .input-field{
-      margin-top:20px;
-      height: 58px;
-      margin-bottom:40px;
-      border: 1px solid #5A40AB;
-      box-sizing: border-box;
-      border-radius: 8px;
-      background-color: #1F163B;
-      color:white;
-      width:535px;
-      margin-left: auto;
-      margin-right: auto;
-  }
-  .heading{
-     font-family: 'Poppins', sans-serif;
-     color:white;
-     font-size: 36px;
-     line-height: 54px;
-     text-align: center;
-  }
-  .label{
-      color: #FAFAFA;
-      font-size: 18px;
-      margin-left:290px;
-      font-family: 'Nunito', sans-serif;
-  }
+.container{
+  margin-top:120px;
+  margin-bottom:140px;
+}
+.normal-text{
+  font-family: 'Nunito', sans-serif; 
+  font-size:24px;
+  text-align: center;
+  color: #FAFAFACC;
+}
+.input-field{
+  margin-top:20px;
+  font-size: 18px;
+  height: 58px;
+  margin-bottom:40px;
+  border: 1px solid #5A40AB;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #1F163B;
+  color:white;
+  width:535px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heading{
+ font-family: 'Poppins', sans-serif;
+ color:white;
+ font-size: 36px;
+ line-height: 54px;
+ text-align: center;
+}
+.label{
+  color: #FAFAFA;
+  font-size: 18px;
+  margin-left:290px;
+  font-family: 'Nunito', sans-serif;
+}
+.account-btn{
+  margin-top: 59px;
+  background-color:  #5A40AB;
+  align-items: center;
+  padding: 16px 45px;
+  width: 535px;
+  font-size: 18px;
+  color: #FFFFFF;
+  height: 57px;
+  margin-left:290px;
+  margin-bottom:10px;
+}
+#btn-text{
+  color: #9A88D3;
+  margin-left:290px;
+  font-size: 18px;
+  text-decoration: none;
+ 
+}
+@media screen and (max-device-width: 375px) {
+
   .account-btn{
-      margin-top: 59px;
-      background-color:  #5A40AB;
-      align-items: center;
-      padding: 16px 45px;
-      width: 535px;
-      font-size: 18px;
-      color: #FFFFFF;
-      height: 57px;
-      margin-left:290px;
-      margin-bottom:10px;
+      margin-left:0px;
+      width:100%;
   }
   #btn-text{
-      color: #9A88D3;
-      margin-left:290px;
-      font-size: 18px;
-      text-decoration: none;
-     
+      margin-left: 0px;
   }
-  @media screen and (max-device-width: 375px) {
-
-      .account-btn{
-          margin-left:0px;
-          width:100%;
-      }
-      #btn-text{
-          margin-left: 0px;
-      }
-      .label{
-          margin-left: 0px;
-      }
-      .input-field{
-          width:100%;
-      }
+  .label{
+      margin-left: 0px;
   }
-
-  @media screen and (max-device-width: 1000px) {
-
-      .account-btn{
-          margin-left:0px;
-          width:100%;
-      }
-      .input-field{
-          width:100%;
-      }
-      #btn-text{
-          margin-left: 0px;
-      }
-      .label{
-          margin-left: 0px;
-      }
-  }
-
-  .register-photo {
-  background: #1F163B;
-  padding: 80px 0;
-}
-
-.register-photo .image-holder {
-  display: table-cell;
-  width: auto;
-  background: url(meeting.jpg);
-  background-size: cover;
-}
-
-.register-photo .form-container {
-  display: table;
-  max-width: 900px;
-  width: 90%;
-  margin: 0 auto;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-}
-
-.register-photo form {
-  display: table-cell;
-  width: 400px;
-  background-color: #5A40AB;
-  padding: 40px 60px;
-  color: #ffffff;
-}
-
-@media (max-width:991px) {
-  .register-photo form {
-    padding: 40px;
+  .input-field{
+      width:100%;
   }
 }
 
-.register-photo form h2 {
-  font-size: 24px;
-  line-height: 1.5;
-  margin-bottom: 30px;
+@media screen and (max-device-width: 1000px) {
+
+  .account-btn{
+      margin-left:0px;
+      width:100%;
+  }
+  .input-field{
+      width:100%;
+  }
+  #btn-text{
+      margin-left: 0px;
+  }
+  .label{
+      margin-left: 0px;
+  }
 }
 
-.register-photo form .form-control {
-  background: #f7f5fa;
-  border: none;
-  border-bottom: 1px solid #dfe7f1;
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  color: inherit;
-  text-indent: 6px;
-  height: 40px;
-}
-
-.register-photo form .form-check {
-  font-size: 13px;
-  line-height: 20px;
-}
-
-.register-photo form .btn-primary {
-  background: #f4476b;
-  border: none;
-  border-radius: 4px;
-  padding: 11px;
-  box-shadow: none;
-  margin-top: 35px;
-  text-shadow: none;
-  outline: none !important;
-}
-
-.register-photo form .btn-primary:hover, .register-photo form .btn-primary:active {
-  background: #eb3b60;
-}
-
-.register-photo form .btn-primary:active {
-  transform: translateY(1px);
-}
-
-.register-photo form .already {
-  display: block;
-  text-align: center;
-  font-size: 12px;
-  color: #ffffff;
-  opacity: 0.9;
-  text-decoration: none;
-}
 </style>
 {% csrf_token %}
     {% include 'partials/_messages.html' %}
@@ -197,6 +115,7 @@
 </section>
 </div>
 
+{% include 'partials/footer.html' %}
 
 
 <script src="{% static 'js/register.js' %}"></script>

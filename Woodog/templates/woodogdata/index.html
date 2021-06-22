@@ -1,10 +1,12 @@
-
-
 {% extends 'partials/base.html' %}
+{% load static %}
 
 {% block content %}
-{% load static %}
+
+{% include 'partials/header.html' %}
+
 <style>
+    
     .main-pg-dog{
         border-radius: 24px;
         margin-top:20px;
@@ -54,22 +56,25 @@
         font-family: 'Nunito', sans-serif;
         font-size:18px;
     }
-    .apply-btn{
+    .index-apply-btn{
         border-radius: 0px 12px 12px 0px;
         background-color:#5A40AB;
         color:white;
+        width:139px;
+        font-size: 18px;
         font-family: 'Nunito', sans-serif;
     }
     .email-input{
-        width:336px;
-        height:58px;
+        width:326px;
+        height:60px;
+        font-size: 18px;
         background-color: #1F163B;
         border-radius:12px 0px 0px 12px;
         border:1px solid #5A40AB;
     }
 
-</style>
 
+</style>
 <main role='main' class="container">
     <p class="main-heading" style="width:500px;margin-left:192px;">Your Kindness can help them</p>
     <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
@@ -78,16 +83,16 @@
         <p class="main-heading">Food! Shelter! Love!</p> 
         <p class="main-text" style="width:384px;">With Woodog provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
         <form class="form-inline">
-            <div class="row">
+            <div class="row" style="width:446px;">
                 <input type="email"  class="email-input form-control col" id="inputEmail4" placeholder="Email">
-                <button class="btn col apply-btn" type="submit">Sign up</button>
+                <button class="btn index-apply-btn" type="submit">Sign up</button>
             </div>
         </form>
     </div>  
 </main>
 
 <div class="cards-section">
-    <p class="main-heading">How can you help?</p>
+    <p class="main-heading">How can you Help?</p>
     <div class="row" style="margin-top:40px;">
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
@@ -108,6 +113,8 @@
     }
 
 </script>
+
+{% include 'partials/footer.html' %}
 
 {% endblock content %}
 

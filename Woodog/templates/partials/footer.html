@@ -1,0 +1,125 @@
+{% load static %}
+<style>
+ 
+    #header{
+      margin:60px 120px;
+      background-color: #1F163B;
+      font-family: 'Nunito', sans-serif;
+    }
+    .nav-link ,.navbar-brand{
+      color:#FAFAFA  !important;
+    }
+    .nav-link{
+      margin-left:45px;
+      font-size:18px;
+
+    }
+    #sign-up{
+      margin-right:35px;
+    }
+    #login-navbtn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      font-size: 18px;
+      padding: 16px 45px 16px 45px;
+      border-radius:8px;
+      font-family: 'Nunito', sans-serif;
+    }
+    #login-navbtn:hover{
+      background-color:#5A40AB;
+      color:#FAFAFA;
+    }
+    footer{
+        width:100%;
+        background-color:#141414;
+        /* height:456px; */
+        color:#FAFAFA;
+        font-family: 'Nunito', sans-serif;
+    }
+    .nav-link{
+        size:18px;
+        line-height:24.55px;
+        color:#FAFAFA;
+    }
+    .nav-link:hover{
+        color:#5A40AB;
+    }
+    .footer-icon{
+        color:#5B34D6;
+        height:20px;
+        width:15px;
+        margin-bottom:0px;
+    }
+    .footer-icon.fb{
+      width: 8px;
+    }
+    body{
+      background-color:#1F163B;
+      overflow-x:hidden;
+    }
+    .email-input1{
+        width:310px;
+        height:58px;
+        font-size: 18px;
+        background-color:  #141414;
+        border-radius:12px 0px 0px 12px;
+        border:1px solid #5A40AB;
+    }
+    .copyrights{
+      margin-bottom:57px;
+      font-family: 'Nunito', sans-serif;
+      margin-right:145px;
+      font-size:24px;
+      color:#FAFAFACC;
+      margin-left:1096px;
+    }
+    .apply-btn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      background-color:#5A40AB;
+      border-radius:8px;
+      font-size: 18px;
+      width:139px;
+      border-radius: 0px 12px 12px 0px;
+      font-family: 'Nunito', sans-serif;
+    }
+    .navbar-brand.logo {
+      background: transparent;
+    }
+     
+</style>
+
+<footer>
+  <div class="row">
+      <div class="col-lg-3" style="margin:100px 0px 80px 80px;">
+         <ul  style="list-style: none;">
+             <li><a class="nav-link" href="#">Home</a></li>
+             <li><a class="nav-link" href="#">About</a></li>
+             <li><a class="nav-link" href="#">Contact</a></li>
+             <li><a class="nav-link" href="#">Blog</a></li>
+             <li><a class="nav-link" href="#">Gallery</a></li>
+         </ul>
+      </div>
+      <div class="col-lg-3" style="margin-top:160px;text-align: center;" >
+          <div class="row">
+              <p style="font-weight: 700;font-size:18px;">WOODOG</p>
+          </div>
+          <div class="row" style="display: inline-block;">
+              <a href="#"><img class="col footer-icon fb"  src="{% static 'img/Vector.svg' %}" ></a>
+              <a href="#"><img class="col footer-icon" src="{% static 'img/twitter.svg' %}" ></a>
+              <a href="#"><img class="col footer-icon" src="{% static 'img/mailbox.svg' %}" ></a>
+          </div>
+      </div>
+      <div class="col-lg-4" style="margin-top:162px;margin-left:80px;">
+        <form class="form-inline">
+          <div class="row">
+              <input type="email"  class="email-input1 form-control" id="inputEmail4" placeholder="Email">
+              <button class="btn apply-btn" type="submit">Sign up</button>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="row">
+      <p class="copyrights">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
+  </div>
+</footer>

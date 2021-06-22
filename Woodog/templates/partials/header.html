@@ -1,0 +1,130 @@
+{% load static %}
+<style>
+  
+    #header{
+      margin:60px 120px;
+      background-color: #1F163B;
+      font-family: 'Nunito', sans-serif;
+    }
+    .nav-link ,.navbar-brand{
+      color:#FAFAFA  !important;
+    }
+    .nav-link{
+      margin-left:45px;
+      font-size:18px;
+
+    }
+    #sign-up{
+      margin-right:35px;
+    }
+    #login-navbtn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      padding: 16px 45px 16px 45px;
+      border-radius:8px;
+      font-family: 'Nunito', sans-serif;
+    }
+    #login-navbtn:hover{
+      background-color:#5A40AB;
+      color:#FAFAFA;
+    }
+    footer{
+        width:100%;
+        background-color:#141414;
+        /* height:456px; */
+        color:#FAFAFA;
+        font-family: 'Nunito', sans-serif;
+    }
+    .nav-link{
+        size:18px;
+        line-height:24.55px;
+        color:#FAFAFA;
+    }
+    .nav-link:hover{
+        color:#5A40AB;
+    }
+    .footer-icon{
+        color:#5B34D6;
+        height:20px;
+        width:15px;
+        margin-bottom:0px;
+    }
+    .footer-icon.fb{
+      width: 8px;
+    }
+    body{
+      background-color:#1F163B;
+      overflow-x:hidden;
+    }
+    .email-input1{
+        width:327px;
+        height:58px;
+        background-color:  #141414;
+        border-radius:12px 0px 0px 12px;
+        border:1px solid #5A40AB;
+    }
+    .copyrights{
+      margin-bottom:57px;
+      font-family: 'Nunito', sans-serif;
+      margin-right:145px;
+      font-size:24px;
+      color:#FAFAFACC;
+      margin-left:1096px;
+    }
+    .apply-btn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      background-color:#5A40AB;
+      border-radius:8px;
+      border-radius: 0px 12px 12px 0px;
+      font-family: 'Nunito', sans-serif;
+    }
+    .navbar-brand.logo {
+      background: transparent;
+    }
+    .apply-btn{
+      border:1px solid #5A40AB;
+      color:#FAFAFA;
+      background-color:#5A40AB;
+      border-radius:8px;
+      border-radius: 0px 12px 12px 0px;
+      font-family: 'Nunito', sans-serif;
+    }
+    
+</style>
+
+<nav id="header" class="navbar navbar-expand-lg">
+  <!-- <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 80px;"></a> -->
+  <div class="container-fluid">
+    <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 119px;"></a>
+    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="background-color:white"></span>
+      <div id="navbar-close" class="hidden">
+          <span class="glyphicon glyphicon-remove"></span>
+        </div>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'woodogdata' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'appdashboard' %}">Gallery</a>
+        </li>
+      </ul>
+
+      <a class="nav-link" id="sign-up" href="{% url "register" %}">Sign up</a>
+      <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
+
+    </div>
+  </div>
+</nav>
