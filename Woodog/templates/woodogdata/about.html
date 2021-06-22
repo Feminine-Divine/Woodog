@@ -1,63 +1,120 @@
 {% extends 'partials/base.html' %}
 {% block content %}
 {% load static %}
+
+{% include 'partials/header.html' %}
+
 <style>
     .container{
         background-color:#1F163B;
+        margin-left:100px;
+        margin-right:100px;
     }
-    .main-pg-dog{
-        border-radius: 30px;
-        margin-top:5px;
-        margin-left:40px;
-    }
+    
     .main-heading{
         color:#FAFAFA;
         margin-top:60px;
         font-weight: 500;
-        font-size: 75px;
+        font-size: 48px;
         font-family: 'Poppins', sans-serif;
-        line-height: 72px;
-        
+        line-height: 72px;        
     }
-    .application{
-        margin-left:40px;
+    .side-line-1{
+        border-left:5px solid #FAFAFA;
+        padding-left:15px;       
     }
-    .main-text{
+    .side-line-2{
+        border-right:5px solid #FAFAFA;
+        padding-right:15px;   
+        margin-right:60px;    
+    }
+    .text{
         font-size:24px;
         line-height:38.06px;
         color:hsla(0, 0%, 98%, 0.8);
         font-family: 'Nunito', sans-serif;
     }
-    .email-input{
-        width:336px;
-        height:58px;
-        background-color: #1F163B;
-        border-radius:12px 0px 0px 12px;
-        border:1px solid #5A40AB;
+    .about-section-2, .about-section-3{
+        margin-top:50px;
     }
-    .main {
-        color:#FAFAFA;
-        margin-top:60px;
-        margin-left:40px;
-        font-family: 'Nunito', sans-serif;
-        font-size:24px;
-        line-height:38.06px;
-        color:hsla(0, 0%, 98%, 0.8);
+    .card-img{
+        padding:8px;
     }
-
+    .about-us-img{
+        margin-left:30px;margin-top:30px;
+    }
+    .card-img2{
+        width:100%;
+    }
 </style>
 
-<main role='main' class="container">
-        <p class="main-heading" style="width:500px;margin-left:50px;">About Us</p>
-        <<img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
-        <div class="application">
-            <p class="main-heading">Food! Shelter! Love!</p> 
-            <p class="main-text" style="width:500px; margin-left:50px; margin-top:10px;">With Woodog we provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
-        </div>  
-        <p class="main" style="margin-left:50px;">Woodog🐶 is an initiative to provide help to increasing stray animals by providing them food 🍞 and
-        refuge 🏠 by connecting them with fellow helpful humans. On the application, two types of people can be registered 📥 one who can provide the 
-        location and condition of a nearby stray, and another who can provide information and arrange shelter 🏠 and food 🍞 for them.</p>
-</main>
+
+<div class="container">
+
+    <div class="about-section-1">
+        <p class="main-heading side-line-1" >About Us</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12 text" style="width:500px;margin-top:20px;">
+                <p>Woodog is an initiative to provide help 
+                    to increasing stray animals .<br>
+                    Stray dogs and getting increased in the society day by day. <br>
+                    They have no one to care , food or give shelter. We have come with an approach to take an steps for the betterment of their conditions.
+                    <br>This app will give the way to help those innocent.</p>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <div class="img-box" style="width: 578px;height:334px;background-color:#5A40AB;border-radius:18px;">              
+                  <img class="about-us-img" style="margin-left:30px;margin-top:30px;"  src="{% static 'img/about-us-dog1.png' %}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="about-section-2">
+        <div class="row">
+            <p class="main-heading" style="text-align: center;margin-bottom:30px;">What we do?</p>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <img class="card-img" src="{% static 'img/connect.png' %}">
+                <p class="text" style="padding:10px;">Connect Stray Dogs  with  fellow helpful human beings</p>    
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <img class="card-img" src="{% static 'img/shelter.png' %}">
+                <p class="text" style="padding:10px;">Help them by providing them shelter</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <img class="card-img" src="{% static 'img/food.png' %}">
+                <p class="text" style="padding:10px;">Help them by providing them  food</p>   
+            </div>
+        </div>      
+    </div>
+
+    <div class="about-section-3">
+        <p class="main-heading" style="margin-bottom:30px;">Connect with us</p>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <p class="text side-line-2" style="text-align: right;">Provide the Location and condition<br>
+                     of a nearby stray</p>
+                <img src="{% static 'img/location-dog.png' %}" class="card-img2">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">          
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                <p class="text side-line-1">Provide  information and arrange
+                    shelter and food for them</p>
+                <img src="{% static 'img/dog-care.png' %}" class="card-img2">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% include 'partials/footer.html' %}
 
 {% endblock content %}
 
