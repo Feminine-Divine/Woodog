@@ -1,0 +1,167 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+		body {
+			background-color: #1F163B;
+		}
+
+		.container {
+			background-repeat: no-repeat;
+			position: absolute;
+			width: 700px;
+			height: 100%;
+			left: 10px;
+			top: 0px;
+		}
+
+		.image {
+			position: relative;
+			left: 10px;
+			top: 30px;
+			width: 100%;
+			height: 550px;
+			border-radius: 30px;
+		}
+
+		.title {
+			font-size: 40px;
+			top: 0px;
+			position: absolute;
+			left: 880px;
+			width: 100px;
+			white-space: nowrap;
+			color: white;			
+		}
+
+		.labels {
+			font-size: 35px;
+			top: 90px;
+			position: absolute;
+			left: 750px;
+			width: 100px;
+			white-space: nowrap;
+			color: white;
+		}
+
+		.box {
+			position: absolute;
+			width: 500px;
+			height: 40px;
+			left: 770px;
+			top: 135px;
+			padding-left: 15px;
+			background: #9796F0;
+			border-color: inherit;
+			border-radius: 15px;
+		}
+
+		.labels1 {
+			font-size: 35px;
+			top: 200px;
+			position: absolute;
+			left: 750px;
+			width: 100px;
+			white-space: nowrap;
+			color: white;
+		}
+
+		.box1 {
+			position: absolute;
+			width: 500px;
+			height: 40px;
+			left: 770px;
+			top: 255px;
+			padding-left: 15px;
+			background: #9796F0;
+			border-color: inherit;
+			border-radius: 15px;
+		}
+
+		.labels2 {
+			font-size: 35px;
+			top: 315px;
+			position: absolute;
+			left: 750px;
+			width: 100px;
+			white-space: nowrap;
+			color: white;
+		}
+
+		.box2 {
+			position: absolute;
+			width: 500px;
+			height: 90px;
+			left: 770px;
+			top: 365px;
+			padding-top: 10px;
+			padding-left: 15px;
+			background: #9796F0;
+			border-color: #9796F0;
+			border-radius: 15px;
+		}
+
+		.btn {
+			font-family: Poppins;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 30px;
+			line-height: 45px;
+			letter-spacing: 0.04em;
+			color: black;
+			position: absolute;
+			width: 201px;
+			height: 77px;
+			left: 910px;
+			top: 530px;
+			border-radius: 20px;
+			border-color: inherit;
+		}
+		
+		input[type=text], select, textarea {
+			margin-top: 6px;
+			margin-bottom: 16px;
+			border-color: inherit;
+			border-radius: 15px;
+			resize: vertical;
+		}
+
+		input[type=submit] {
+			background-color: #2dc28b;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			cursor: pointer;
+		}
+
+		input[type=submit]:hover {
+			background-color: #1bf826;
+		}
+
+</style>
+
+<div class="container">
+		<div class="row">
+		  <div class="column">
+			  <br>
+			<img class="image" src="{% static 'img/dog-main.jpg' %}">
+		  </div>
+		  <div class="column">
+			  <h1 class="title">CONTACT US<h1>
+			<form action="/action_page.php">
+			  <label for="fname" class="labels">First Name</label>
+			  <input type="text" id="fname" class="box" name="firstname" placeholder="Your name..">
+			  <label for="email" class="labels1">Email</label>
+			  <input type="email" id="email" class="box1" name="email" placeholder="example@gmail.com">
+			  <label for="subject" class="labels2">Message</label>
+			  <textarea id="subject" name="subject" class="box2" placeholder="Write something.." style="height:120px"></textarea>
+			  <input type="submit" value="Submit" class="btn">
+			</form>
+		  </div>
+		</div>
+	  </div>
+
+{% endblock content %}
+
+

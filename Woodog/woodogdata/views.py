@@ -17,3 +17,7 @@ def index(request):
         return render(request, 'woodogdata/index.html' , params )
     except : 
         return render(request, 'woodogdata/index.html' )
+
+
+def about(request):
+    return render(request,'woodogdata/about.html')
