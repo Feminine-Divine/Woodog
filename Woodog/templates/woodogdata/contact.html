@@ -1,166 +1,186 @@
 {% extends 'partials/base.html' %}
 {% block content %}
 {% load static %}
+ 
+{% include 'partials/header.html' %}
+
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-		body {
-			background-color: #1F163B;
-		}
+.container{
+  margin-top:120px;
+  margin-bottom:340px;
+}
+.input-field{
+  margin-top:20px;
+  height: 58px;
+  font-size: 18px;
+  margin-bottom:40px;
+  border: 1px solid #5A40AB;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #1F163B;
+  color:white;
+  width:535px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heading{
+ font-family: 'Poppins', sans-serif;
+ color:white;
+ font-size: 36px;
+ line-height: 54px;
+ text-align: center;
+}
+.label{
+  color: #FAFAFA;
+  font-size: 18px;
+  margin-left:290px;
+  font-family: 'Nunito', sans-serif;
+}
+.btn-send{
+  margin-top: 59px;
+  background-color:  #5A40AB;
+  align-items: center;
+  padding: 16px 45px;
+  width: 535px;
+  font-size: 18px;
+  color: #FFFFFF;
+  height: 57px;
+  margin-left:290px;
+  margin-bottom:10px;
+}
+.input-field-msg{
+  margin-top:20px;
+  height: 185px;
+  font-size: 18px;
+  margin-bottom:40px;
+  border: 1px solid #5A40AB;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #1F163B;
+  color:white;
+  width:535px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-		.container {
-			background-repeat: no-repeat;
-			position: absolute;
-			width: 700px;
-			height: 100%;
-			left: 10px;
-			top: 0px;
-		}
+.icon-oval{
+  background-color:black;
+  border-radius: 50%;
+  width:60px;
+  padding:18px;
+  height:60px;
+}
 
-		.image {
-			position: relative;
-			left: 10px;
-			top: 30px;
-			width: 100%;
-			height: 550px;
-			border-radius: 30px;
-		}
+.text{
+    font-size:18px;
+    line-height:38.06px;
+    color:hsla(0, 0%, 98%, 0.8);
+    font-family: 'Nunito', sans-serif;
+ }
 
-		.title {
-			font-size: 40px;
-			top: 0px;
-			position: absolute;
-			left: 880px;
-			width: 100px;
-			white-space: nowrap;
-			color: white;			
-		}
 
-		.labels {
-			font-size: 35px;
-			top: 90px;
-			position: absolute;
-			left: 750px;
-			width: 100px;
-			white-space: nowrap;
-			color: white;
-		}
+.icon-div{
+  margin-top: 80px;
+  width:580px;
+  margin-left:320px;  
+}
 
-		.box {
-			position: absolute;
-			width: 500px;
-			height: 40px;
-			left: 770px;
-			top: 135px;
-			padding-left: 15px;
-			background: #9796F0;
-			border-color: inherit;
-			border-radius: 15px;
-		}
+@media screen and (max-device-width: 375px) {
 
-		.labels1 {
-			font-size: 35px;
-			top: 200px;
-			position: absolute;
-			left: 750px;
-			width: 100px;
-			white-space: nowrap;
-			color: white;
-		}
+  .btn-send{
+      margin-left:0px;
+      width:100%;
+  }
+  .label{
+      margin-left: 0px;
+  }
+  .input-field,.input-field-msg{
+      width:100%;
+  }
+  
+  .icon-div{
+    width:auto;
+    margin-left:0px;  
+  }
+}
 
-		.box1 {
-			position: absolute;
-			width: 500px;
-			height: 40px;
-			left: 770px;
-			top: 255px;
-			padding-left: 15px;
-			background: #9796F0;
-			border-color: inherit;
-			border-radius: 15px;
-		}
+@media screen and (max-device-width: 1000px) {
 
-		.labels2 {
-			font-size: 35px;
-			top: 315px;
-			position: absolute;
-			left: 750px;
-			width: 100px;
-			white-space: nowrap;
-			color: white;
-		}
-
-		.box2 {
-			position: absolute;
-			width: 500px;
-			height: 90px;
-			left: 770px;
-			top: 365px;
-			padding-top: 10px;
-			padding-left: 15px;
-			background: #9796F0;
-			border-color: #9796F0;
-			border-radius: 15px;
-		}
-
-		.btn {
-			font-family: Poppins;
-			font-style: normal;
-			font-weight: 500;
-			font-size: 30px;
-			line-height: 45px;
-			letter-spacing: 0.04em;
-			color: black;
-			position: absolute;
-			width: 201px;
-			height: 77px;
-			left: 910px;
-			top: 530px;
-			border-radius: 20px;
-			border-color: inherit;
-		}
-		
-		input[type=text], select, textarea {
-			margin-top: 6px;
-			margin-bottom: 16px;
-			border-color: inherit;
-			border-radius: 15px;
-			resize: vertical;
-		}
-
-		input[type=submit] {
-			background-color: #2dc28b;
-			color: white;
-			padding: 12px 20px;
-			border: none;
-			cursor: pointer;
-		}
-
-		input[type=submit]:hover {
-			background-color: #1bf826;
-		}
+  .btn-send{
+      margin-left:0px;
+      width:100%;
+  }
+  .input-field,.input-field-msg{
+      width:100%;
+  }
+  .label{
+      margin-left: 0px;
+  }
+  
+  .icon-div{
+    width: auto;
+    margin-left:0px;  
+  }
+} 
 
 </style>
 
-<div class="container">
-		<div class="row">
-		  <div class="column">
-			  <br>
-			<img class="image" src="{% static 'img/dog-main.jpg' %}">
-		  </div>
-		  <div class="column">
-			  <h1 class="title">CONTACT US<h1>
-			<form action="/action_page.php">
-			  <label for="fname" class="labels">First Name</label>
-			  <input type="text" id="fname" class="box" name="firstname" placeholder="Your name..">
-			  <label for="email" class="labels1">Email</label>
-			  <input type="email" id="email" class="box1" name="email" placeholder="example@gmail.com">
-			  <label for="subject" class="labels2">Message</label>
-			  <textarea id="subject" name="subject" class="box2" placeholder="Write something.." style="height:120px"></textarea>
-			  <input type="submit" value="Submit" class="btn">
-			</form>
-		  </div>
-		</div>
-	  </div>
+<div class="container col-lg-12" >
+    <p class="heading">Get in touch with us</p>
+    <form style="margin-top:80px;" action="{% url 'contact' %}" method="post">
+      {% csrf_token %}
+      {% include 'partials/_messages.html' %}
+  
+        <div class="form-group" >
+            <label for="name" class="label">Name</label>
+            <input type="text" class="form-control input-field" name="name" id="name">
+        </div>
+        <div class="form-group">
+          <label for="email" class="label">Email</label>
+          <input type="email" class="form-control input-field" name="email" id="email">
+        </div>      
+        <div class="form-group">
+          <label for="subject" class="label">Subject</label>
+          <input type="text" class="form-control input-field" name="subject" id="subject">
+        </div> 
+        <div class="form-group">
+          <label for="message" class="label">Message</label>
+          <textarea class="form-control input-field-msg" id="message" value="message" rows="3"></textarea>
+        </div>   
+        <div class="form-group">
+            <button type="submit" class="btn btn-send">Send message</button>
+        </div>
+    </form>
+
+    <div class="icon-div">
+      <div class="row" >
+        <div class="col" >
+          <div class="icon-oval">
+            <a href="#"><img src="{% static 'img/location.svg' %}" ></a>
+          </div>
+          <p class="text">Address<br><br></p>
+        </div>
+        <div class="col">
+          <div class="icon-oval">
+            <a href="#"><img src="{% static 'img/phone.svg' %}" ></a>
+          </div>
+          <p class="text">Phone<br></p>
+        </div>
+        <div class="col">
+          <div class="icon-oval">
+            <a href="#"><img src="{% static 'img/send-msg.svg' %}" ></a>
+          </div>
+          <p class="text">Email<br></p>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+
+
+ 
+{% include 'partials/footer.html' %}
 
 {% endblock content %}
 

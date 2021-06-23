@@ -9,3 +9,6 @@ def index(request):
 
 def about(request):
     return render(request,'woodogdata/about.html')
+
+def contact(request):
+    return render(request,'woodogdata/contact.html')
