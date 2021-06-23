@@ -123,12 +123,10 @@
           <a class="nav-link" href="{% url 'appdashboard' %}">Gallery</a>
         </li>
       </ul>
-      {% if user.is_authenticated %}
-       <a class="btn" id="login-navbtn" type="button" href="{% url 'appdashboard' %}">Welcome  to woodog {{user.username}} !</a>
-      {% else %}
-      <a class="nav-link" id="sign-up" href="{% url 'register' %}">Sign up</a>
-      <a class="btn" id="login-navbtn" type="submit" href="{% url 'login' %}">Login</a>
-      {% endif %}
+
+      <a class="nav-link" id="sign-up" href="{% url "register" 'seeker' %}">Sign up</a>
+      <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
+
     </div>
   </div>
 </nav>
