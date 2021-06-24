@@ -55,10 +55,9 @@
 }
 #btn-text{
   color: #9A88D3;
-  margin-left:67px;
+  margin-left:290px;
   font-size: 18px;
-  text-decoration: none;
- 
+  text-decoration: none; 
 }
 @media screen and (max-device-width: 375px) {
 
@@ -100,25 +99,48 @@
 
 <div class="container col-lg-12" >
   <p class="normal-text">Join Woodog</p>
-  <section class="register-photo">
-    <div class="form-container">
-        <form method="post">
-            {% csrf_token %}
-            {% include 'partials/_messages.html' %}
-            <h2 class="text-center"><strong>Create</strong> an account.</h2>
-            <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" /></div>
-            <div style="margin-bottom: 16px;"><input type="text" class="form-control" name="Username" placeholder="Username" /></div>
-            <div class="mb-3"><input type="password" class="form-control" name="password" placeholder="Password" /></div>
-            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Sign Up</button></div><a class="already" href="{% url 'login' %}">You already have an account? Login here.</a>
-        </form>
-    </div>
-</section>
+  <p class="heading">Create your Account</p>
+    <form style="margin-top:80px;" action="{% url 'register' txt %}" method="post">
+      {% csrf_token %}
+      {% include 'partials/_messages.html' %}
+        <div class="form-group" >
+          <label for="email" class="label">Email</label>
+          <input type="email" class="form-control input-field" name="email" id="email" aria-describedby="emailHelp" placeholder="demo@space.com">
+          <!-- <div class="emailFeedbackArea invalid_feedback" style="display:none;"> -->
+
+        </div>
+        <div class="form-group" >
+            <label for="username" class="label">Username</label>            
+            <input type="text" class="form-control input-field" name="username" id="username">
+            <!-- <div class="invalid_feedback invalid_feedback" style="display: none;">
+            </div>
+            <p class="text-sm text-success usernameSuccessOutput"></p> -->
+        </div>
+        <div class="form-group">
+          <label for="password" class="label">Password</label>
+          <input type="password" class="form-control input-field" name="password" id="password">
+        </div>        
+        <div class="form-group">
+            <button type="submit" class="btn account-btn">Create Account as {{txt}}</button>
+            <small class="form-text"><a id="btn-text" href="{% url 'login' %}">Already have an account?</a></small>
+        </div>
+    </form>
 </div>
 
 {% include 'partials/footer.html' %}
 
 
 <script src="{% static 'js/register.js' %}"></script>
+<script >
+  window.onload = function() {  
+    function change_loc(){
+      location.href = '/'; }
+    let check = "{txt}";
+    if(check != 'helper' or check != 'seeker' ){
+      change_loc() }
+  };
+
+</script>
 
 {% endblock content %}
 <!--{% url 'register' %} -->

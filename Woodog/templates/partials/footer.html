@@ -71,7 +71,7 @@
       margin-right:145px;
       font-size:24px;
       color:#FAFAFACC;
-      margin-left:1096px;
+      margin-left:1000px;
     }
     .apply-btn{
       border:1px solid #5A40AB;
@@ -87,15 +87,37 @@
       background: transparent;
     }
      
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      border-radius:50px;
+      z-index: 99;
+      border: none;
+      border:2px solid black;
+      outline: none;
+      background-color:#5A40AB;
+      cursor: pointer;
+      padding: 15px;
+     
+    }
+
+    #myBtn:hover {
+      background-color: white;
+      border:3px solid #5A40AB;
+    }
 </style>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'img/top.svg' %}"></button>
 
 <footer>
   <div class="row">
       <div class="col-lg-3" style="margin:100px 0px 80px 80px;">
          <ul  style="list-style: none;">
-             <li><a class="nav-link" href="#">Home</a></li>
-             <li><a class="nav-link" href="#">About</a></li>
-             <li><a class="nav-link" href="#">Contact</a></li>
+             <li><a class="nav-link" href="{% url 'woodogdata' %}">Home</a></li>
+             <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
+             <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
              <li><a class="nav-link" href="#">Blog</a></li>
              <li><a class="nav-link" href="#">Gallery</a></li>
          </ul>
@@ -122,4 +144,23 @@
   <div class="row">
       <p class="copyrights">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
   </div>
+  
+<script>
+  var mybutton = document.getElementById("myBtn");
+  
+  window.onscroll = function() {scrollFunction()};
+  
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+  
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+  </script>
 </footer>
