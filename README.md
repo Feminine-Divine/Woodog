@@ -1,6 +1,23 @@
 <p align = 'center'>
 <img src = "https://img.shields.io/badge/Woodog-4285F4?style=%2for-the-badge&logo=datadog&logoColor=white" height = '100' width = '300'/>
 </p>
+<div align="center">
+
+<a href="https://github.com/Feminine-Divine/Woodog"><img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103"></a>
+<a href="https://github.com/Feminine-Divine/Woodog"><img src="https://img.shields.io/badge/Built%20by-developers%20%3C%2F%3E-0059b3"></a>
+<a href="https://github.com/Feminine-Divine/Woodog"><img src="https://img.shields.io/static/v1.svg?label=Contributions&message=Welcome&color=yellow"></a>
+<a href="https://github.com/Feminine-Divine/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
+<a href="https://github.com/Feminine-Divine/Woodog"><img src="https://img.shields.io/badge/PR's%3F-Welcomed-brightgreen.svg?v=103"></a>
+
+<a href="https://github.com/Feminine-Divine/Woodog/watchers"><img src="https://img.shields.io/github/watchers/Feminine-Divine/Woodog?style=flat"></a> 
+<a href="https://github.com/Feminine-Divine/Woodog/graphs/contributors"><img src="https://img.shields.io/github/contributors/Feminine-Divine/Woodog?color=brightgreen"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/stargazers"><img src="https://img.shields.io/github/stars/Feminine-Divine/Woodog?color=0059b3"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/network/members"><img src="https://img.shields.io/github/forks/Feminine-Divine/Woodog?color=yellow"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/issues"><img src="https://img.shields.io/github/issues/Feminine-Divine/Woodog?color=0059b3"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed-raw/Feminine-Divine/Woodog?color=yellow"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/pulls"><img src="https://img.shields.io/github/issues-pr/Feminine-Divine/Woodog?color=brightgreen"></a>
+<a href="https://github.com/Feminine-Divine/Woodog/pulls?q=is%3Apr+is%3Aclosed"><img src="https://img.shields.io/github/issues-pr-closed-raw/Feminine-Divine/Woodog?color=0059b3"></a> 
+</div>
 
 Woodog:dog: is an initiative to provide help to increasing stray animals by providing them food :bread: and refuge :house: by connecting them with fellow helpful humans.
 On the application, two types of people can be registered :inbox_tray: one who can provide the location and condition of a nearby stray, and another who can provide information and arrange shelter :house: and food :bread: for them.

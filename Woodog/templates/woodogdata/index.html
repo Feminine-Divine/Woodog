@@ -1,10 +1,12 @@
-
-
 {% extends 'partials/base.html' %}
+{% load static %}
 
 {% block content %}
-{% load static %}
+
+{% include 'partials/header.html' %}
+
 <style>
+    
     .main-pg-dog{
         border-radius: 24px;
         margin-top:20px;
@@ -54,19 +56,23 @@
         font-family: 'Nunito', sans-serif;
         font-size:18px;
     }
-    .apply-btn{
+    .index-apply-btn{
         border-radius: 0px 12px 12px 0px;
         background-color:#5A40AB;
         color:white;
+        width:139px;
+        font-size: 18px;
         font-family: 'Nunito', sans-serif;
     }
     .email-input{
-        width:336px;
+        width:326px;
         height:60px;
+        font-size: 18px;
         background-color: #1F163B;
         border-radius:12px 0px 0px 12px;
         border:1px solid #5A40AB;
     }
+
 
 </style>
 
@@ -78,36 +84,56 @@
         <p class="main-heading">Food! Shelter! Love!</p> 
         <p class="main-text" style="width:384px;">With Woodog provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
         <form class="form-inline">
-            <div class="row">
-                <input type="email"  class="email-input form-control col-md-8" id="inputEmail4" placeholder="Email">
-                <button class="btn col apply-btn" type="submit">Sign up</button>
+            <div class="row" style="width:446px;">
+                <input type="email"  class="email-input form-control col" id="inputEmail4" placeholder="Email">
+                <button class="btn index-apply-btn" type="submit">Sign up</button>
             </div>
         </form>
     </div>  
 </main>
 
 <div class="cards-section">
-    <p class="main-heading">How can you elp?</p>
+    <p class="main-heading">How can you Help?</p>
     <div class="row" style="margin-top:40px;">
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
             <p class="card-text">Provide the location and condition of nearby stray and let us find their local helper. </p>
-            <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
+            {% if not success %}
+                <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
+            {% endif %}
         </div>
         <div class="col">
             <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
             <p class="card-text" style="width: 363px;">Arrange temporary food and shelter for your local stray animals.</p>
-            <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
+            {% if not success %}
+                <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
+            {% endif %}
         </div>
     </div>    
 </div>
 
 <script >
     function register_as(type) {
-        location.href= `authentication/register` ;
+        location.href= `authentication/register/${type}` ;
     }
 
+    function render_nav(){
+        ele = document.getElementById('sign-up');
+        ele_2 = document.getElementById('login-navbtn');
+        ele.innerText = 'Logout';
+        ele_2.innerText = "{{name}}";
+        ele_2.href = '#';
+        ele.href = 'authentication/logout'; 
+    }
+    
+    let var_ = "{{success}}";
+    if( var_ ){    
+        render_nav(); 
+    } 
+
 </script>
+
+{% include 'partials/footer.html' %}
 
 {% endblock content %}
 
