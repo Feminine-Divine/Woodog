@@ -6,7 +6,6 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from authentication.models import User_status
 import json
-
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
@@ -16,8 +15,11 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.sites.shortcuts import get_current_site
 from .utils import token_generator
 from django.contrib import auth
-
-
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 class EmailValidationView(View):
@@ -156,5 +158,22 @@ class LogoutView(View):
         return redirect('login')
             
                 
-# def get(self, request):
-#         return render(request,'authentication/register.html')
+# @login_required(login_url='/authentication/login')
+class ChangePasswordView(View):
+    def get(self,request):
+        return render(request,'authentication/set-newpassword.html')
+    
+    def post(self,request):
+        old = request.POST['old-password']
+        new = request.POST['new-password']
+        confirm = request.POST['confirm-password']
+
+        currentpassword=request.user.password 
+        
+        matchcheck=check_password(old, currentpassword)
+
+        if matchcheck:
+            user.set_password('new password')
+            user.save()
+            messages.success(request, "Password changed.")
+        return render(request,'authentication/set-newpassword.html')
