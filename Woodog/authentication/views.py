@@ -20,6 +20,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
 # Create your views here.
 
 class EmailValidationView(View):
@@ -159,21 +160,36 @@ class LogoutView(View):
             
                 
 # @login_required(login_url='/authentication/login')
-class ChangePasswordView(View):
+class ChangePasswordView(TemplateView):
+    template_name='authentication/set-newpassword.html'
     def get(self,request):
         return render(request,'authentication/set-newpassword.html')
     
     def post(self,request):
-        old = request.POST['old-password']
-        new = request.POST['new-password']
-        confirm = request.POST['confirm-password']
-
-        currentpassword=request.user.password 
-        
-        matchcheck=check_password(old, currentpassword)
-
-        if matchcheck:
-            user.set_password('new password')
-            user.save()
-            messages.success(request, "Password changed.")
-        return render(request,'authentication/set-newpassword.html')
+        Current = request.POST['old-password']
+        password_1= request.POST['new-password']
+        password_2 = request.POST['confirm-password']
+        if request.user.is_authenticated:
+            user=request.user.username  
+            pwd=request.user.password     
+            u = User.objects.get(username=user) 
+            if password_1!=password_2:
+                messages.error(request,"Two passwords doesn't match")
+                return render(request,'authentication/set-newpassword.html')
+            if password_1.__len__()<9:
+                messages.error(request,'New password must be at least 9 characters long')
+                return render(request,'authentication/set-newpassword.html')
+            try:
+                user=User.objects.get(username=u)
+            except ObjectDoesNotExist:
+                messages.error(request,'User doesn not exist')
+                return render(request,'authentication/set-newpassword.html')
+            if user.check_password(Current)==False:
+                messages.error(request,'Your current password is incorrect !')
+                return render(request,'authentication/set-newpassword.html')
+            else:
+                user.set_password(password_1)
+                user.save()
+                auth.login(request, user)
+                return redirect('woodogdata')
+    
