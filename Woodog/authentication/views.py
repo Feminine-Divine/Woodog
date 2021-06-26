@@ -6,7 +6,6 @@ from django.http import JsonResponse
 from django.contrib.auth.models import User
 from authentication.models import User_status
 import json
-
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.core.mail import send_mail
@@ -16,8 +15,12 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.sites.shortcuts import get_current_site
 from .utils import token_generator
 from django.contrib import auth
-
-
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.hashers import check_password
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
 # Create your views here.
 
 class EmailValidationView(View):
@@ -156,5 +159,37 @@ class LogoutView(View):
         return redirect('login')
             
                 
-# def get(self, request):
-#         return render(request,'authentication/register.html')
+# @login_required(login_url='/authentication/login')
+class ChangePasswordView(TemplateView):
+    template_name='authentication/set-newpassword.html'
+    def get(self,request):
+        return render(request,'authentication/set-newpassword.html')
+    
+    def post(self,request):
+        Current = request.POST['old-password']
+        password_1= request.POST['new-password']
+        password_2 = request.POST['confirm-password']
+        if request.user.is_authenticated:
+            user=request.user.username  
+            pwd=request.user.password     
+            u = User.objects.get(username=user) 
+            if password_1!=password_2:
+                messages.error(request,"Two passwords doesn't match")
+                return render(request,'authentication/set-newpassword.html')
+            if password_1.__len__()<9:
+                messages.error(request,'New password must be at least 9 characters long')
+                return render(request,'authentication/set-newpassword.html')
+            try:
+                user=User.objects.get(username=u)
+            except ObjectDoesNotExist:
+                messages.error(request,'User doesn not exist')
+                return render(request,'authentication/set-newpassword.html')
+            if user.check_password(Current)==False:
+                messages.error(request,'Your current password is incorrect !')
+                return render(request,'authentication/set-newpassword.html')
+            else:
+                user.set_password(password_1)
+                user.save()
+                auth.login(request, user)
+                return redirect('woodogdata')
+    
