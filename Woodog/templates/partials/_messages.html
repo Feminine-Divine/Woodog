@@ -1,8 +1,41 @@
+<style>
+    .alert{
+        width:535px;
+        height: 50px;
+        font-size:18px;
+        background-color: #FF7A7A;
+        border-radius: 8px;
+        color:white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .messages{
+        margin-bottom:50px;
+        margin-top:30px
+    }
+    .alert-success{
+        background-color: #0F5257;
+    }
+    .alert-info{
+        background-color: #49BEAA;
+        color: #000;
+    }
+    .alert-danger{
+        background-color: #B10F2E;
+    }
+    .alert-warning{
+        background-color: #FFB100;
+        color: #000;
+    }
+</style>
+
 {% if messages %}
 <div class="messages">
     {% for message in messages %}
-    <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}"{% endif %}>
+    <div {% if message.tags %} data-auto-dismiss="2000" class="alert alert-dismissible fade show alert-{{ message.tags }}" role="alert" {% endif %}>
         {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
 </div>
