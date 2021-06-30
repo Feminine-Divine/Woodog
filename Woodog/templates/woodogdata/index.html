@@ -15,12 +15,11 @@
     }
     .main-heading{
         color:#FAFAFA;
-        margin-top:100px;
+        margin-top:70px;
         font-weight: 500;
         font-size: 48px;
         font-family: 'Poppins', sans-serif;
-        line-height: 72px;
-        
+        line-height: 72px;        
     }
     .application{
         margin-left:192px;
@@ -74,19 +73,145 @@
         border-radius:12px 0px 0px 12px;
         border:1px solid #5A40AB;
     }
+    #main-heading{
+        width:500px;
+        margin-left:192px;
+    }
+    .apply-text,.apply-form{
+        width:384px;
+    }
+
+    @media screen and (max-device-width: 375px) {
+      .main-heading{
+          font-size:24px;
+          margin-top:10%;
+      } 
+      .cards-section{
+        width: 90%;
+        margin-bottom: 78px;
+        margin-left:10%;
+        margin-right:10%;
+      }
+      .card-pics{
+        width: 90%;
+      }
+      #main-heading{
+          margin-left:76px;
+          margin-right:76px;
+          width: 216px;
+          line-height: 36px;
+      }
+      .main-pg-dog{
+        width: 96%;
+        height: 168px;
+        margin-left:2%;
+        margin-right:2%;
+        margin-bottom:5%;
+        border-radius: 16px;
+      }
+      .cards-btn{
+        width: 90%;
+        height: auto;
+        font-size: 12px;
+        line-height: 18px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 8px;
+      }
+      .main-text , .card-text{
+        font-size: 14px;
+        line-height: 22px;
+      }
+      .application{
+          margin-left:10%;
+          width: 80%;
+          margin-right:10%;
+       }
+      .index-apply-btn{
+            border-radius: 6px 6px 6px 6px;
+            width: 100%;
+            height: 34px;
+            font-size: 13px;
+       }
+       .email-input{
+            width: 100%;
+            height: 34px;
+            font-size: 13px;
+            border-radius:6px 6px 6px 6px;
+            margin-bottom:5%;
+            margin-top:5%;
+       }
+       .apply-text{
+           width: 90%;
+       }
+       .apply-form{
+            width: 90%;
+        }
+        .card-text{
+            width: 90%;
+        }
+    }
+
+    @media screen and (max-device-width: 1000px) {
+
+        .btn-login{
+            margin-left:0px;
+            width:100%;
+        }
+        .input-field{
+            width:100%;
+        }
+        #btn-text{
+            margin-left: 0px;
+        }
+        .label{
+            margin-left: 0px;
+        }
+        .main-pg-dog{
+            width: 96%;
+            height:auto;
+            margin-left:2%;
+            margin-right:2%;
+            margin-bottom:5%;
+            border-radius: 16px;
+        }
+        #main-heading{
+          margin-left:auto;
+          margin-right:auto;
+        }
+        .application{
+            margin-left:auto;
+            margin-right:auto;
+        }
+        .cards-section{
+            width: 90%;
+            margin-bottom: 78px;
+            margin-left:10%;
+            margin-right:10%;
+        }
+        .card-pics{
+            width: 90%;
+        }
+        .cards-btn{
+            width: 90%;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding: 8px;
+        }
+    }
 
 
 </style>
 
 <main role='main' class="container">
-    <p class="main-heading" style="width:500px;margin-left:192px;">Your Kindness can help them</p>
+    <p class="main-heading" id="main-heading">Your Kindness can help them</p>
     <img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
 
     <div class="application">
         <p class="main-heading">Food! Shelter! Love!</p> 
-        <p class="main-text" style="width:384px;">With Woodog provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
+        <p class="main-text" class="apply-text">With Woodog provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
         <form class="form-inline">
-            <div class="row" style="width:446px;">
+            <div class="row apply-form" >
                 <input type="email"  class="email-input form-control col" id="inputEmail4" placeholder="Email">
                 <button class="btn index-apply-btn" type="submit">Sign up</button>
             </div>
@@ -97,16 +222,16 @@
 <div class="cards-section">
     <p class="main-heading">How can you Help?</p>
     <div class="row" style="margin-top:40px;">
-        <div class="col">
+        <div class="col-lg-6 col-sm-12 col-12">
             <img class="card-pics" src="{% static 'img/dog-photo1.jpg' %}">
             <p class="card-text">Provide the location and condition of nearby stray and let us find their local helper. </p>
             {% if not success %}
                 <button type="button" onclick="register_as('seeker')" class="cards-btn" class="btn btn-lg">Sign Up as Seeker</button>
             {% endif %}
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-sm-12 col-12">
             <img class="card-pics" src="{% static 'img/dog-photo2.jpg' %}">
-            <p class="card-text" style="width: 363px;">Arrange temporary food and shelter for your local stray animals.</p>
+            <p class="card-text" >Arrange temporary food and shelter for your local stray animals.</p>
             {% if not success %}
                 <button type="button" onclick = "register_as('helper')" class="cards-btn" class="btn btn-lg">Sign Up as Helper</button>
             {% endif %}
