@@ -1,0 +1,64 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .container{
+        background-color:#1F163B;
+    }
+    .main-pg-dog{
+        border-radius: 30px;
+        margin-top:5px;
+        margin-left:40px;
+    }
+    .main-heading{
+        color:#FAFAFA;
+        margin-top:60px;
+        font-weight: 500;
+        font-size: 75px;
+        font-family: 'Poppins', sans-serif;
+        line-height: 72px;
+        
+    }
+    .application{
+        margin-left:40px;
+    }
+    .main-text{
+        font-size:24px;
+        line-height:38.06px;
+        color:hsla(0, 0%, 98%, 0.8);
+        font-family: 'Nunito', sans-serif;
+    }
+    .email-input{
+        width:336px;
+        height:58px;
+        background-color: #1F163B;
+        border-radius:12px 0px 0px 12px;
+        border:1px solid #5A40AB;
+    }
+    .main {
+        color:#FAFAFA;
+        margin-top:60px;
+        margin-left:40px;
+        font-family: 'Nunito', sans-serif;
+        font-size:24px;
+        line-height:38.06px;
+        color:hsla(0, 0%, 98%, 0.8);
+    }
+
+</style>
+
+<main role='main' class="container">
+        <p class="main-heading" style="width:500px;margin-left:50px;">About Us</p>
+        <<img class="main-pg-dog" src="{% static 'img/dog-main.jpg' %}">
+        <div class="application">
+            <p class="main-heading">Food! Shelter! Love!</p> 
+            <p class="main-text" style="width:500px; margin-left:50px; margin-top:10px;">With Woodog we provide food, shelter or any kind of help which is possible from your side to these little beings.</p>
+        </div>  
+        <p class="main" style="margin-left:50px;">Woodog🐶 is an initiative to provide help to increasing stray animals by providing them food 🍞 and
+        refuge 🏠 by connecting them with fellow helpful humans. On the application, two types of people can be registered 📥 one who can provide the 
+        location and condition of a nearby stray, and another who can provide information and arrange shelter 🏠 and food 🍞 for them.</p>
+</main>
+
+{% endblock content %}
+
+
