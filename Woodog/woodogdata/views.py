@@ -2,7 +2,6 @@ import re
 from django.http.response import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-<<<<<<< HEAD
 from rest_framework import serializers
 from rest_framework import renderers
 from rest_framework.renderers import JSONRenderer
@@ -89,30 +88,3 @@ def contat_us_throughwebsite(request):
    except:
         return HttpResponse("Not submitted properly !")
   
-=======
-from django.contrib.auth.models import User
-
-# Create your views here.
-
-# @login_required(login_url='/authentication/login')
-
-def index(request):
-    crr_user = request.user
-    try : 
-        crr_user = User.objects.get(username = crr_user)
-        if crr_user.is_active : 
-            params = {'success' : True , 'name' : crr_user}
-        else : 
-            params = {'success' : False , 'name' : crr_user}
-        return render(request, 'woodogdata/index.html' , params )
-    except : 
-        return render(request, 'woodogdata/index.html' )
-
-
-def about(request):
-    return render(request,'woodogdata/about.html')
-
-def contact(request):
-    return render(request,'woodogdata/contact.html')
-
->>>>>>> d98ff40ce3abff4410dd434228ea4ce5bc49b0b2
