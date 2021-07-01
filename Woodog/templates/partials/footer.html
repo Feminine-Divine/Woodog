@@ -1,43 +1,14 @@
 {% load static %}
 <style>
  
-    #header{
-      margin:60px 120px;
-      background-color: #1F163B;
-      font-family: 'Nunito', sans-serif;
-    }
-    .nav-link ,.navbar-brand{
-      color:#FAFAFA  !important;
-    }
-    .nav-link{
-      margin-left:45px;
-      font-size:18px;
-
-    }
-    #sign-up{
-      margin-right:35px;
-    }
-    #login-navbtn{
-      border:1px solid #5A40AB;
-      color:#FAFAFA;
-      font-size: 18px;
-      padding: 16px 45px 16px 45px;
-      border-radius:8px;
-      font-family: 'Nunito', sans-serif;
-    }
-    #login-navbtn:hover{
-      background-color:#5A40AB;
-      color:#FAFAFA;
-    }
     footer{
         width:100%;
         background-color:#141414;
-        /* height:456px; */
         color:#FAFAFA;
         font-family: 'Nunito', sans-serif;
     }
     .nav-link{
-        size:18px;
+        font-size:18px;
         line-height:24.55px;
         color:#FAFAFA;
     }
@@ -58,7 +29,7 @@
       overflow-x:hidden;
     }
     .email-input1{
-        width:310px;
+        width:60%;
         height:58px;
         font-size: 18px;
         background-color:  #141414;
@@ -68,10 +39,8 @@
     .copyrights{
       margin-bottom:57px;
       font-family: 'Nunito', sans-serif;
-      margin-right:145px;
       font-size:24px;
-      color:#FAFAFACC;
-      margin-left:1000px;
+      color:#FAFAFACC;     
     }
     .apply-btn{
       border:1px solid #5A40AB;
@@ -79,14 +48,11 @@
       background-color:#5A40AB;
       border-radius:8px;
       font-size: 18px;
-      width:139px;
+      width:30%;
       border-radius: 0px 12px 12px 0px;
       font-family: 'Nunito', sans-serif;
     }
-    .navbar-brand.logo {
-      background: transparent;
-    }
-     
+
     #myBtn {
       display: none;
       position: fixed;
@@ -103,18 +69,108 @@
      
     }
 
+    .quick-links{
+      margin-top:107px;
+      margin-bottom:80px;
+      margin-left:80px;
+    }
+
     #myBtn:hover {
       background-color: white;
       border:3px solid #5A40AB;
     }
+
+    .footer-btn{
+      margin-top:162px;
+      margin-left:10%;
+    }
+    .footer-logo-icon{
+      margin-top:160px;text-align: center;
+    }
+
+    @media screen and (max-device-width: 375px) {
+      .copyrights{
+        margin-left:0px;
+        text-align: center;
+        font-size: 14px;
+      }
+      .apply-btn{
+        font-size: 18px;
+        width:30%;
+        font-size: 13px;
+        border-radius: 0px 6px 6px 0px;
+      }  
+      .email-input1{
+        width:60%;
+        font-size: 13px;
+        height:39px;
+        border-radius: 6px 0px 0px 6px;
+
+      }
+      .footer-btn{
+        margin-top:52px;       
+        text-align: center;
+        margin-left:0px;
+        margin-bottom: 90px;
+      }
+      .quick-links{
+        margin-left:19px;
+        text-align: left;
+      }
+      .nav-link{
+        font-size: 14px;
+      }
+      .form-inline{
+        margin-left:10%;
+        margin-right: 10%;      
+      }
+      .footer-logo-icon{
+        padding-left:38px;
+        margin-top:50px;text-align: left;
+      }
+      .quick-links{
+        margin-left:-38px;
+      }
+      #myBtn {
+        border-radius:50px;
+        padding: 1.5%;      
+      }
+      
+    }
+
+    @media screen and (max-device-width: 767px) {
+
+      .quick-links{
+        margin-left:0px;
+      }
+      .footer-logo-icon{
+        margin-top:10%;
+      }
+      
+      .footer-btn{
+        margin-top: 10%;
+        margin-bottom: 10%;       
+      }  
+
+      footer{
+        padding-left:10%;
+        padding-right: 10%;
+      }
+      .copyrights{
+        text-align: center;
+      }
+      
+    }
+
+
 </style>
 
-<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="{% static 'img/top.svg' %}"></button>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img class="top-btn" src="{% static 'img/top.svg' %}"></button>
 
 <footer>
   <div class="row">
-      <div class="col-lg-3" style="margin:100px 0px 80px 80px;">
-         <ul  style="list-style: none;">
+      <div class="col-lg-3 col-md-3 col-sm-12 col-12" >
+         <ul  style="list-style: none;"  class="quick-links">
              <li><a class="nav-link" href="{% url 'woodogdata' %}">Home</a></li>
              <li><a class="nav-link" href="{% url 'about' %}">About</a></li>
              <li><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
@@ -122,7 +178,7 @@
              <li><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
          </ul>
       </div>
-      <div class="col-lg-3" style="margin-top:160px;text-align: center;" >
+      <div class="col-lg-3 col-md-3 col-sm-12 col-12 footer-logo-icon">
           <div class="row">
               <p style="font-weight: 700;font-size:18px;">WOODOG</p>
           </div>
@@ -132,7 +188,7 @@
               <a href="#"><img class="col footer-icon" src="{% static 'img/mailbox.svg' %}" ></a>
           </div>
       </div>
-      <div class="col-lg-4" style="margin-top:162px;margin-left:80px;">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-12 footer-btn" >
         <form class="form-inline">
           <div class="row">
               <input type="email"  class="email-input1 form-control" id="inputEmail4" placeholder="Email">
@@ -142,7 +198,8 @@
       </div>
   </div>
   <div class="row">
-      <p class="copyrights">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
+      <p class="col-lg-4 col-md-4 col-sm-12 col-12"></p><p class="col-lg-4 col-md-4 col-sm-12 col-12"></p>
+      <p class="copyrights col-lg-4 col-md-4 col-sm-12 col-12">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
   </div>
   
 <script>

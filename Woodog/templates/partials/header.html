@@ -1,18 +1,30 @@
 {% load static %}
 <style>
+  ::-webkit-scrollbar{
+        width: 20px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: linear-gradient(#b8b8bb,transparent, #888a8b);
+        border-radius: 50px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+        background: linear-gradient(#9b8fdb,transparent, #584aa7);
+        border-radius: 50px;
+    }
   
     #header{
       margin:60px 120px;
       background-color: #1F163B;
       font-family: 'Nunito', sans-serif;
     }
-    .nav-link ,.navbar-brand{
-      color:#FAFAFA  !important;
-    }
     .nav-link{
-      margin-left:45px;
-      font-size:18px;
-
+        font-size:18px;
+        line-height:24.55px;
+        color:#FAFAFA;
+        margin-left:45px;
+    }
+    .nav-link:hover{
+        color:#5A40AB;
     }
     #sign-up{
       margin-right:35px;
@@ -22,74 +34,17 @@
       color:#FAFAFA;
       padding: 16px 45px 16px 45px;
       border-radius:8px;
+      font-size:18px;
       font-family: 'Nunito', sans-serif;
     }
     #login-navbtn:hover{
       background-color:#5A40AB;
       color:#FAFAFA;
     }
-    footer{
-        width:100%;
-        background-color:#141414;
-        /* height:456px; */
-        color:#FAFAFA;
-        font-family: 'Nunito', sans-serif;
-    }
-    .nav-link{
-        size:18px;
-        line-height:24.55px;
-        color:#FAFAFA;
-    }
-    .nav-link:hover{
-        color:#5A40AB;
-    }
-    .footer-icon{
-        color:#5B34D6;
-        height:20px;
-        width:15px;
-        margin-bottom:0px;
-    }
-    .footer-icon.fb{
-      width: 8px;
-    }
-    body{
-      background-color:#1F163B;
-      overflow-x:hidden;
-    }
-    .email-input1{
-        width:327px;
-        height:58px;
-        background-color:  #141414;
-        border-radius:12px 0px 0px 12px;
-        border:1px solid #5A40AB;
-    }
-    .copyrights{
-      margin-bottom:57px;
-      font-family: 'Nunito', sans-serif;
-      margin-right:145px;
-      font-size:24px;
-      color:#FAFAFACC;
-      margin-left:1096px;
-    }
-    .apply-btn{
-      border:1px solid #5A40AB;
-      color:#FAFAFA;
-      background-color:#5A40AB;
-      border-radius:8px;
-      border-radius: 0px 12px 12px 0px;
-      font-family: 'Nunito', sans-serif;
-    }
     .navbar-brand.logo {
       background: transparent;
     }
-    .apply-btn{
-      border:1px solid #5A40AB;
-      color:#FAFAFA;
-      background-color:#5A40AB;
-      border-radius:8px;
-      border-radius: 0px 12px 12px 0px;
-      font-family: 'Nunito', sans-serif;
-    }
+ 
     
 </style>
 
@@ -117,7 +72,7 @@
           <a class="nav-link" href="{% url 'contact' %}">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="{% url 'blog' %}">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
@@ -125,7 +80,7 @@
       </ul>
 
       <a class="nav-link" id="sign-up" href="{% url "register" 'seeker' %}">Sign up</a>
-      <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
+      <a class="btn" id="login-navbtn" type="submit" href="{% url 'login' %}">Login</a>
 
     </div>
   </div>
