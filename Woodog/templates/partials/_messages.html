@@ -28,6 +28,24 @@
         background-color: #FFB100;
         color: #000;
     }
+
+    @media screen and (max-device-width: 375px) {
+        
+        .alert{
+            width:80%;
+            height: 39px;
+            font-size: 13px;
+        }
+    }
+
+
+    @media screen and (max-device-width: 1000px) {
+        .alert{
+            width:80%;
+            height: auto;
+        }
+    
+    }
 </style>
 
 {% if messages %}

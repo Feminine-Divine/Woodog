@@ -85,23 +85,53 @@
   margin-left:320px;  
 }
 
+.contact-form{
+  margin-top:80px;
+}
+
 @media screen and (max-device-width: 375px) {
 
   .btn-send{
       margin-left:0px;
       width:100%;
+      padding:5px;
+      height: 39px;
+      font-size: 13px;
   }
   .label{
       margin-left: 0px;
+      font-size: 14px;
   }
-  .input-field,.input-field-msg{
+  .text{
+    font-size: 14px;
+    margin-right: 12px;
+    text-align: center;
+  }
+  .input-field{
       width:100%;
-  }
-  
-  .icon-div{
-    width:auto;
-    margin-left:0px;  
-  }
+      height: 39px;
+      margin-top:8px;
+      margin-bottom:15px;
+    }  
+    .input-field-msg{
+      width:100%;
+      margin-top:8px;
+      margin-bottom:15px;
+    }  
+    .icon-div{
+      width:auto;
+    }
+    .heading{
+      font-size: 24px;    
+    }
+    .container{
+      width:80%;
+      margin-top:10%;
+      margin-bottom:20%;
+    }
+    .contact-form{
+      margin-top:40px;
+    }
 }
 
 @media screen and (max-device-width: 1000px) {
@@ -121,13 +151,18 @@
     width: auto;
     margin-left:0px;  
   }
+  .container{
+      width:80%;
+      margin-top:10%;
+      margin-bottom:20%;
+  }
 } 
 
 </style>
 
 <div class="container col-lg-12" >
     <p class="heading">Get in touch with us</p>
-    <form style="margin-top:80px;" action="{% url 'contact' %}" method="post">
+    <form  action="{% url 'contact' %}" method="post" class="contact-form">
       {% csrf_token %}
       {% include 'partials/_messages.html' %}
   
@@ -176,9 +211,6 @@
       </div>
     </div>
 </div>
-
-
-
  
 {% include 'partials/footer.html' %}
 
