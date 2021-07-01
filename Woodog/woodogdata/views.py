@@ -25,3 +25,5 @@ def about(request):
 def contact(request):
     return render(request,'woodogdata/contact.html')
 
+def gallery(request):
+    return render(request,'woodogdata/gallery.html')
