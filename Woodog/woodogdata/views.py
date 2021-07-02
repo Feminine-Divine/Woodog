@@ -88,3 +88,7 @@ def contat_us_throughwebsite(request):
    except:
         return HttpResponse("Not submitted properly !")
   
+
+def blog(request):
+    return render(request,'woodogdata/blog.html')
+

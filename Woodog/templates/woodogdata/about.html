@@ -46,6 +46,59 @@
     .card-img2{
         width:100%;
     }
+    .img-box{
+        width: 578px;height:334px;background-color:#5A40AB;border-radius:18px;
+    }
+
+    @media screen and (max-width:375px) {
+        
+       .main-heading{
+            font-size: 24px;    
+        }
+        .container{
+            width:80%;
+            margin:10%;
+        }      
+        .text{
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .about-us-img{
+            margin-left:5%;
+            margin-left:5%;
+            margin-top:5%;
+            width:100%;
+        }
+        .img-box{
+            width: 90%;
+            height:90%;
+        }
+        .about-section-2, .about-section-3{
+            margin-top:0%;
+        }
+    }
+
+    
+    @media screen and (max-width:1000px) {
+        
+        .container{
+             width:80%;
+             margin:10%;
+        } 
+
+        .about-us-img{
+            margin-left:5%;
+            margin-left:5%;
+            margin-top:5%;
+            width:100%;
+        }
+        .img-box{
+            width: 90%;
+            height:90%;
+        }     
+      
+     }
+
 </style>
 
 
@@ -62,8 +115,8 @@
                     <br>This app will give the way to help those innocent.</p>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                <div class="img-box" style="width: 578px;height:334px;background-color:#5A40AB;border-radius:18px;">              
-                  <img class="about-us-img" style="margin-left:30px;margin-top:30px;"  src="{% static 'img/about-us-dog1.png' %}">
+                <div class="img-box" >              
+                  <img class="about-us-img"  src="{% static 'img/about-us-dog1.png' %}">
                 </div>
             </div>
         </div>

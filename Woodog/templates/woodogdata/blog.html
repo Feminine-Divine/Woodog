@@ -1,0 +1,173 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'partials/header.html' %}
+
+<style >
+    *,
+    *::before,
+    *::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 10px;
+    }
+    img{
+        width: 100%;
+    }
+    .body{
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1F163B;
+        padding: 0 1.5rem;
+        margin-bottom: 2%;
+    }
+    .blog-post{
+        width: 100%;
+        max-width: 98rem;
+        padding: 5rem;
+        background-color: #5A40AB;
+        box-shadow: 0 1.4rem 8rem rgba(12, 12, 12, 0.2);
+        display: flex;
+        align-items: center;
+        border-radius: 0.8rem;
+    }
+    .blog-post_img{
+        min-width: 35rem;
+        max-width: 35rem;
+        height: 30rem;
+        transform: translateX(-8rem);
+        position: relative;
+    }
+    .blog-post_img img{
+        width: 100%;
+        height:100% ;
+        object-fit: cover;
+        display: block;
+        border-radius: .8rem;
+    }
+    .blog-post_img::before{
+        width: 100%;
+        height:100% ;
+        position: relative;
+        top: 0;
+        left: 0;
+        
+    }
+    .blog-post_date span{
+        display: block;
+        color:#eee;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin: .5rem  0;
+
+    }
+    .blog-post_title{
+        font-size: 2.6rem;
+        color: rgb(8, 8, 8);
+        margin: 1.5rem 0 2rem;
+        text-transform: uppercase;
+    }
+    .blog-post_text{
+        margin-bottom: 3rem;
+        font-size:1.5rem ;
+        color: white;
+    }
+    .blog-post_cta{
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: #eee;
+        background-image: linear-gradient(to right, #021c33 0%, #003d41 100%);
+        border-radius: .9rem;
+        text-decoration: none;
+    }
+    .blog-post_cta:hover{
+        background-image: linear-gradient(to right,  #003d41 0%,#021c33 100%);
+        color: white;
+    }
+    @media screen and (max-width:1068px) {
+        .blog-post{
+            max-width: 80rem;
+            padding-bottom: 5%;
+        }
+        .blog-post_img{
+            min-width: 30rem;
+            max-width: 30rem;
+        }
+    }
+    @media screen and (max-width:868px) {
+        .blog-post{
+           max-width: 78rem;
+           padding-bottom: 5%;
+        }
+    }
+    @media screen and (max-width:768px) {
+        .body{
+            height: 800px;
+        }
+
+        .blog-post{
+            padding: 2.5rem;
+            flex-direction: column;
+            
+        }
+        .blog-post_img{
+            min-width: 100%;
+            max-width: 100%;
+            transform: translate(0, -8rem);
+        }
+    }
+</style>
+<div class="body">
+<div class="blog-post">
+    <div class="blog-post_img">
+        <img   src="{% static 'img/about-us-dog1.png' %}">
+    </div>
+    <div class="blog-post_info">
+        <div class="blog-post_date">
+            <span>Sunday</span>
+            <span>June 6 2021</span>
+        </div>
+        <h1 class="blog-post_title">Woodog</h1>
+        <p class="blog-post_text">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sed similique magni velit delectus cum quam perferendis quidem reiciendis. Praesentium saepe tenetur facilis necessitatibus vel ducimus tempora eum eveniet similique.
+        </p>
+        <a href="#" class="blog-post_cta">Read More</a>
+    </div>
+</div>
+</div>
+<div class="body">
+    <div class="blog-post">
+        <div class="blog-post_img">
+            <img   src="{% static 'img/about-us-dog1.png' %}">
+        </div>
+        <div class="blog-post_info">
+            <div class="blog-post_date">
+                <span>Sunday</span>
+                <span>June 6 2021</span>
+            </div>
+            <h1 class="blog-post_title">Woodog</h1>
+            <p class="blog-post_text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sed similique magni velit delectus cum quam perferendis quidem reiciendis. Praesentium saepe tenetur facilis necessitatibus vel ducimus tempora eum eveniet similique.
+            </p>
+            <a href="#" class="blog-post_cta">Read More</a>
+        </div>
+    </div>
+    
+    </div>
+
+
+{% include 'partials/footer.html' %}
+
+{% endblock content %}
+
+
