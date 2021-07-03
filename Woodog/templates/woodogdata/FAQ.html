@@ -1,0 +1,347 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'partials/header.html' %}
+
+<style>
+.body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #1F163B;
+  padding: 40px;
+}
+::selection{
+  background: #7d2ae8;
+  color: #fff;
+}
+.accordion{
+  display: flex;
+  max-width: 1010px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: #8540df;
+  border-radius: 25px;
+  padding: 45px 90px 45px 60px;
+}
+.accordion .image-box{
+  height: 560px;
+  width: 400px;
+}
+.accordion .image-box img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.accordion .accordion-text{
+  width: 60%;
+}
+.accordion .accordion-text .title{
+  font-size: 35px;
+  font-weight: 600;
+  color: #150d2e;
+  font-family: 'Fira Sans', sans-serif;
+}
+.accordion .accordion-text .faq-text{
+  margin-top: 25px;
+  height: 430px;
+  overflow-y: auto;
+}
+.faq-text::-webkit-scrollbar{
+  display: none;
+}
+.accordion .accordion-text li{
+  list-style: none;
+  cursor: pointer;
+}
+.accordion-text li .question-arrow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordion-text li .question-arrow .question{
+  font-size: 18px;
+  font-weight: 500;
+  color: #cfc4c4;
+  transition: all 0.3s ease;
+}
+.accordion-text li .question-arrow .arrow{
+  font-size: 20px;
+  color: #d3c1c1;
+  transition: all 0.3s ease;
+}
+.accordion-text li.showAnswer .question-arrow .arrow{
+  transform: rotate(-180deg);
+}
+.accordion-text li:hover .question-arrow .question,
+.accordion-text li:hover .question-arrow .arrow{
+  color: black;
+}
+.accordion-text li.showAnswer .question-arrow .question,
+.accordion-text li.showAnswer .question-arrow .arrow{
+  color: black;
+}
+.accordion-text li .line{
+  display: block;
+  height: 2px;
+  width: 100%;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.accordion-text li p{
+  width: 92%;
+  font-size: 15px;
+  font-weight: 500;
+  color: #d1bbbb;
+  display: none;
+}
+.accordion-text li.showAnswer p{
+  display: block;
+}
+.faq_btn{
+        display: inline-block;
+        padding: 1.5rem 3rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: #eee;
+        background-image: linear-gradient(to right, #021c33 0%, #003d41 100%);
+        border-radius: .9rem;
+        text-decoration: none;
+    }
+    .faq_btn:hover{
+        background-image: linear-gradient(to right,  #003d41 0%,#021c33 100%);
+        color: white;
+    }
+@media (max-width: 994px) {
+  body{
+    padding: 40px 20px;
+  }
+  .accordion{
+    max-width: 100%;
+    padding: 45px 60px 45px 60px;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 220px;
+  }
+  .accordion .accordion-text{
+    width: 63%;
+    height: 700px;
+  }
+  .accordion .accordion-text .faq-text{
+  margin-top: 25px;
+  height: 730px;
+  overflow-y: auto;
+}
+}
+@media (max-width: 820px) {
+  .accordion{
+    flex-direction: column;
+  }
+  .accordion .image-box{
+    height: 360px;
+    width: 300px;
+    background: #7d2ae8;
+    width: 100%;
+    border-radius: 25px;
+    padding: 30px;
+  }
+  .accordion .accordion-text{
+    width: 100%;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 538px) {
+  .accordion{
+    padding: 25px;
+  }
+  .accordion-text li p{
+    width: 98%;
+  }
+
+}
+
+</style>
+<div class="body">
+    <div class="accordion">
+        <div class="image-box">
+            <img src="{% static 'img/faq.svg' %}">
+        </div>
+        <div class="accordion-text">
+            <div class="title">Frequently Asked Questions(FAQs)</div>
+            <ul class="faq-text">
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">What the Color of Your Dog's Gums
+                            Mean?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>Every dog has gums surrounding their teeth, and these
+                        mucous
+                        membranes give us a lot of insight into the health of
+                        our
+                        pets. Acting primarily as a protective barrier, gums
+                        have a
+                        rich blood supply that gives them their distinctive pink
+                        color. <br>
+
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/what-does-the-color-of-your-dogs-gums-mean-4686101" target="__blank">Read
+                            More</a>
+
+                    </p>
+
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">Does My Dog Need Pet Insurance?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>Pet insurance helps protect you from paying enormous
+                        veterinary costs for your dog. There are a variety of
+                        coverage options out there, allowing you to select a
+                        plan
+                        that fits your budget and lifestyle.<br>
+
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/does-my-dog-need-pet-insurance-4685898" target="__blank">Read
+                            More</a>
+
+                    </p>
+
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">What is Skin Cancer in Dogs?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>Cancer develops when abnormal cells replicate in an
+                        uncontrolled manner. These abnormal cells grow and
+                        sometimes
+                        form tumors in the skin of a dog. These tumors can
+                        spread to
+                        distant parts of the body (metastasize), and some forms
+                        of
+                        skin cancer can be fatal, which is why it is so
+                        important to
+                        identify and treat them as soon as they are found.<br>
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/skin-cancer-in-dogs-4628142" target="__blank">Read
+                            More</a>
+
+                    </p>
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">What Is Ataxia in Dogs?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>A dog's four legs work in a coordinated manner to get him
+                        from point A to point B, but sometimes the legs don't
+                        work
+                        quite as they should or the central nervous system
+                        doesn't
+                        communicate properly with the head, body, or legs. This
+                        makes a dog wobble and have problems moving around.<br>
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/ataxia-in-dogs-4686102" target="__blank">Read
+                            More</a>
+
+                    </p>
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">How to Prevent Ataxia in Dogs ?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>There is, unfortunately, no way to ensure ataxia never
+                        occurs
+                        in a dog but you can decrease the likelihood of it
+                        occurring
+                        as a result of some diseases and toxicities. Preventing
+                        ear
+                        infections by regularly cleaning your dog's ears and
+                        keeping
+                        medications out of reach of your dog are two ways that
+                        you
+                        can help prevent these things from causing ataxia in a
+                        dog.<br>
+
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/ataxia-in-dogs-4686102" target="__blank">Read
+                            More</a>
+
+                    </p>
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">How To Safely Pet a Dog That
+                            Isn’t Yours ?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>Want to spread the love? In many cases, it’s perfectly
+                        fine
+                        to pet a dog that isn’t yours—but you’ll want to make
+                        sure
+                        to follow these general rules to ensure that both pet
+                        and
+                        pet parent are on board with it.<br>
+
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/why-dogs-like-being-pet-5121112" target="__blank">Read
+                            More</a>
+
+                    </p>
+                    <span class="line"></span>
+                </li>
+                <li>
+                    <div class="question-arrow">
+                        <span class="question">Why Some Dogs Don’t Like To Be
+                            Pet ?</span>
+                        <i class="bx bxs-chevron-down arrow"></i>
+                    </div>
+                    <p>Petting is not universally revered by all dogs. Some dogs
+                        don’t like being pet based purely on their personality
+                        and
+                        prefer other forms of social interaction with their
+                        humans.
+                        <br>
+
+                        <a class="faq_btn"
+                            href="https://www.thesprucepets.com/why-dogs-like-being-pet-5121112" target="__blank">Read
+                            More</a>
+
+                    </p>
+                    <span class="line"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<script>
+    let li = document.querySelectorAll(".faq-text li");
+    for (var i = 0; i < li.length; i++) {
+      li[i].addEventListener("click", (e)=>{
+        let clickedLi;
+        if(e.target.classList.contains("question-arrow")){
+          clickedLi = e.target.parentElement;
+        }else{
+          clickedLi = e.target.parentElement.parentElement;
+        }
+       clickedLi.classList.toggle("showAnswer");
+      });
+    }
+  </script>
+{% include 'partials/footer.html' %}
+
+{% endblock content %}

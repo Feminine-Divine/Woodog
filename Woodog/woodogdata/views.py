@@ -31,3 +31,6 @@ def gallery(request):
 def blog(request):
     return render(request,'woodogdata/blog.html')
 
+def faq(request):
+    return render(request,'woodogdata/faq.html')    
+
