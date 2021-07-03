@@ -1,6 +1,6 @@
 {% load static %}
 <style>
-  ::-webkit-scrollbar{
+    ::-webkit-scrollbar{
         width: 20px;
     }
     ::-webkit-scrollbar-thumb{
@@ -44,26 +44,127 @@
     .navbar-brand.logo {
       background: transparent;
     }
+    
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: #141414;
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 2rem;
+      margin-left:10%;
+      text-align: left;
+      color: #FAFAFA;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+
+    .overlay-top{
+      margin-bottom:60%;
+    }
+   
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+
+    @media screen and (max-device-width: 450px){
+      #login-navbtn2{
+        margin-left:70%;
+      }
+      #header{
+        margin-left:0%;
+        margin-right:2%;
+      }
+      #login-navbtn{
+        border:1px solid #5A40AB;
+        color:#FAFAFA;
+        padding:4% 8%;
+        border-radius:8px;
+        font-size:1.5rem;
+      }
+    }
+
+    
+    @media screen and (min-device-width:451px) and (max-device-width:986px) {
+      #header{
+        margin-left:10%;
+        margin-right:10%;
+      }
+    }
+    
+    #login-navbtn2{
+        border:1px solid #5A40AB;
+        color:#FAFAFA;
+        font-size: 2rem;
+        border-radius:8px;
+        width:25%;
+        height: auto;
+        text-align: center;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Nunito', sans-serif;
+      }
+      #login-navbtn2:hover{
+        background-color:#5A40AB;
+        color:#FAFAFA;
+      }
+
+
+    .copyrights2{
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: 'Nunito', sans-serif;
+        color:#FAFAFACC;
+        margin-bottom: 10%;
+    }
+
  
     
 </style>
 
-
  
 <nav id="header" class="navbar navbar-expand-lg">
-  <!-- <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 80px;"></a> -->
   <div class="container-fluid">
     <a class="navbar-brand logo" href="{% url 'woodogdata' %}"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 119px;"></a>
-    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" style="background-color:white"></span>
-      <div id="navbar-close" class="hidden">
-          <span class="glyphicon glyphicon-remove"></span>
-        </div>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'woodogdata' %}">Home</a>
+          <a class="nav-link" href="{% url 'woodogdata' %}">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}">About</a>
@@ -75,13 +176,53 @@
           <a class="nav-link" href="{% url 'blog' %}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'appdashboard' %}">Gallery</a>
+          <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'faq' %}">FAQs</a>
         </li>
       </ul>
 
       <a class="nav-link" id="sign-up" href="{% url "register" 'seeker' %}">Sign up</a>
-      <a class="btn" id="login-navbtn" type="submit" href="{% url 'login' %}">Login</a>
+     
+    </div>
+    <a class="btn" id="login-navbtn" type="submit" href="{% url "login" %}">Login</a>
+    <button class="navbar-toggler  navbar-light" style="background-color:white;" type="button"  onclick="openNav()">
+      <span class="navbar-toggler-icon "></span>
+   </button>
+  </div>
 
+</nav>
+
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a>
+  <div class="overlay-content">
+    <div class="overlay-top">
+      <a href="{% url 'woodogdata' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'blog' %}">Blog</a>
+      <a href="{% url 'appdashboard' %}">Gallery</a>
+    </div>
+    <div class="overlay-end">
+      <a  style="text-align: center;margin-left:0%;" href="{% url "register" 'seeker' %}">Sign up</a>
+      <a class="btn" id="login-navbtn2" type="submit" href="{% url "login" %}">Login</a>
+    </div>
+    <div class="row">
+      <p class="copyrights2">Woodog &copy <script>document.write(new Date().getFullYear())</script></p>
     </div>
   </div>
-</nav>
+</div>
+
+<script>
+
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+
+</script>
