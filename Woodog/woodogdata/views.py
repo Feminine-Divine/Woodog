@@ -25,8 +25,12 @@ def about(request):
 def contact(request):
     return render(request,'woodogdata/contact.html')
 
+def gallery(request):
+    return render(request,'woodogdata/gallery.html')
+
 def blog(request):
     return render(request,'woodogdata/blog.html')
 
 def faq(request):
     return render(request,'woodogdata/faq.html')    
+
