@@ -1,0 +1,78 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'partials/header.html' %}
+
+<style>
+    .gallery-container{
+        margin:10%;
+    }
+    .heading{
+        font-family: 'Poppins', sans-serif;
+        color:white;
+        font-size:36px;
+        margin-bottom: 8%;
+        text-align: center;
+    }
+    img{
+        margin-bottom:5%;
+    }
+
+</style>
+
+
+<div class="gallery-container">
+    <p class="heading">Gallery</p>
+    <div class="row"> 
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img1.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img2.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img3.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img4.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img5.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img6.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img7.jpeg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img8.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img9.jpg'%}" style="width:100%">
+          <img data-aos="flip-up" src="{% static 'img/gallery/img10.jpg '%}" style="width:100%">
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img11.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img12.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img13.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img14.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img15.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img16.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img17.webp'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img18.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img19.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img20.jpg'%}" style="width:100%">
+        </div>  
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img21.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img22.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img23.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img24.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img25.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img26.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img27.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img28.jpg' %}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img29.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img30.jpg'%}" style="width:100%">
+            <img data-aos="flip-up" src="{% static 'img/gallery/img31.jpg'%}" style="width:100%">
+
+        </div>
+      </div>
+
+</div>
+
+<script>
+    AOS.init();
+</script>
+
+{% include 'partials/footer.html' %}
+
+{% endblock content %}
+
+
