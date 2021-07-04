@@ -192,4 +192,6 @@ class ChangePasswordView(TemplateView):
                 user.save()
                 auth.login(request, user)
                 return redirect('woodogdata')
-    
+
+def Forget_Password(request):
+    return render(request,'authentication/forget_password.html')    
