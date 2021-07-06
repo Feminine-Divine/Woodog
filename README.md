@@ -286,6 +286,37 @@ git push origin '<your_branch_name>'
 </table>
     <hr>
 
+### Levels & Points
+
+<table>
+  <tr>
+    <th>Level</th>
+    <th>Points</th> 
+  </tr>
+  <tr>
+    <td>Level 0</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Level 1</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>Level 2</td>
+    <td>15</td>
+  </tr>
+  <tr>
+    <td>Level 3</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>Level 4</td>
+    <td>45</td>
+  </tr>
+</table>
+
+<hr>
+
   ## Our Project Admins 🤓 
 
 <br>
@@ -321,3 +352,5 @@ git push origin '<your_branch_name>'
     
 </a>
 </p>
+
+>## Happy Contribution ✨
