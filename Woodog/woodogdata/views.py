@@ -34,3 +34,5 @@ def blog(request):
 def faq(request):
     return render(request,'woodogdata/faq.html')    
 
+def service(request):
+    return render(request,'woodogdata/service.html') 
