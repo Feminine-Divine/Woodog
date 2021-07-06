@@ -1,0 +1,96 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %}
+{% include 'partials/header.html' %} 
+ <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        *{
+          
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;     
+        }
+        .box{
+            padding-top: 150px;
+        }
+    </style> 
+  </head> {% endcomment %}
+  <body>
+    <div class="box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-12 mx-auto">
+                    <form method="post" id="formdata">
+                        <div class="form-group">
+                        
+                          <label for="">Name:{{msg2}}</label>
+                            <input type="text" class="form-control" placeholder="Enter name" id="name" name="name" required>
+                          </div>
+                        <div class="form-group">
+                          <label for="email">Email address:</label>
+                          <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" required>
+                        </div>
+                                                <div class="form-group">
+                          <label for="email">Email contact Number:</label>
+                          <input type="text" class="form-control" placeholder="Enter Contact No" maxlength="10"  id="contact_no" name="contact_no" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="text">Email Message:</label>
+                          <input type="text" class="form-control" placeholder="Enter message" id="message" name="message" required>
+                        </div>
+                      
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>     
+                <br>     
+              </div>
+        </div>
+    </div>
+<br>
+<br>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+       jQuery('#formdata').on('submit',function(e){
+        e.preventDefault();
+        var formData = {
+      name: $("#name").val(),
+      email: $("#email").val(),
+      contact_no: $("#contact_no").val(),
+      message: $("#message").val(),
+     
+    };
+    console.log(formData);
+           jQuery.ajax({
+               url:'http://127.0.0.1:8000/contact_usw/',
+               type:'post',
+               //data: formData
+               data: JSON.stringify(formData),
+               dataType: "json",
+               success:function(resp){
+                   window.location.href="woodogdata/contact_us.html"
+                   console.log(resp);
+                   console.log('request is working ')
+               }
+           })
+       })
+
+    </script>
+{% include 'partials/footer.html' %}
+
+{% endblock content%}

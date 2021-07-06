@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from authentication.models import User_status
 from django.utils import timezone
 
-# Create your models here.
+# Create your models here
 
 # Seekers posting condition
 class Seeker_Post(models.Model):
@@ -30,3 +30,14 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-timestamp']
+        
+# For Contact Us Form
+class ContactModel(models.Model):
+    name=models.CharField(max_length=60,default='name')
+    email=models.CharField(max_length=60,default='mail')
+    contact_no=models.CharField(max_length=12,default='number bro ')
+    message=models.TextField(max_length=500,default='message!')
+
+    def __str__(self):
+        return str(self.name)
+
