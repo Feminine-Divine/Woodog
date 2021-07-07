@@ -4,16 +4,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-    <tittle>Woodog</tittle>
-    {% comment %} <title>Woodog {% block title %}
-    {% endblock %} </title> {% endcomment %}
-=======
     <title>Woodog {% block title %}
     {% endblock %} </title>
     <!--Favicon-->
     <link rel="shortcut icon" href="{% static 'img/favicon.png' %}" />
->>>>>>> d98ff40ce3abff4410dd434228ea4ce5bc49b0b2
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" >
@@ -44,7 +38,11 @@
   </head>
 <body>
 
-<<<<<<< HEAD
+  <a style="padding:10px;display:block;" href="feedback.html" target="_blank"></a>
+  
+  <a href="feedback.html" class="float">
+  <i class="fa fa-plus my-float"></i>
+  </a>
  
 <nav id="header" class="navbar navbar-expand-lg">
   <!-- <a class="navbar-brand logo" href="#"><img src="{% static 'img/woodog-logo1.png' %}" style="width: 80px;"></a> -->
@@ -86,8 +84,6 @@
 
 
 
-=======
->>>>>>> d98ff40ce3abff4410dd434228ea4ce5bc49b0b2
   {% block content %}
 
   {% endblock %}
