@@ -13,15 +13,38 @@
     }
   
     #header{
-      margin:60px 120px;
+      margin:5% 5%;
       background-color: #1F163B;
       font-family: 'Nunito', sans-serif;
     }
+    .dropdown-item:focus{
+      background-color:#C9B8E9;
+      color: #1F163B;
+    }
+    .dropdown-item:active{
+      background-color:#C9B8E9;
+      color: #1F163B;
+    }
+
     .nav-link{
         font-size:18px;
         line-height:24.55px;
         color:#FAFAFA;
         margin-left:45px;
+    }
+    .dropdown-item{
+        font-size:18px;
+        color:#FAFAFA;
+        background-color: #1F163B;
+        margin-left:0px;
+        margin:5% 0% 5% 0%;
+        padding-top:5%;
+        padding-bottom: 5%;
+        border:1px solid #5A40AB;
+    }
+    .dropdown-menu{
+      background-color:#1F163B;
+      margin-left:45px;
     }
     .nav-link:hover{
         color:#5A40AB;
@@ -170,9 +193,6 @@
           <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'service' %}">Services</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="{% url 'contact' %}">Contact</a>
         </li>
         <li class="nav-item">
@@ -181,8 +201,15 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'faq' %}">FAQs</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'faq' %}">FAQs</a></li>
+            <li> <a class="dropdown-item" href="{% url 'service' %}">Services</a></li>
+            <li> <a class="dropdown-item" href="">Feedback</a></li>
+          </ul>
         </li>
       </ul>
 
