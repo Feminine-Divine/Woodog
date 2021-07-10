@@ -41,6 +41,16 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'navbar-top-fixed.css' %}" rel="stylesheet">
+    <style>
+      df-messenger {
+       --df-messenger-bot-message: #5A40AB;
+       --df-messenger-button-titlebar-color: #5A40AB;
+       --df-messenger-chat-background-color: #C9B8E9;
+       --df-messenger-font-color: white;
+       --df-messenger-send-icon: #878fac;
+       --df-messenger-user-message: #473C5F;
+      }
+    </style> 
   </head>
 <body>
 
@@ -95,5 +105,14 @@
 
   <script src="{% static 'js/main.js' %}" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
   <script src="{% static 'js/bootstrap-auto-dismiss-alert.js' %}" ></script>
-  </body>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-icon="https://img.icons8.com/ios-glyphs/36/000000/speech-bubble-with-dots.png"
+    chat-title="Woodog Assistant"
+    agent-id="e387cc1f-dc7f-426e-9cf4-c3299dc6d5b2"
+    language-code="en"
+  ></df-messenger>
+</script>  
+</body>
 </html>
