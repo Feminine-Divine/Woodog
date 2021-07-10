@@ -166,8 +166,14 @@
         background-color:#5A40AB;
         color:#FAFAFA;
       }
+    .overlay-link{
+      background-color:#141414;
+    }
 
-
+    .overlay-menu{
+      background-color:#141414;
+      margin-left:45px;
+    }
     .copyrights2{
         text-align: center;
         font-size: 1.5rem;
@@ -234,7 +240,14 @@
       <a href="{% url 'contact' %}">Contact</a>
       <a href="{% url 'blog' %}">Blog</a>
       <a href="{% url 'gallery' %}">Gallery</a>
-      <a href="{% url 'faq' %}">FAQs</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        More
+      </a>
+      <ul class="dropdown-menu overlay-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li><a class="dropdown-item overlay-link" href="{% url 'faq' %}">FAQs</a></li>
+        <li> <a class="dropdown-item overlay-link" href="{% url 'service' %}">Services</a></li>
+        <li> <a class="dropdown-item overlay-link" href="">Feedback</a></li>
+      </ul>    
     </div>
     <div class="overlay-end">
       <a  style="text-align: center;margin-left:0%;" href="{% url "register" 'seeker' %}">Sign up</a>
