@@ -6,7 +6,6 @@ __pycache__
 virtual
 db.sqlite3
 /static
-migrations/
 .DS_Store
 env/
 myenv/

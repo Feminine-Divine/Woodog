@@ -34,17 +34,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'woodogdata.apps.WoodogdataConfig',
+    'woodogdata',
     'authentication',
     'appdashboard',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
