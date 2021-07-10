@@ -9,6 +9,7 @@ urlpatterns = [
     path('register/<str:type_of>',RegistrationView.as_view(), name='register'),
     path('login',LoginView.as_view(), name='login'),
     path('logout',LogoutView.as_view(), name='logout'),
+    path('forget',views.Forget_Password, name='forget'),
     path("validate-username", csrf_exempt(UsernameValidationView.as_view()), 
     name="validate-username"),
     path('validate-email', csrf_exempt(EmailValidationView.as_view()), 

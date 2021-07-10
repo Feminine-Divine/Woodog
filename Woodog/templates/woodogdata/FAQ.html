@@ -5,11 +5,10 @@
 {% include 'partials/header.html' %}
 
 <style>
-.body{
+.faq-body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
   background: #1F163B;
   padding: 40px;
 }
@@ -23,12 +22,12 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  background: #8540df;
+  background: #C9B8E9;
   border-radius: 25px;
   padding: 45px 90px 45px 60px;
 }
 .accordion .image-box{
-  height: 560px;
+  height: auto;
   width: 400px;
 }
 .accordion .image-box img{
@@ -65,12 +64,12 @@
 .accordion-text li .question-arrow .question{
   font-size: 18px;
   font-weight: 500;
-  color: #cfc4c4;
+  color: #652C57;
   transition: all 0.3s ease;
 }
 .accordion-text li .question-arrow .arrow{
   font-size: 20px;
-  color: #d3c1c1;
+  color: #652C57;
   transition: all 0.3s ease;
 }
 .accordion-text li.showAnswer .question-arrow .arrow{
@@ -95,7 +94,7 @@
   width: 92%;
   font-size: 15px;
   font-weight: 500;
-  color: #d1bbbb;
+  color: #652C57;
   display: none;
 }
 .accordion-text li.showAnswer p{
@@ -108,16 +107,17 @@
         text-transform: uppercase;
         font-size: 1.2rem;
         color: #eee;
-        background-image: linear-gradient(to right, #021c33 0%, #003d41 100%);
+        margin:2%;
+        background-image: linear-gradient(to right, #00618d 0%, #9c7fe8 100%);
         border-radius: .9rem;
         text-decoration: none;
     }
     .faq_btn:hover{
-        background-image: linear-gradient(to right,  #003d41 0%,#021c33 100%);
+        background-image: linear-gradient(to right,  #9c7fe8 0%,#00618d 100%);
         color: white;
     }
-@media (max-width: 994px) {
-  body{
+@media (max-width: 821px) {
+  .faq-body{
     padding: 40px 20px;
   }
   .accordion{
@@ -125,7 +125,7 @@
     padding: 45px 60px 45px 60px;
   }
   .accordion .image-box{
-    height: 360px;
+    height: auto;
     width: 220px;
   }
   .accordion .accordion-text{
@@ -133,19 +133,18 @@
     height: 700px;
   }
   .accordion .accordion-text .faq-text{
-  margin-top: 25px;
-  height: 730px;
-  overflow-y: auto;
-}
+    margin-top: 25px;
+    height: 730px;
+    overflow-y: auto;
+  }
 }
 @media (max-width: 820px) {
   .accordion{
     flex-direction: column;
   }
   .accordion .image-box{
-    height: 360px;
+    height:auto;
     width: 300px;
-    background: #7d2ae8;
     width: 100%;
     border-radius: 25px;
     padding: 30px;
@@ -153,8 +152,10 @@
   .accordion .accordion-text{
     width: 100%;
     margin-top: 30px;
+    overflow-y: auto;
   }
 }
+
 @media (max-width: 538px) {
   .accordion{
     padding: 25px;
@@ -162,11 +163,14 @@
   .accordion-text li p{
     width: 98%;
   }
+  .accordion .accordion-text .faq-text{
+    overflow-y: auto;
+  }
 
 }
 
 </style>
-<div class="body">
+<div class="faq-body">
     <div class="accordion">
         <div class="image-box">
             <img src="{% static 'img/faq.svg' %}">
