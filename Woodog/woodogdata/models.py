@@ -30,3 +30,17 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ['-timestamp']
+
+#Models for adding pictures to gallery page
+class Gallery(models.Model):
+    tag=models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images')
+    title=models.CharField(max_length=100)
+    uploading_date = models.DateTimeField(default=timezone.now)
+
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-uploading_date']
