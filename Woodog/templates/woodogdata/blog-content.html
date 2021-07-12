@@ -1,0 +1,370 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'partials/header.html' %}
+
+<style>
+    .blog-content{
+        margin:8%;
+        font-family: 'Nunito',sans-serif;
+    }
+    .blog-img{
+        width: 100%;
+        border-radius:18px;
+        margin-bottom:5%;
+    }
+    .content{
+        border-radius: 16px;
+        background-color: #C9B8E9;
+        padding:8%;
+    }
+    .tag{
+        background-color: #5A40AB;
+        color:white;
+        width: 20%;
+        padding:8px 10px 8px 10px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .post-details{
+        display: inline-block;
+        font-size: 1.5rem;
+        width:15%;
+    }
+    .blog-text{
+        font-size: 1.8rem;
+        margin-top:2%;
+        color:#652C57;
+        font-weight: 600;
+
+    }
+    .main-heading{
+        font-family: 'Poppins', sans-serif;
+        font-size:36px;
+        margin:2.5% 0%;
+        color:hsla(250, 31%, 16%, 1);
+    }
+    .post-icons{
+        margin-right: 5%;
+    }
+    .prev-btn{
+        background-color: #5A40AB;
+        color:white;
+        padding:4%;
+        width: 80%;
+        margin-top:2%;
+        font-size: 1.5rem;
+    }
+    .next-btn{
+        background-color: #5A40AB;
+        color:white;
+        padding:4%;
+        width: 80%;
+        text-align: right;
+        margin-top:2%;
+        font-size: 1.5rem;
+    }
+    .btn-text , .btn-icon{
+        display: inline-block;
+        margin:5%;
+    }
+
+    .post-comments{
+        margin: 5%;
+        border-radius: 16px;
+        border:3px solid #5A40AB;
+    }
+
+    .input-field{
+        margin-top:20px;
+        height: 58px;
+        font-size: 18px;
+        margin-bottom:40px;
+        border: 1px solid #5A40AB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: #1F163B;
+        color:white;
+        width:433px;
+    }
+
+    .heading{
+        font-family: 'Poppins', sans-serif;
+        color:white;
+        font-size: 36px;
+        line-height: 54px;
+        margin-top:5%;
+        text-align: center;
+    }
+    
+    .label{
+        color: #FAFAFA;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .btn-send{
+        margin-top: 59px;
+        background-color:  #5A40AB;
+        align-items: center;
+        padding: 16px 45px;
+        width: 535px;
+        font-size: 18px;
+        color: #FFFFFF;
+        height: 57px;
+        margin-left:20%;
+        margin-bottom:10px;
+    }
+    
+    .input-field-msg{
+        margin-top:20px;
+        height: 185px;
+        font-size: 18px;
+        margin-bottom:40px;
+        border: 1px solid #5A40AB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: #1F163B;
+        color:white;
+       
+    }
+
+    .text{
+        font-size:18px;
+        line-height:38.06px;
+        color:hsla(0, 0%, 98%, 0.8);
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .comments-form{
+       margin-top:2%;
+       padding:5%;
+    }
+
+    .comments{
+        margin:10%;
+    }
+    .comment-div{
+        margin:5% 0%;
+    }
+
+    .comment-text{
+        color: #FAFAFA;
+        margin-left:8%;
+        font-size: 18px;
+        font-family: 'Nunito', sans-serif;
+    }
+    
+    .author-Name{
+        color:hsla(261, 53%, 82%, 1);
+        font-size: 24px;
+        margin-left:2%;
+        display: inline-block;
+    }
+
+@media screen and (max-device-width: 375px) {
+
+    .btn-send{
+        margin-left:0px;
+        width:100%;
+        padding:5px;
+        height: 39px;
+        font-size: 13px;
+    }
+    .post-details{
+        display:list-item;
+        font-size: 1.5rem;
+        width:100%;
+        margin:1%;
+        list-style: none;
+    }
+    .label{
+        margin-left: 0px;
+        font-size: 14px;
+    }
+
+    .tag{
+        width: 30%;
+        padding:6px 6px 6px 6px;
+        font-size: 1rem;
+    }
+
+    .next-btn,.prev-btn{
+        width: 30%;
+        padding:6px 6px 6px 6px;
+        font-size: 1rem;
+    }
+
+    .comment-text{
+        color: #FAFAFA;
+        margin-left:8%;
+        font-size: 1.2rem;
+        font-family: 'Nunito', sans-serif;
+    }
+
+    .btn-text , .btn-icon{
+        margin:1%;
+    }
+    
+    .author-Name{
+        color:hsla(261, 53%, 82%, 1);
+        font-size: 16px;
+        margin-left:2%;
+        display: inline-block;
+    }
+    .text{
+        font-size: 14px;
+        margin-right: 12px;
+        text-align: center;
+    }
+    .input-field{
+        width:100%;
+        height: 39px;
+        margin-top:8px;
+        margin-bottom:15px;
+    }  
+    .input-field-msg{
+        width:100%;
+        margin-top:8px;
+        margin-bottom:15px;
+    }  
+    .heading{
+        font-size: 24px;    
+    }
+    .comment-profile{
+        width:10%;
+        height: 10%;
+    }
+    .btn-icon{
+        width:25%;
+        height: 25%;
+    }
+    .comment-div{
+        margin:12% 0%;
+    }
+}
+
+@media screen and (max-device-width: 1000px) {
+
+    .btn-send{
+        margin-left:0px;
+        width:100%;
+    }
+    .input-field,.input-field-msg{
+        width:100%;
+    }
+    .label{
+        margin-left: 0px;
+    }
+    .post-details{
+        font-size: 1.5rem;
+        width:100%;
+        margin:1%;
+    }
+
+} 
+
+</style>
+
+<div class="blog-content">
+    <div class="blog">
+        <div class="content">
+            <img class="blog-img" src="{% static 'img/dog-main.jpg' %}" alt="">
+            <div class="tag">
+                <p>Dog Care</p>
+            </div>
+            <div class="div1">
+                <p class="main-heading">Lorem Ipsum is simply dummy text</p>
+                <div class="blog-post_date">
+                    <ul>
+                        <li class="post-details"><img class="post-icons" src="{% static 'img/profile -blog.svg' %}">Woodog</li>
+                        <li class="post-details"><img class="post-icons" src="{% static 'img/calendar-blog.svg' %}">05 April,2021</li>
+                        <li class="post-details"><img class="post-icons" src="{% static 'img/comment-blog.svg' %}">8 comments</li>
+                    </ul>
+                </div>
+                <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
+                    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
+                    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-3 col-sm-3 col-md-3">
+                    <div class="prev-btn">
+                        <img src="{% static 'img/prev-post.svg' %}" class="btn-icon">
+                        <p class="btn-text">Prev Post</p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-sm-6 col-md-6"></div>
+                <div class="col-12 col-lg-3 col-sm-3 col-md-3">
+                    <div class="next-btn">
+                        <p class="btn-text">Next Post</p>
+                        <img src="{% static 'img/next-post.svg' %}" class="btn-icon">
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+    <div class="comments">
+        <p class="text">09 Comments</p>
+        <div class="comment-div">
+            <img class="comment-profile" src="{% static 'img/comment-profile.svg' %}">
+            <p class="author-Name">Emily</p>
+            <p class="comment-text">December 12,2021 at  4.15pm</p>
+            <p class="comment-text">Lorem ipsum is simply a dummy text</p>
+        </div>
+        <div class="comment-div">
+            <img class="comment-profile" src="{% static 'img/comment-profile.svg' %}">
+            <p class="author-Name">Emily</p>
+            <p class="comment-text">December 12,2021 at  4.15pm</p>
+            <p class="comment-text">Lorem ipsum is simply a dummy text</p>
+        </div>
+        <div class="comment-div">
+            <img class="comment-profile" src="{% static 'img/comment-profile.svg' %}">
+            <p class="author-Name">Emily</p>
+            <p class="comment-text">December 12,2021 at  4.15pm</p>
+            <p class="comment-text">Lorem ipsum is simply a dummy text</p>
+        </div>
+    </div>
+    <div class="post-comments">
+        <p class="heading">Post Comments</p>
+        <form  action="{% url 'blog_content' %}" method="post" class="comments-form">
+        {% csrf_token %}
+        {% include 'partials/_messages.html' %}
+    
+            
+            <div class="row">
+                <div class="col-12 col-lg-6 col-sm-12 col-md-6">
+                    <div class="form-group" >
+                        <label for="name" class="label">Name</label>
+                        <input type="text" class="form-control input-field" name="name" id="name">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <label for="email" class="label">Email</label>
+                        <input type="email" class="form-control input-field" name="email" id="email">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+            <label for="message" class="label">Message</label>
+            <textarea class="form-control input-field-msg" id="message" value="message" rows="3"></textarea>
+            </div>   
+            <div class="form-group">
+                <button type="submit" class="btn btn-send">Post Comment</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% include 'partials/footer.html' %}
+
+{% endblock content %}
+
+
