@@ -34,17 +34,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'woodogdata.apps.WoodogdataConfig',
+    'woodogdata',
     'authentication',
     'appdashboard',
-    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +143,7 @@ MESSAGE_TAGS = {
 }
 
 #email stuff
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'femininedivine591@gmail.com'
 EMAIL_USE_TLS = True
