@@ -10,5 +10,5 @@ urlpatterns = [
     path('faq/', views.faq, name='faq'),
     path('service/', views.service, name='service'),
     path('blog_content/', views.blog_content, name='blog_content'),
-
+    path('feedback/',views.feedback,name='feedback'),
 ]
