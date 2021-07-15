@@ -1,5 +1,6 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
  
 {% include 'partials/header.html' %}
@@ -144,6 +145,8 @@
             <button type="submit" class="btn btn-login">Login</button>
             <small class="form-text"><a id="btn-text" href="{% url 'woodogdata'  %}">Need an account?</a></small>
         </div>
+        <a href="{% provider_login_url 'google' %}">Login with Google</a>
+
     </form>
 </div>
 
