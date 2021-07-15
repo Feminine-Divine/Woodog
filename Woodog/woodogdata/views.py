@@ -39,3 +39,7 @@ def service(request):
 
 def blog_content(request):
     return render(request,'woodogdata/blog-content.html') 
+
+
+def feedback(request):
+    return render(request,'woodogdata/feedback.html') 
