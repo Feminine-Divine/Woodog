@@ -1,5 +1,6 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
 
 {% include 'partials/header.html' %}
@@ -58,6 +59,22 @@
   margin-left:290px;
   font-size: 18px;
   text-decoration: none; 
+}
+.social-media-login{
+  margin-top: 5%;
+}
+.icons{
+  background-color:black;
+  border-radius: 50%;
+  width:60px;
+  display: inline-block;
+  padding:18px;
+  margin-left: 5%;
+  height:60px;
+}
+.icons:hover{
+  border:3px solid #dd4b39;
+  background-color:white;
 }
 @media screen and (max-device-width: 375px) {
 
@@ -156,6 +173,10 @@
             <button type="submit" class="btn account-btn">Create Account as {{txt}}</button>
             <small class="form-text"><a id="btn-text" href="{% url 'login' %}">Already have an account?</a></small>
         </div>
+        <div class="social-media-login">
+          <p class="label" style="display: inline-block;"> Or login using</p>
+          <div class="icons"><a href="{% provider_login_url 'google' %}"><img class="google-icon" src="{% static 'img/google-plus.svg' %}"></a></div>            
+        </div>  
     </form>
 </div>
 
