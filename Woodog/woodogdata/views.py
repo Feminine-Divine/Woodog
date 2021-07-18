@@ -36,3 +36,10 @@ def faq(request):
 
 def service(request):
     return render(request,'woodogdata/service.html') 
+
+def blog_content(request):
+    return render(request,'woodogdata/blog-content.html') 
+
+
+def feedback(request):
+    return render(request,'woodogdata/feedback.html') 
