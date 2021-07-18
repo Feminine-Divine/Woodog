@@ -17,14 +17,18 @@ from django import urls
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from froala_editor import views
 from django.conf import settings
 from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('',include('woodogdata.urls')),
     path('authentication/',include('authentication.urls')),
     path('dashboard/',include('appdashboard.urls')),
     path('admin/', admin.site.urls),
+    path('froala_editor/',include('froala_editor.urls'))
+
 ]
 
 if settings.DEBUG:
