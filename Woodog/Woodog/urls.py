@@ -17,6 +17,10 @@ from django import urls
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from froala_editor import views
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('',include('woodogdata.urls')),
@@ -24,4 +28,8 @@ urlpatterns = [
     path('dashboard/',include('appdashboard.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('froala_editor/',include('froala_editor.urls'))
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
