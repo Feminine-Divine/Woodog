@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'woodogdata',
     'authentication',
     'appdashboard',
-    'froala_editor'
 ]
 
 MIDDLEWARE = [

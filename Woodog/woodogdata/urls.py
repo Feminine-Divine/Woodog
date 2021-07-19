@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import *
 
 urlpatterns = [
     path('', views.index, name='woodogdata'),
@@ -9,6 +10,6 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('faq/', views.faq, name='faq'),
     path('service/', views.service, name='service'),
-    path('blog_content/', views.blog_content, name='blog_content'),
+    path('blog_content/<slug>', views.blog_content, name='blog_content'),
     path('feedback/',views.feedback,name='feedback'),
 ]

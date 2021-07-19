@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from .models import BlogModel
 
 # Create your views here.
 
@@ -29,7 +30,13 @@ def gallery(request):
     return render(request,'woodogdata/gallery.html')
 
 def blog(request):
-    return render(request,'woodogdata/blog.html')
+    context = {'trending_first':BlogModel.objects.all().filter(tag='trending_first'),
+    'trending' : BlogModel.objects.all().filter(tag='trending'),
+    'latest':BlogModel.objects.all().filter(tag='latest'),
+    'editor1':BlogModel.objects.all().filter(tag='editor1'),
+    'editor2':BlogModel.objects.all().filter(tag='editor2'),
+    'popular':BlogModel.objects.all().filter(tag='popular')}
+    return render(request , 'woodogdata/blog.html' , context)
 
 def faq(request):
     return render(request,'woodogdata/faq.html')    
@@ -37,9 +44,14 @@ def faq(request):
 def service(request):
     return render(request,'woodogdata/service.html') 
 
-def blog_content(request):
-    return render(request,'woodogdata/blog-content.html') 
-
+def blog_content(request,slug):
+    context = {}
+    try:
+        blog_obj = BlogModel.objects.filter(slug = slug).first()
+        context['blog_obj'] =  blog_obj
+    except Exception as e:
+        print(e)
+    return render(request,'woodogdata/blog_content.html',context)
 
 def feedback(request):
     return render(request,'woodogdata/feedback.html') 
