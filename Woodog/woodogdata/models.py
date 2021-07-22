@@ -42,21 +42,22 @@ class BlogModel(models.Model):
     slug=models.SlugField(max_length=1000,null=True,blank=True)
     image=models.ImageField(upload_to='Media')
     created_date_time=models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = Generate_slug(self.title)
+        super(BlogModel, self).save(*args, **kwargs)
+
+    
     
 #Models for adding pictures to gallery page
 class Gallery(models.Model):
-    tag=models.CharField(max_length=100)
+    tag=models.IntegerField()
     image = models.ImageField(upload_to='images')
     title=models.CharField(max_length=100)
     uploading_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
-
-
-    def save(self, *args, **kwargs):
-        self.slug = Generate_slug(self.title)
-        super(BlogModel, self).save(*args, **kwargs)
 
     class Meta:
         ordering = ['-uploading_date']

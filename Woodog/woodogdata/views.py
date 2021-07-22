@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-
+from .models import Gallery
 # Create your views here.
 
 # @login_required(login_url='/authentication/login')
@@ -26,7 +26,17 @@ def contact(request):
     return render(request,'woodogdata/contact.html')
 
 def gallery(request):
-    return render(request,'woodogdata/gallery.html')
+    gallery = Gallery.objects.all()
+    gallery_dict = {}
+    gallery_title = {}
+
+    for img in gallery:
+        if img.tag not in gallery_dict.keys():
+            gallery_dict[img.tag] = []
+        gallery_dict[img.tag].append(img)
+    print(gallery_dict)
+    context = {'gallery_dict': gallery_dict}
+    return render(request,'woodogdata/gallery.html',context)
 
 def blog(request):
     return render(request,'woodogdata/blog.html')
