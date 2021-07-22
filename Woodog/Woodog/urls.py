@@ -27,8 +27,8 @@ urlpatterns = [
     path('authentication/',include('authentication.urls')),
     path('dashboard/',include('appdashboard.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('froala_editor/',include('froala_editor.urls'))
-
 ]
 
 if settings.DEBUG:
