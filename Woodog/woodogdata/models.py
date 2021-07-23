@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from authentication.models import User_status
 from django.utils import timezone
-from froala_editor.fields import FroalaField
 from woodogdata.helpers import *
 
 # Create your models here.
@@ -34,10 +33,19 @@ class Comment(models.Model):
         ordering = ['-timestamp']
 
 #Model for Blog
+
+TAG_CHOICES = (
+    ('trending','trending'),
+    ('latest', 'latest'),
+    ('editor1','editor1'),
+    ('editor2','editor2'),
+    ('popular','popular'),
+)
+
 class BlogModel(models.Model):
     title=models.CharField(max_length=1000)
-    content = FroalaField()
-    tag=models.CharField(max_length=100)
+    content = models.TextField()
+    tag=models.CharField(max_length=100,choices=TAG_CHOICES,default="latest")
     user=models.ForeignKey(User,blank=True,null=True,on_delete=models.CASCADE)
     slug=models.SlugField(max_length=1000,null=True,blank=True)
     image=models.ImageField(upload_to='Media')
