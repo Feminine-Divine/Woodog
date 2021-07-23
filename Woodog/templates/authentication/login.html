@@ -1,5 +1,6 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
  
 {% include 'partials/header.html' %}
@@ -92,6 +93,21 @@
 .login-img{
   width: 100%;
 }
+.social-media-login{
+  margin-top: 5%;
+}
+.icons{
+  background-color:black;
+  border-radius: 50%;
+  width:60px;
+  padding:18px;
+  height:60px;
+}
+.icons:hover{
+  border:3px solid #dd4b39;
+  background-color:white;
+}
+
 @media screen and (max-device-width: 375px) {
 
   .btn-login{
@@ -131,6 +147,13 @@
       margin-bottom:20%;
       width:90%;
     }
+    .register-here{
+      align-items: center;
+      color: #FFFFFF;
+      padding: 10px;
+      height: 39px;
+      font-size: 13px;
+    }
 }
 
 @media screen and (max-device-width:766px) {
@@ -159,6 +182,8 @@
 }
 </style>
 
+{% include 'partials/_messages.html' %}
+
 <div class="login-card">
   <div class="row">
     <div class="col-lg-6 col-12 col-md-6 col-sm-12">
@@ -174,7 +199,6 @@
       <div class="login-container col-lg-12" >
         <form style="margin-top:80px;" action="{% url 'login' %}" method="post">
           {% csrf_token %}
-          {% include 'partials/_messages.html' %}
       
             <div class="form-group" >
                 <label for="username" class="label">Username</label>
@@ -190,8 +214,11 @@
             </div>        
             <div class="form-group">
                 <button type="submit" class="btn btn-login">Login</button>
-                <br>
-            </div>
+            </div>  
+            <div class="social-media-login">
+                <p class="label"> Or login using</p>
+                <div class="icons"><a href="{% provider_login_url 'google' %}"><img class="google-icon" src="{% static 'img/google-plus.svg' %}"></a></div>            
+            </div>          
           </form>
         </div>
       </div>

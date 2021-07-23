@@ -35,7 +35,7 @@ class Comment(models.Model):
 
 #Models for adding pictures to gallery page
 class Gallery(models.Model):
-    tag=models.CharField(max_length=100)
+    tag=models.IntegerField()
     image = models.ImageField(upload_to='images')
     title=models.CharField(max_length=100)
     uploading_date = models.DateTimeField(default=timezone.now)
@@ -66,4 +66,3 @@ class BlogModel(models.Model):
     def save(self , *args, **kwargs): 
         self.slug = generate_slug(self.title)
         super(BlogModel, self).save(*args, **kwargs)
-    
