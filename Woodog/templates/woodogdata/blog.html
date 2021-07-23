@@ -27,7 +27,8 @@
         color:hsla(250, 31%, 16%, 1);
     }
     .carousel-img{
-        margin:34px;
+        margin:5%;
+        width:80%;
     }
     .carousel-heading{
         font-family: 'Poppins', sans-serif;
@@ -37,9 +38,10 @@
     }
     
     .blog-text{
-        margin-left:64px;
+        margin-left:0%;
         margin-top:2%;
         margin-bottom:2%;
+        width:85%;
     }
     .carousel-text{
         font-size: 18px;
@@ -67,9 +69,10 @@
         margin-bottom:10%;
     }
    
-    img{
+    .img-fixed{
         width: 100%;
     }
+
     .posts-body{
         width: 100%;
         height: auto;
@@ -136,6 +139,10 @@
         height: 22px;
     }
 
+    #popular-posts{
+        margin-top: 10%;
+    }
+
     .blog-post_title{
         font-family: 'Poppins', sans-serif;
         font-size: 2.6rem;
@@ -146,7 +153,6 @@
     .editors-pick1{
         padding:8%;
         background-color: #C9B8E9;
-        width: 474px;
         margin-bottom:10%;
         height: 478px;
         color:hsla(250, 31%, 16%, 1);
@@ -154,20 +160,15 @@
 
     .editors-pick2{        
         background-color: #C9B8E9;
-        width: 474px;
-        padding:5%;
-        height: 159px;
+        padding:2%;
+        height: auto;
+        text-align: left;
         margin-bottom:10%;
         color:hsla(250, 31%, 16%, 1);
     }
 
-    .img2-editor{
-        width: 142px;
-        height: 127px;
-    }
-
     .email-input2{
-        width:70%;
+        width:60%;
         height:58px;
         font-size: 18px;
         background-color:  #1F163B;
@@ -180,6 +181,8 @@
       background-color:hsl(255, 46%, 46%);
       border-radius:8px;
       font-size: 18px;
+      padding-left:5%;
+      padding-right: 5%;
       width:30%;
       border-radius: 0px 12px 12px 0px;
       font-family: 'Nunito', sans-serif;
@@ -236,23 +239,59 @@
             max-width: 30rem;
         }
     }
-    @media screen and (max-width:868px) {
-        .blog-post{
-           max-width: 78rem;
-           padding-bottom: 5%;
+
+    @media screen and (max-width:575px) {
+        .editors-pick2{
+            text-align: center;
+        }
+        .blog-post_cta{
+            padding: 0.8rem 1rem;
         }
     }
-    @media screen and (max-width:768px) {
+
+    @media screen and (max-width:375px) {
+        .section-heading{
+            font-size:24px;
+            margin-bottom: 10%;
+        }
+        .posts-btn{
+            font-size:13px;
+        }
+        .carousel-heading{
+            font-size: 24px;
+        }
+    }
+
+    @media screen and (max-width:968px) {
 
         .blog-post{
             padding: 2.5rem;
             flex-direction: column;
-            
+            margin-top:10%;
+            margin-bottom:10%;
         }
         .blog-post_img{
             min-width: 100%;
             max-width: 100%;
             transform: translate(0, -8rem);
+        }
+
+        .blog-text{
+            margin-left:2%;
+            text-align: center;
+        }
+
+        .carousel-img,.blog-text{
+            width: 90%;
+        }
+
+        .blog-post_info{
+            margin-left:0%;
+            margin-top:-10%;
+        }
+
+        .body{
+            margin:4%;
         }
     }
     .popular-post{
@@ -278,7 +317,7 @@
         color:#D3C2F4;
         font-family: Nunito;
         font-weight: 600;
-        font-size: 24px;
+        font-size: 2rem;
     }
 
     .pop-details{
@@ -295,15 +334,17 @@
         margin:1.2%;
     }
 
-    #posts-btn{
+    .posts-btn{
       border:1px solid #5A40AB;
       color:#FAFAFA;
-      padding: 16px 45px 16px 45px;
+      padding: 1.5rem 1rem;
       border-radius:8px;
       font-size:18px;
+      margin-bottom:5%;
       font-family: 'Nunito', sans-serif;
     }
-    #posts-btn:hover{
+
+    .posts-btn:hover{
       background-color:#5A40AB;
       color:#FAFAFA;
     }
@@ -318,6 +359,9 @@
         border-top: 5px solid #FAFAFA;
     }
 
+    .search-container{
+        margin-bottom: 5%;
+    }
 </style>
 <div class="body">
     <div class="header">
@@ -331,10 +375,10 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-4 col-12">
-                <a class="btn" id="posts-btn" type="submit" href="#">Add Posts</a>
+                <a class="btn posts-btn" type="submit" href="#">Add Posts</a>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-4 col-12">
-                <a class="btn" id="posts-btn" type="submit" href="#">Manage Posts</a>
+                <a class="btn posts-btn" type="submit" href="#">Manage Posts</a>
             </div>
         </div>
     
@@ -347,16 +391,18 @@
     <div class="trending">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+              <div class="carousel-item active" data-bs-interval="2000">
                 <div class="carousel-cards d-block w-100">
                     <div class="row">
-                        <div class="col">
-                            <a href="#"><img class="carousel-img" src="{% static 'img/caurosel-img.png' %}"></a>
+                        <div class="col-lg-6 col-12 col-md-6">
+                            <a href="{% url 'blog_content' %}"><img class="carousel-img" src="{% static 'img/caurosel-img.png' %}"></a>
                         </div>
-                        <div class="col blog-text">
-                            <p class="carousel-text">Dog care - July 21,2021</p>
-                            <a href="#" class="carousel-heading"><p>Lorem Ipsum is simply dummy text</p></a>
-                            <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                        <div class="col-lg-6 col-12 col-md-6">
+                            <div class="blog-text">
+                                <p class="carousel-text">Dog care - July 21,2021</p>
+                                <a href="{% url 'blog_content' %}" class="carousel-heading"><p>Lorem Ipsum is simply dummy text</p></a>
+                                <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -364,13 +410,15 @@
               <div class="carousel-item" data-bs-interval="2000">
                 <div class="carousel-cards d-block w-100">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-lg-6 col-12 col-md-6">
                             <img class="carousel-img" src="{% static 'img/caurosel-img.png' %}">
                         </div>
-                        <div class="col blog-text">
-                            <p class="carousel-text">Dog care - July 21,2021</p>
-                            <p class="carousel-heading">Lorem Ipsum is simply dummy text</p>
-                            <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                        <div class="col-lg-6 col-12 col-md-6">
+                            <div class="blog-text">
+                                <p class="carousel-text">Dog care - July 21,2021</p>
+                                <p class="carousel-heading">Lorem Ipsum is simply dummy text</p>
+                                <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>    
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -378,13 +426,15 @@
               <div class="carousel-item" data-bs-interval="2000">
                 <div class="carousel-cards d-block w-100">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-lg-6 col-12 col-md-6">
                             <img class="carousel-img" src="{% static 'img/caurosel-img.png' %}">
                         </div>
-                        <div class="col blog-text">
-                            <p class="carousel-text">Dog care - July 21,2021</p>
-                            <p class="carousel-heading">Lorem Ipsum is simply dummy text</p>
-                            <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                        <div class="col-lg-6 col-12 col-md-6">
+                            <div class="blog-text">
+                                <p class="carousel-text">Dog care - July 21,2021</p>
+                                <p class="carousel-heading">Lorem Ipsum is simply dummy text</p>
+                                <p class="carousel-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -418,7 +468,7 @@
                             <p class="blog-post_text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
                             </p>
-                            <a href="#" class="blog-post_cta">Read More</a>
+                            <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -439,7 +489,7 @@
                             <p class="blog-post_text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
                             </p>
-                            <a href="#" class="blog-post_cta">Read More</a>
+                            <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -460,16 +510,16 @@
                             <p class="blog-post_text">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
                             </p>
-                            <a href="#" class="blog-post_cta">Read More</a>
+                            <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                         </div>
                     </div>
                 </div>                 
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+            <div class="col-lg-5 col-md-5 col-sm-12 col-12">
                 <div class="side-line"></div>
                 <p class="section-heading">Editor's Pick</p>
                 <div class="editors-pick1">
-                    <img src="{% static 'img/editor-img1.png' %}">
+                    <img class="img-fixed" src="{% static 'img/editor-img1.png' %}">
                     <h1 class="blog-post_title">Woodog</h1>
                     <p class="blog-post_text">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard 
@@ -484,8 +534,10 @@
                 </div>
                 <div class="editors-pick2">
                     <div class="row">
-                        <img class="col-lg-4 col-12 img2-editor" style="display: inline-block;" src="{% static 'img/editor-img2.png' %}">
-                        <div class="col-lg-6 col-12" style="display: inline-block;">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-12 ">
+                            <img src="{% static 'img/editor-img2.png' %}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-8 col-12" >
                             <h1 style="font-size:2.2rem;">Woodog</h1>
                             <div class="blog-post_date">
                                 <ul>
@@ -499,8 +551,10 @@
                 </div>
                 <div class="editors-pick2">
                     <div class="row">
-                        <img class="col-lg-4 col-12 img2-editor" style="display: inline-block;" src="{% static 'img/editor-img2.png' %}">
-                        <div class="col-lg-6 col-12" style="display: inline-block;">
+                        <div class="col-lg-6 col-md-6 col-sm-4 col-12 ">
+                            <img src="{% static 'img/editor-img2.png' %}">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-8 col-12">
                             <h1 style="font-size:2.2rem;">Woodog</h1>
                             <div class="blog-post_date">
                                 <ul>
@@ -512,12 +566,6 @@
                         </div>
                     </div>                    
                 </div>
-            </div>            
-        </div>
-
-        <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-12 col-12"></div>
-            <div class="col-lg-5 col-md-5 col-sm-12 col-12" style="padding-left:5%;margin-top:-10%;">
                 <div class="newletter" >
                     <div class="side-line"></div>
                     <p class="section-heading">Newsletter</p>
@@ -529,15 +577,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>            
         </div>
         
-        <div class="row">
+        <div class="row" id="popular-posts">
             <div class="side-line"></div>
             <p class="section-heading">Popular Posts</p>
             <div class="col-lg-5 col-md-6 col-sm-12 col-12">
                 <div class="popular-post">
-                    <img src="{% static 'img/popular-post1.png' %}">
+                    <img class="img-fixed" src="{% static 'img/popular-post1.png' %}">
                     <p class="second-txt">Lorem Ipsum is simply dummy </p>
                     <div class="pop-details">
                         <ul>
@@ -545,13 +593,13 @@
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-calendar.svg' %}">05 April,2021</li>
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-comment.svg' %}">8 comments</li>
                         </ul>
-                        <a href="#" class="blog-post_cta">Read More</a>
+                        <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-12 col-12">
                 <div class="popular-post">
-                    <img src="{% static 'img/popular-post-2.png' %}">
+                    <img class="img-fixed" src="{% static 'img/popular-post-2.png' %}">
                     <p class="first-txt">Lorem Ipsum is simply dummy </p>
                     <div class="pop-details">
                         <ul>
@@ -559,11 +607,11 @@
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-calendar.svg' %}">05 April,2021</li>
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-comment.svg' %}">8 comments</li>
                         </ul>
-                        <a href="#" class="blog-post_cta">Read More</a>
+                        <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                     </div>
                 </div>
                 <div class="popular-post">
-                    <img src="{% static 'img/popular-post-3.png' %}">
+                    <img class="img-fixed" src="{% static 'img/popular-post-3.png' %}">
                     <p class="first-txt">Lorem Ipsum is simply dummy </p>
                     <div class="pop-details">
                         <ul>
@@ -571,7 +619,7 @@
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-calendar.svg' %}">05 April,2021</li>
                             <li class="post-details2"><img class="post-icons" src="{% static 'img/pop-comment.svg' %}">8 comments</li>
                         </ul>
-                        <a href="#" class="blog-post_cta">Read More</a>
+                        <a href="{% url 'blog_content' %}" class="blog-post_cta">Read More</a>
                     </div>
                 </div>
             </div>

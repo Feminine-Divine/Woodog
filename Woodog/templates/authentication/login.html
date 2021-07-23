@@ -1,14 +1,14 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% load socialaccount %}
 {% block content %}
  
 {% include 'partials/header.html' %}
 
 <style>
 
-.container{
-  margin-top:120px;
-  margin-bottom:340px;
+.login-container{
+  margin:6%;
 }
 .input-field{
   margin-top:20px;
@@ -20,21 +20,21 @@
   border-radius: 8px;
   background-color: #1F163B;
   color:white;
-  width:535px;
-  margin-left: auto;
-  margin-right: auto;
+  width:420px;
+  margin-left: 2%;
 }
 .heading{
  font-family: 'Poppins', sans-serif;
- color:white;
  font-size: 36px;
  line-height: 54px;
+ margin-bottom: 5%;
  text-align: center;
+ color:hsla(250, 31%, 16%, 1);
 }
 .label{
   color: #FAFAFA;
   font-size: 18px;
-  margin-left:290px;
+  margin-left: 2%;
   font-family: 'Nunito', sans-serif;
 }
 .btn-login{
@@ -42,20 +42,72 @@
   background-color:  #5A40AB;
   align-items: center;
   padding: 16px 45px;
-  width: 535px;
+  width:420px;
   font-size: 18px;
   color: #FFFFFF;
   height: 57px;
-  margin-left:290px;
+  margin-left: 2%;
+  margin-bottom:10px;
+}
+.register-here{
+  display:inline-block;
+  margin-top: 59px;
+  background-color:  #5A40AB;
+  align-items: center;
+  padding: 16px 45px;
+  border-radius:40px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #FFFFFF;
+  height: 57px;
+  margin-left: 2%;
   margin-bottom:10px;
 }
 #btn-text{
   color: #9A88D3;
-  margin-left:290px;
+  margin-left: 2%;
   font-size: 18px;
-  text-decoration: none;
- 
+  text-decoration: none; 
 }
+
+.login-card{
+  border:2px solid #5A40AB;
+  border-radius: 16px;
+  margin:8% 10%;
+  box-shadow: 0 0 10px 10px black;
+}
+
+.login-part1{
+  padding:2%;
+  height:100%;
+  background-color:#C9B8E9;
+  border-radius: 16px 0px 0px 16px;
+}
+.text{
+  font-size: 20px;
+  font-weight: 600;
+  color:#652C57;
+  font-family: 'Nunito',sans-serif;
+  text-align: center;
+}
+.login-img{
+  width: 100%;
+}
+.social-media-login{
+  margin-top: 5%;
+}
+.icons{
+  background-color:black;
+  border-radius: 50%;
+  width:60px;
+  padding:18px;
+  height:60px;
+}
+.icons:hover{
+  border:3px solid #dd4b39;
+  background-color:white;
+}
+
 @media screen and (max-device-width: 375px) {
 
   .btn-login{
@@ -95,8 +147,20 @@
       margin-bottom:20%;
       width:90%;
     }
+    .register-here{
+      align-items: center;
+      color: #FFFFFF;
+      padding: 10px;
+      height: 39px;
+      font-size: 13px;
+    }
 }
 
+@media screen and (max-device-width:766px) {
+    .login-part1{
+      border-radius:16px 16px 0px 0px;
+    }
+}
 @media screen and (max-device-width: 1000px) {
 
   .btn-login{
@@ -112,40 +176,56 @@
   .label{
       margin-left: 0px;
   }
-  .container{
-      margin-left:5%;
-      margin-right: 5%;
-      margin-top:10%;
-      margin-bottom:20%;
-      width:90%;
+  .login-card{
+      margin-bottom:24%;
   }
 }
 </style>
 
-<div class="container col-lg-12" >
-    <p class="heading">Welcome Back</p>
-    <form style="margin-top:80px;" action="{% url 'login' %}" method="post">
-      {% csrf_token %}
-      {% include 'partials/_messages.html' %}
-  
-        <div class="form-group" >
-            <label for="username" class="label">Username</label>
-            <input type="text" class="form-control input-field" name="username" id="username">
-            <!-- <div class="invalid_feedback invalid_feedback" style="display: none;">
+{% include 'partials/_messages.html' %}
+
+<div class="login-card">
+  <div class="row">
+    <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+      <div class="login-part1">
+        <p class="heading">Welcome Back</p>
+        <p class="text">To keep connected with us please login with your personal info</p>
+        <img class="login-img" src="{% static 'img/login.png' %}">
+        <p class="text" style="display:inline-block;text-align: left;margin-left: 2%;">Need an Account?</p>
+        <a class="register-here" href="{% url "register" 'seeker' %}">Sign Up</a></span> 
+      </div>
+    </div>
+    <div class="col-lg-6 col-12 col-md-6 col-sm-12">
+      <div class="login-container col-lg-12" >
+        <form style="margin-top:80px;" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+      
+            <div class="form-group" >
+                <label for="username" class="label">Username</label>
+                <input type="text" class="form-control input-field" name="username" id="username">
+                <!-- <div class="invalid_feedback invalid_feedback" style="display: none;">
+                </div>
+                <p class="text-sm text-success usernameSuccessOutput"></p> -->
             </div>
-            <p class="text-sm text-success usernameSuccessOutput"></p> -->
+            <div class="form-group">
+              <label for="password" class="label">Password</label>
+              <input type="password" class="form-control input-field" name="password" style=" margin-bottom:15px;" id="password">
+              <small class="form-text"><a id="btn-text" href="{% url 'forget_password'  %}">Forgot Password?</a></small>
+            </div>        
+            <div class="form-group">
+                <button type="submit" class="btn btn-login">Login</button>
+            </div>  
+            <div class="social-media-login">
+                <p class="label"> Or login using</p>
+                <div class="icons"><a href="{% provider_login_url 'google' %}"><img class="google-icon" src="{% static 'img/google-plus.svg' %}"></a></div>            
+            </div>          
+          </form>
         </div>
-        <div class="form-group">
-          <label for="password" class="label">Password</label>
-          <input type="password" class="form-control input-field" name="password" style=" margin-bottom:15px;" id="password">
-          <small class="form-text"><a id="btn-text" href="{% url 'forget'  %}">Forgot Password?</a></small>
-        </div>        
-        <div class="form-group">
-            <button type="submit" class="btn btn-login">Login</button>
-            <small class="form-text"><a id="btn-text" href="{% url 'woodogdata'  %}">Need an account?</a></small>
-        </div>
-    </form>
+      </div>
+    </div>
 </div>
+
+
 
   <script src="{% static 'js/register.js' %}"></script>
 

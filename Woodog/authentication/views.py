@@ -193,5 +193,84 @@ class ChangePasswordView(TemplateView):
                 auth.login(request, user)
                 return redirect('woodogdata')
 
-def Forget_Password(request):
-    return render(request,'authentication/forget_password.html')    
+class Forget_PasswordView(View):
+    def get(self,request):
+        return render(request,'authentication/forget_password.html')    
+    
+    def post(self,request):
+        mail = request.POST['email'] 
+
+        try:
+            user=User.objects.get(email=mail)
+            uidb64=urlsafe_base64_encode(force_bytes(user.pk))
+            domain=get_current_site(request).domain
+            link=reverse('reset-password',kwargs={'uidb64':uidb64,'token':token_generator.make_token(user)})
+
+            reset_url = 'http://'+domain+link
+
+            email_subject="Woodog - Reset your Password!"
+            email_body= "Hi  "+user.username+"  ,  Please use this link to Reset your Password\n" + reset_url
+            email = EmailMessage(
+                email_subject,
+                email_body,
+                'noreply@gmail.com',
+                [mail],
+            )
+            
+            email.send(fail_silently=False)
+            messages.success(request,"We Have Sent you Mail!, Please Check It!")
+            return render(request,'authentication/forget_password.html')
+
+        except User.DoesNotExist:
+                messages.error(request,"User with this Email Address doesn't exist")
+                return render(request,'authentication/forget_password.html')
+
+class Password_reset_form(View):
+    def get(self, request, uidb64, token):
+        try:
+            id = force_text(urlsafe_base64_decode(uidb64))
+            user = User.objects.get(pk=id)
+
+            if not token_generator.check_token(user,token):
+                messages.success(request, 'Invalid Link !')
+                return redirect('login')
+
+            return redirect('reset-password')
+
+        except Exception as ex:
+            pass
+
+        return redirect('reset-password')
+
+
+class Reset_Newpassword_form(View):
+    def get(self,request):
+        return render(request,'authentication/reset-password.html')
+    
+    def post(self,request):
+        new_pwd = request.POST['new-password-2']
+        confirm_pwd = request.POST['confirm-password-2']
+        user_email = request.POST['user_email']
+        try:
+            user=User.objects.get(email=user_email)
+
+        except User.DoesNotExist:
+                messages.error(request,"User with this Email Address doesn't exist")
+                return render(request,'authentication/reset-password.html')
+    
+        if new_pwd!=confirm_pwd:
+            messages.error(request,"Two passwords doesn't match")
+            return render(request,'authentication/reset-password.html')
+    
+        if new_pwd.__len__()<9:
+            messages.error(request,'New password must be at least 9 characters long')
+            return render(request,'authentication/reset-password.html')
+    
+        else:
+            user.set_password(confirm_pwd)  
+            print(user.username)
+            print(user.email)  
+            user.save()
+            auth.login(request, user)
+            messages.success(request,'Your Password Reset Successfully Completed! Login using New Password!')
+            return redirect('woodogdata')
