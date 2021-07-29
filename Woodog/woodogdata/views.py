@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from .models import Gallery
+from .models import Gallery,BlogModel
+from django.shortcuts import render , redirect
+from django.contrib import messages
+from django.views import View
+
 # Create your views here.
 
 # @login_required(login_url='/authentication/login')
@@ -53,3 +57,29 @@ def blog_content(request):
 
 def feedback(request):
     return render(request,'woodogdata/feedback.html') 
+
+class AddBlogView(View):
+    def get(self,request):
+        return render(request,'woodogdata/add-blog.html')
+    
+    def post(self,request):
+        image = request.FILES['image']
+        title = request.POST['title']
+        content = request.POST['content']
+        tag=request.POST['tag']            
+        user = request.user
+            
+        try:
+            blog_obj = BlogModel.objects.create(
+            user = user , title = title, 
+            content = content, image = image, tag=tag
+            )
+            messages.success(request,"Your Blog is successfully Added!!")
+            return redirect('/add-blog/')
+
+   
+        except Exception as e :
+            messages.error(request,"Error in adding your blog")
+            print("exception",e)
+    
+        return render(request , 'woodogdata/add-blog.html')
