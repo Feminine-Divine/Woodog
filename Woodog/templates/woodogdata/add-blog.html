@@ -1,0 +1,115 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+{% load static %}
+
+{% include 'partials/header.html' %}
+<style>
+    .body{
+        margin:8%;
+    }
+    label{
+        color: white;
+        margin-bottom: 2%;
+        font-size: 18px;
+        font-family: 'Nunito',sans-serif;
+    }
+    .main-heading{
+        font-size: 36px;
+        font-family: 'Poppins',sans-serif;
+        color: white;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+    .fields{
+        margin:2%;
+    }
+    .input-field{
+        font-size: 18px;
+        border: 1px solid #5A40AB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        height: 58px;
+        background-color: #1F163B;
+        color:white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .input-field-msg{
+        font-size: 18px;
+        height: 185px;
+        border: 1px solid #5A40AB;
+        box-sizing: border-box;
+        border-radius: 8px;
+        background-color: #1F163B;
+        color:white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .btn-create{
+        margin-top: 59px;
+        background-color:  #5A40AB;
+        align-items: center;
+        padding: 16px 45px;
+        width: 535px;
+        font-size: 18px;
+        color: #FFFFFF;
+        height: 57px;
+        margin-left:290px;
+        margin-bottom:10px;
+    }
+</style>
+<div class="body">
+    {% include 'partials/_messages.html'%}
+    <p class="main-heading">Write your blogs</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-12 fields">
+                <label>Enter blog title</label>
+                <input
+                    type="text"
+                    class="form-control input-field"
+                    placeholder="Enter title"
+                    name="title"
+                >
+            </div>
+            <div class="col-md-12 fields">
+                <label>Enter blog content</label>
+                <textarea
+                    class="form-control input-field-msg"
+                    id="content"
+                    placeholder="Enter your content"
+                    name="content"
+                    rows="5"
+                ></textarea>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6 col-sm-12 col-md-6 fields" style="display: inline-block;">
+                    <select class="form-select" style="font-size:18px;" name="tag">
+                        <option selected>Select Tag</option>
+                        <option value="trending">Trending</option>
+                        <option value="latest">Latest</option>
+                        <option value="editor1">Editors Pick1</option>
+                        <option value="editor1">Editors Pick2</option>
+                        <option value="popular">Popular</option>
+                    </select>
+                </div>
+                <div class="col-12 col-lg-6 col-sm-12 col-md-6 fields" style="display: inline-block;">
+                    <label>Choose an Image</label>
+                    <input
+                        type="file"
+                        name="image"
+                        style="font-size:18px;"
+                        class="form-control"
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-create">Create Blog</button>
+        </div>
+    </form>
+</div>
+{% include 'partials/footer.html' %}
+
+{% endblock content %}

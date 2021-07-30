@@ -184,3 +184,11 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+
+# This is for google authentication for login and signup
+ 
+# This should be added in django admin page --> Go to Home › Social Accounts › Social applications
+
+# CLIENT_ID = 803638076474-daagolon2kqtfmatmg46ipask2in6bao.apps.googleusercontent.com
+# SECRET_KEY = yAc2Gcjc23XS80_0Ti6iTxB1

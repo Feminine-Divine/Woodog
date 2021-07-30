@@ -3,7 +3,6 @@
 {% load static %}
  
 {% include 'partials/header.html' %}
-
 <style>
 .contact-container{
   margin-top:120px;
@@ -156,64 +155,89 @@
       margin-top:10%;
       margin-bottom:20%;
   }
-} 
-
+}
 </style>
-
-<div class="container col-lg-12 contact-container" >
+<div class="container col-lg-12 contact-container">
     <p class="heading">Get in touch with us</p>
-    <form  action="{% url 'contact' %}" method="post" class="contact-form">
-      {% csrf_token %}
+    <form action="{% url 'contact' %}" method="post" class="contact-form">
+        {% csrf_token %}
       {% include 'partials/_messages.html' %}
-  
-        <div class="form-group" >
+        <div class="form-group">
             <label for="name" class="label">Name</label>
-            <input type="text" class="form-control input-field" name="name" id="name">
+            <input
+                type="text"
+                class="form-control input-field"
+                name="name"
+                id="name"
+            >
         </div>
         <div class="form-group">
-          <label for="email" class="label">Email</label>
-          <input type="email" class="form-control input-field" name="email" id="email">
-        </div>      
+            <label for="email" class="label">Email</label>
+            <input
+                type="email"
+                class="form-control input-field"
+                name="email"
+                id="email"
+            >
+        </div>
         <div class="form-group">
-          <label for="subject" class="label">Subject</label>
-          <input type="text" class="form-control input-field" name="subject" id="subject">
-        </div> 
+            <label for="subject" class="label">Subject</label>
+            <input
+                type="text"
+                class="form-control input-field"
+                name="subject"
+                id="subject"
+            >
+        </div>
         <div class="form-group">
-          <label for="message" class="label">Message</label>
-          <textarea class="form-control input-field-msg" id="message" value="message" rows="3"></textarea>
-        </div>   
+            <label for="message" class="label">Message</label>
+            <textarea
+                class="form-control input-field-msg"
+                id="message"
+                value="message"
+                rows="3"
+            ></textarea>
+        </div>
         <div class="form-group">
             <button type="submit" class="btn btn-send">Send message</button>
         </div>
     </form>
-
     <div class="icon-div">
-      <div class="row" >
-        <div class="col" >
-          <div class="icon-oval">
-            <a href="#"><img src="{% static 'img/location.svg' %}" ></a>
-          </div>
-          <p class="text">Address<br><br></p>
+        <div class="row">
+            <div class="col">
+                <div class="icon-oval">
+                    <a href="#">
+                        <img src="{% static 'img/location.svg' %}">
+                    </a>
+                </div>
+                <p class="text">Address
+                    <br>
+                    <br>
+                </p>
+            </div>
+            <div class="col">
+                <div class="icon-oval">
+                    <a href="#">
+                        <img src="{% static 'img/phone.svg' %}">
+                    </a>
+                </div>
+                <p class="text">Phone
+                    <br>
+                </p>
+            </div>
+            <div class="col">
+                <div class="icon-oval">
+                    <a href="#">
+                        <img src="{% static 'img/send-msg.svg' %}">
+                    </a>
+                </div>
+                <p class="text">Email
+                    <br>
+                </p>
+            </div>
         </div>
-        <div class="col">
-          <div class="icon-oval">
-            <a href="#"><img src="{% static 'img/phone.svg' %}" ></a>
-          </div>
-          <p class="text">Phone<br></p>
-        </div>
-        <div class="col">
-          <div class="icon-oval">
-            <a href="#"><img src="{% static 'img/send-msg.svg' %}" ></a>
-          </div>
-          <p class="text">Email<br></p>
-        </div>
-        
-      </div>
     </div>
 </div>
- 
 {% include 'partials/footer.html' %}
 
 {% endblock content %}
-
-
