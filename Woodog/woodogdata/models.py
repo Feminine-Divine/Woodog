@@ -32,6 +32,21 @@ class Comment(models.Model):
     class Meta:
         ordering = ['-timestamp']
 
+
+#Models for adding pictures to gallery page
+class Gallery(models.Model):
+    tag=models.IntegerField()
+    image = models.ImageField(upload_to='images')
+    title=models.CharField(max_length=100)
+    uploading_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-uploading_date']
+
+
 #Model for Blog
 
 TAG_CHOICES = (
@@ -51,21 +66,12 @@ class BlogModel(models.Model):
     image=models.ImageField(upload_to='Media')
     created_date_time=models.DateTimeField(auto_now_add=True)
 
-    def save(self, *args, **kwargs):
-        self.slug = Generate_slug(self.title)
-        super(BlogModel, self).save(*args, **kwargs)
-
-    
-    
-#Models for adding pictures to gallery page
-class Gallery(models.Model):
-    tag=models.IntegerField()
-    image = models.ImageField(upload_to='images')
-    title=models.CharField(max_length=100)
-    uploading_date = models.DateTimeField(default=timezone.now)
-
     def __str__(self):
         return self.title
 
     class Meta:
-        ordering = ['-uploading_date']
+        ordering = ['-created_date_time']
+    
+    def save(self , *args, **kwargs): 
+        self.slug = generate_slug(self.title)
+        super(BlogModel, self).save(*args, **kwargs)

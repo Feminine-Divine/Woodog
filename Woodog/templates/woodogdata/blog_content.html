@@ -3,7 +3,6 @@
 {% load static %}
 
 {% include 'partials/header.html' %}
-
 <style>
     .blog-content{
         margin:8%;
@@ -30,7 +29,7 @@
     .post-details{
         display: inline-block;
         font-size: 1.5rem;
-        width:15%;
+        width:30%;
     }
     .blog-text{
         font-size: 1.8rem;
@@ -263,33 +262,35 @@
         margin:1%;
     }
 
-} 
-
+}
 </style>
-
 <div class="blog-content">
     <div class="blog">
         <div class="content">
-            <img class="blog-img" src="{% static 'img/dog-main.jpg' %}" alt="">
+            <img class="blog-img" src="/media/{{blog_obj.image}}" alt="">
             <div class="tag">
-                <p>Dog Care</p>
+                <p>{{blog_obj.tag}}</p>
             </div>
             <div class="div1">
-                <p class="main-heading">Lorem Ipsum is simply dummy text</p>
+                <p class="main-heading">{{blog_obj.title}}</p>
                 <div class="blog-post_date">
                     <ul>
-                        <li class="post-details"><img class="post-icons" src="{% static 'img/profile -blog.svg' %}">Woodog</li>
-                        <li class="post-details"><img class="post-icons" src="{% static 'img/calendar-blog.svg' %}">05 April,2021</li>
-                        <li class="post-details"><img class="post-icons" src="{% static 'img/comment-blog.svg' %}">8 comments</li>
+                        <li class="post-details">
+                            <img class="post-icons" src="{% static 'img/profile -blog.svg' %}">
+                            {{blog_obj.user}}
+                        </li>
+                        <li class="post-details">
+                            <img class="post-icons" src="{% static 'img/calendar-blog.svg' %}">
+                            {{blog_obj.created_date_time}}
+                        </li>
+                        <li class="post-details">
+                            <img class="post-icons" src="{% static 'img/comment-blog.svg' %}">
+                            8 comments
+                        </li>
                     </ul>
                 </div>
-                <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
-                    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
-                    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus.
+                <p class="blog-text">
+                    {{blog_obj.content}}
                 </p>
             </div>
             <div class="row">
@@ -306,7 +307,7 @@
                         <img src="{% static 'img/next-post.svg' %}" class="btn-icon">
                     </div>
                 </div>
-            </div>          
+            </div>
         </div>
     </div>
     <div class="comments">
@@ -332,39 +333,48 @@
     </div>
     <div class="post-comments">
         <p class="heading">Post Comments</p>
-        <form  action="{% url 'blog_content' %}" method="post" class="comments-form">
-        {% csrf_token %}
+        <form action="" method="post" class="comments-form">
+            {% csrf_token %}
         {% include 'partials/_messages.html' %}
-    
-            
             <div class="row">
                 <div class="col-12 col-lg-6 col-sm-12 col-md-6">
-                    <div class="form-group" >
+                    <div class="form-group">
                         <label for="name" class="label">Name</label>
-                        <input type="text" class="form-control input-field" name="name" id="name">
+                        <input
+                            type="text"
+                            class="form-control input-field"
+                            name="name"
+                            id="name"
+                        >
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="email" class="label">Email</label>
-                        <input type="email" class="form-control input-field" name="email" id="email">
+                        <input
+                            type="email"
+                            class="form-control input-field"
+                            name="email"
+                            id="email"
+                        >
                     </div>
                 </div>
             </div>
             <div class="form-group">
-            <label for="message" class="label">Message</label>
-            <textarea class="form-control input-field-msg" id="message" value="message" rows="3"></textarea>
-            </div>   
+                <label for="message" class="label">Message</label>
+                <textarea
+                    class="form-control input-field-msg"
+                    id="message"
+                    value="message"
+                    rows="3"
+                ></textarea>
+            </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-send">Post Comment</button>
             </div>
         </form>
     </div>
 </div>
-
-
 {% include 'partials/footer.html' %}
 
 {% endblock content %}
-
-
